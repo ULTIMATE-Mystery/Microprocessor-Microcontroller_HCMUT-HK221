@@ -94,13 +94,13 @@ int main(void)
   while(1){
 	  int hour , min , sec;
 	  hour = 7; min = 7; sec = 27;
-	  realclock(hour , min , sec);
+	  analogClock(hour , min , sec);
 	  HAL_Delay(1000);
   }
       /* USER CODE END 3 */
     }
 
-  void realclock(int hour,int min,int sec){
+  void analogClock(int hour,int min,int sec){
 
   int min0 = (int) min / 5;
   int sec0 = (int) sec / 5;

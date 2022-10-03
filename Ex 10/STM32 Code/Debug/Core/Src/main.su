@@ -1,5 +1,5 @@
 ../Core/Src/main.c:63:5:main	24	static
-../Core/Src/main.c:103:8:realclock	32	static
+../Core/Src/main.c:103:8:analogClock	32	static
 ../Core/Src/main.c:113:8:clearAllClock	8	static
 ../Core/Src/main.c:129:6:setNumberOnClock	16	static
 ../Core/Src/main.c:171:6:clearNumberOnClock	16	static

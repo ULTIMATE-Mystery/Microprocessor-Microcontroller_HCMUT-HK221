@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000458b  00000000  00000000  000396c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000797d2  00000000  00000000  0003dc53  2**0
+ 18 .debug_str    000797d4  00000000  00000000  0003dc53  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000b7425  2**0
+ 19 .comment      00000050  00000000  00000000  000b7427  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00000dbc  00000000  00000000  000b7478  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -123,11 +123,11 @@ int main(void)
  8000168:	60bb      	str	r3, [r7, #8]
  800016a:	231b      	movs	r3, #27
  800016c:	607b      	str	r3, [r7, #4]
-	  realclock(hour , min , sec);
+	  analogClock(hour , min , sec);
  800016e:	687a      	ldr	r2, [r7, #4]
  8000170:	68b9      	ldr	r1, [r7, #8]
  8000172:	68f8      	ldr	r0, [r7, #12]
- 8000174:	f000 f806 	bl	8000184 <realclock>
+ 8000174:	f000 f806 	bl	8000184 <analogClock>
 	  HAL_Delay(1000);
  8000178:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800017c:	f000 fa3c 	bl	80005f8 <HAL_Delay>
@@ -135,12 +135,12 @@ int main(void)
  8000180:	e7ef      	b.n	8000162 <main+0x16>
 	...
 
-08000184 <realclock>:
+08000184 <analogClock>:
   }
       /* USER CODE END 3 */
     }
 
-  void realclock(int hour,int min,int sec){
+  void analogClock(int hour,int min,int sec){
  8000184:	b580      	push	{r7, lr}
  8000186:	b086      	sub	sp, #24
  8000188:	af00      	add	r7, sp, #0
@@ -150,7 +150,7 @@ int main(void)
 
   int min0 = (int) min / 5;
  8000190:	68bb      	ldr	r3, [r7, #8]
- 8000192:	4a0e      	ldr	r2, [pc, #56]	; (80001cc <realclock+0x48>)
+ 8000192:	4a0e      	ldr	r2, [pc, #56]	; (80001cc <analogClock+0x48>)
  8000194:	fb82 1203 	smull	r1, r2, r2, r3
  8000198:	1052      	asrs	r2, r2, #1
  800019a:	17db      	asrs	r3, r3, #31
@@ -158,7 +158,7 @@ int main(void)
  800019e:	617b      	str	r3, [r7, #20]
   int sec0 = (int) sec / 5;
  80001a0:	687b      	ldr	r3, [r7, #4]
- 80001a2:	4a0a      	ldr	r2, [pc, #40]	; (80001cc <realclock+0x48>)
+ 80001a2:	4a0a      	ldr	r2, [pc, #40]	; (80001cc <analogClock+0x48>)
  80001a4:	fb82 1203 	smull	r1, r2, r2, r3
  80001a8:	1052      	asrs	r2, r2, #1
  80001aa:	17db      	asrs	r3, r3, #31
