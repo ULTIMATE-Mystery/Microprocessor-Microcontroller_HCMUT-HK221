@@ -1,0 +1,4 @@
+../Core/Src/led.c:12:6:clear7SEG	8	static
+../Core/Src/led.c:16:6:display7SEG	16	static
+../Core/Src/led.c:62:6:blinkLED	8	static
+../Core/Src/led.c:68:6:changeEN	8	static

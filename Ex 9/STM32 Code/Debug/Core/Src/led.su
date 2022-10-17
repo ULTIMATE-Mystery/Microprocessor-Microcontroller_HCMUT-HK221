@@ -1,0 +1,7 @@
+../Core/Src/led.c:10:6:clear7SEG	8	static
+../Core/Src/led.c:14:6:display7SEG	16	static
+../Core/Src/led.c:61:6:blinkLED	8	static
+../Core/Src/led.c:74:8:getBuffer	16	static
+../Core/Src/led.c:94:8:openENM	16	static
+../Core/Src/led.c:128:8:clearENM	8	static
+../Core/Src/led.c:136:8:updateLEDMatrix	16	static
