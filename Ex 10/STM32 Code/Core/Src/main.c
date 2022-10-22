@@ -91,24 +91,33 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   clearAllClock();
+    int hour = 7;
+    int minute = 7;
+    int second = 27;
+    setNumberOnClock(second / 5);
+    setNumberOnClock(minute / 5);
+    setNumberOnClock(hour);
   while(1){
-	  int hour , min , sec;
-	  hour = 7; min = 7; sec = 27;
-	  analogClock(hour , min , sec);
-	  HAL_Delay(1000);
+	  second++;
+	  	  if(second == 60) {
+	  		  minute++;
+	  		  second = 0;
+	  	  }
+	  	  if(minute == 60) {
+	  		  hour++;
+	  		  minute = 0;
+	  	  }
+	  	  if(hour == 12) {
+	  		  hour = 0;
+	  	  }
+	  	  clearAllClock();
+	  	  setNumberOnClock(second / 5);
+	  	  setNumberOnClock(minute / 5);
+	  	  setNumberOnClock(hour);
+	  	  HAL_Delay(50);
   }
       /* USER CODE END 3 */
     }
-
-  void analogClock(int hour,int min,int sec){
-
-  int min0 = (int) min / 5;
-  int sec0 = (int) sec / 5;
-
-  setNumberOnClock (hour);
-  setNumberOnClock (min0);
-  setNumberOnClock (sec0);
-  }
 
   void clearAllClock()
   {
@@ -220,7 +229,6 @@ void clearNumberOnClock(int num)
 														   	  	  	 GPIO_PIN_SET ) ;
 				}
 }
-
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -272,23 +280,18 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_0_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
                           |LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin
-                          |LED_8_Pin|LED_9_Pin|LED_11_Pin, GPIO_PIN_RESET);
+                          |LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_0_Pin LED_1_Pin LED_2_Pin LED_3_Pin
                            LED_4_Pin LED_5_Pin LED_6_Pin LED_7_Pin
-                           LED_8_Pin LED_9_Pin LED_11_Pin */
+                           LED_8_Pin LED_9_Pin LED_10_Pin LED_11_Pin */
   GPIO_InitStruct.Pin = LED_0_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
                           |LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin
-                          |LED_8_Pin|LED_9_Pin|LED_11_Pin;
+                          |LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : LED_10_Pin */
-  GPIO_InitStruct.Pin = LED_10_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-  HAL_GPIO_Init(LED_10_GPIO_Port, &GPIO_InitStruct);
 
 }
 
