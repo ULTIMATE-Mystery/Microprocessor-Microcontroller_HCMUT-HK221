@@ -1,1 +1,1 @@
-Microprocessor - Microcontroller Lab 1 HCMUT HK221 STM32
+Microprocessor - Microcontroller Lab 1 HCMUT HK221
