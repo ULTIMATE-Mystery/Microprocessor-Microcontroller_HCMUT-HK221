@@ -1,0 +1,2 @@
+../Core/Inc/button.c:16:6:subKeyProcess	8	static
+../Core/Inc/button.c:22:6:getKeyInput	8	static
