@@ -1,0 +1,6 @@
+../Core/Src/output_display.c:31:6:LED_on_road1	24	static
+../Core/Src/output_display.c:41:6:LED_on_road2	24	static
+../Core/Src/output_display.c:52:6:LED_off	16	static
+../Core/Src/output_display.c:59:6:EN_on	24	static
+../Core/Src/output_display.c:71:6:updateBuffer	4	static
+../Core/Src/output_display.c:79:6:display7SEG	16	static

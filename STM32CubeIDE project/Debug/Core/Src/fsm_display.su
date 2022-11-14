@@ -1,0 +1,3 @@
+../Core/Src/fsm_display.c:30:6:restartDisplay	4	static
+../Core/Src/fsm_display.c:34:6:fsm_display	8	static
+../Core/Src/fsm_display.c:76:6:blinkLED	16	static
