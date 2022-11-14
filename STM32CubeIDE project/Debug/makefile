@@ -63,8 +63,8 @@ all: main-build
 main-build: Microcontroller-Lab-3.elf secondary-outputs
 
 # Tool invocations
-Microcontroller-Lab-3.elf Microcontroller-Lab-3.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Lab\ 3\STM32CubeIDE\ project\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Microcontroller-Lab-3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Lab 3\STM32CubeIDE project\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Microcontroller-Lab-3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Microcontroller-Lab-3.elf Microcontroller-Lab-3.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Lab\ 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE\ project\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Microcontroller-Lab-3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Lab 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE project\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Microcontroller-Lab-3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
