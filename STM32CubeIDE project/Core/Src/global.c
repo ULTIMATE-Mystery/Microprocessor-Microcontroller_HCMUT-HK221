@@ -1,9 +1,3 @@
-/*
- * global.c
- *
- *  Created on: Nov 9, 2022
- *      Author: lephu
- */
 
 #include "global.h"
 

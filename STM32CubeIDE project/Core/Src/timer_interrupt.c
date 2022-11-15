@@ -1,9 +1,3 @@
-/*
- * timer_interrupt.c
- *
- *  Created on: Nov 8, 2022
- *      Author: lephu
- */
 
 #include "timer_interrupt.h"
 

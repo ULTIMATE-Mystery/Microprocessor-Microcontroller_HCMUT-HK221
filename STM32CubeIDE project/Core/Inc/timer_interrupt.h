@@ -1,9 +1,3 @@
-/*
- * timer_interrupt.h
- *
- *  Created on: Nov 8, 2022
- *      Author: lephu
- */
 
 #ifndef INC_TIMER_INTERRUPT_H_
 #define INC_TIMER_INTERRUPT_H_

@@ -1,2 +1,2 @@
-../Core/Src/input_reading.c:39:6:getKeyInput	16	static
-../Core/Src/input_reading.c:68:5:isButtonPressed	16	static
+../Core/Src/input_reading.c:33:6:getKeyInput	16	static
+../Core/Src/input_reading.c:62:5:isButtonPressed	16	static

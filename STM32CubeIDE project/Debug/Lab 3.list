@@ -1,5 +1,5 @@
 
-Microcontroller-Lab-3.elf:     file format elf32-littlearm
+Lab 3.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016d75  00000000  00000000  0002ba48  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000b8bb  00000000  00000000  000427bd  2**0
+ 17 .debug_line   0000b8b9  00000000  00000000  000427bd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008227f  00000000  00000000  0004e078  2**0
+ 18 .debug_str    0008222f  00000000  00000000  0004e076  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000d02f7  2**0
+ 19 .comment      00000050  00000000  00000000  000d02a5  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002908  00000000  00000000  000d0348  2**2
+ 20 .debug_frame  00002908  00000000  00000000  000d02f8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -789,7 +789,7 @@ void fsm_manual(void) {
  800062c:	f7ff fd8e 	bl	800014c <fsm_auto_road1>
     fsm_auto_road2();
  8000630:	f7ff fe36 	bl	80002a0 <fsm_auto_road2>
-    if(isButtonPressed(SELECT_BUTTON) == 1) {
+    if(isButtonPressed(MODE_BUTTON) == 1) {
  8000634:	2000      	movs	r0, #0
  8000636:	f000 f98f 	bl	8000958 <isButtonPressed>
  800063a:	4603      	mov	r3, r0
@@ -821,7 +821,7 @@ void fsm_manual(void) {
 	blinkLED(RED);
  8000666:	2000      	movs	r0, #0
  8000668:	f7ff ff64 	bl	8000534 <blinkLED>
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
  800066c:	2000      	movs	r0, #0
  800066e:	f000 f973 	bl	8000958 <isButtonPressed>
  8000672:	4603      	mov	r3, r0
@@ -893,7 +893,7 @@ void fsm_manual(void) {
 	blinkLED(YELLOW);
  80006e8:	2001      	movs	r0, #1
  80006ea:	f7ff ff23 	bl	8000534 <blinkLED>
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
  80006ee:	2000      	movs	r0, #0
  80006f0:	f000 f932 	bl	8000958 <isButtonPressed>
  80006f4:	4603      	mov	r3, r0
@@ -965,7 +965,7 @@ void fsm_manual(void) {
 	blinkLED(GREEN);
  800076a:	2002      	movs	r0, #2
  800076c:	f7ff fee2 	bl	8000534 <blinkLED>
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
  8000770:	2000      	movs	r0, #0
  8000772:	f000 f8f1 	bl	8000958 <isButtonPressed>
  8000776:	4603      	mov	r3, r0
@@ -2464,44 +2464,97 @@ void timerRun(void) {
  8000fdc:	20000150 	.word	0x20000150
 
 08000fe0 <Reset_Handler>:
+  .weak Reset_Handler
+  .type Reset_Handler, %function
+Reset_Handler:
+
+/* Copy the data segment initializers from flash to SRAM */
+  ldr r0, =_sdata
  8000fe0:	480c      	ldr	r0, [pc, #48]	; (8001014 <LoopFillZerobss+0x12>)
+  ldr r1, =_edata
  8000fe2:	490d      	ldr	r1, [pc, #52]	; (8001018 <LoopFillZerobss+0x16>)
+  ldr r2, =_sidata
  8000fe4:	4a0d      	ldr	r2, [pc, #52]	; (800101c <LoopFillZerobss+0x1a>)
+  movs r3, #0
  8000fe6:	2300      	movs	r3, #0
+  b LoopCopyDataInit
  8000fe8:	e002      	b.n	8000ff0 <LoopCopyDataInit>
 
 08000fea <CopyDataInit>:
+
+CopyDataInit:
+  ldr r4, [r2, r3]
  8000fea:	58d4      	ldr	r4, [r2, r3]
+  str r4, [r0, r3]
  8000fec:	50c4      	str	r4, [r0, r3]
+  adds r3, r3, #4
  8000fee:	3304      	adds	r3, #4
 
 08000ff0 <LoopCopyDataInit>:
+
+LoopCopyDataInit:
+  adds r4, r0, r3
  8000ff0:	18c4      	adds	r4, r0, r3
+  cmp r4, r1
  8000ff2:	428c      	cmp	r4, r1
+  bcc CopyDataInit
  8000ff4:	d3f9      	bcc.n	8000fea <CopyDataInit>
+  
+/* Zero fill the bss segment. */
+  ldr r2, =_sbss
  8000ff6:	4a0a      	ldr	r2, [pc, #40]	; (8001020 <LoopFillZerobss+0x1e>)
+  ldr r4, =_ebss
  8000ff8:	4c0a      	ldr	r4, [pc, #40]	; (8001024 <LoopFillZerobss+0x22>)
+  movs r3, #0
  8000ffa:	2300      	movs	r3, #0
+  b LoopFillZerobss
  8000ffc:	e001      	b.n	8001002 <LoopFillZerobss>
 
 08000ffe <FillZerobss>:
+
+FillZerobss:
+  str  r3, [r2]
  8000ffe:	6013      	str	r3, [r2, #0]
+  adds r2, r2, #4
  8001000:	3204      	adds	r2, #4
 
 08001002 <LoopFillZerobss>:
+
+LoopFillZerobss:
+  cmp r2, r4
  8001002:	42a2      	cmp	r2, r4
+  bcc FillZerobss
  8001004:	d3fb      	bcc.n	8000ffe <FillZerobss>
+
+/* Call the clock system intitialization function.*/
+    bl  SystemInit
  8001006:	f7ff ff69 	bl	8000edc <SystemInit>
+/* Call static constructors */
+    bl __libc_init_array
  800100a:	f001 faf7 	bl	80025fc <__libc_init_array>
+/* Call the application's entry point.*/
+  bl main
  800100e:	f7ff fcc3 	bl	8000998 <main>
+  bx lr
  8001012:	4770      	bx	lr
+  ldr r0, =_sdata
  8001014:	20000000 	.word	0x20000000
+  ldr r1, =_edata
  8001018:	2000009c 	.word	0x2000009c
+  ldr r2, =_sidata
  800101c:	08002694 	.word	0x08002694
+  ldr r2, =_sbss
  8001020:	2000009c 	.word	0x2000009c
+  ldr r4, =_ebss
  8001024:	20000170 	.word	0x20000170
 
 08001028 <ADC1_2_IRQHandler>:
+ * @retval : None
+*/
+    .section .text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+  b Infinite_Loop
  8001028:	e7fe      	b.n	8001028 <ADC1_2_IRQHandler>
 	...
 

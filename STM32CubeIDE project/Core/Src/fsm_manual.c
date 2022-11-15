@@ -1,9 +1,3 @@
-/*
- * fsm_manual.c
- *
- *  Created on: Nov 9, 2022
- *      Author: lephu
- */
 
 #include "fsm_manual.h"
 
@@ -38,7 +32,7 @@ void fsm_manual(void) {
   case MODE1:
     fsm_auto_road1();
     fsm_auto_road2();
-    if(isButtonPressed(SELECT_BUTTON) == 1) {
+    if(isButtonPressed(MODE_BUTTON) == 1) {
       status_manual = MODE2;
       time_road1 = MODE2;
       time_road2 = time_red;
@@ -48,7 +42,7 @@ void fsm_manual(void) {
     break;
   case MODE2:
 	blinkLED(RED);
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
 	  status_manual = MODE3;
 	  time_road1 = MODE3;
 	  time_road2 = time_yellow;
@@ -70,7 +64,7 @@ void fsm_manual(void) {
 	break;
   case MODE3:
 	blinkLED(YELLOW);
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
 	  status_manual = MODE4;
 	  time_road1 = MODE4;
 	  time_road2 = time_green;
@@ -92,7 +86,7 @@ void fsm_manual(void) {
 	break;
   case MODE4:
 	blinkLED(GREEN);
-	if(isButtonPressed(SELECT_BUTTON) == 1) {
+	if(isButtonPressed(MODE_BUTTON) == 1) {
 	  status_manual = MODE1;
       restartDisplay();
 	  setInit();

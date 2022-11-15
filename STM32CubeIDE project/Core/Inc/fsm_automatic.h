@@ -1,9 +1,3 @@
-/*
- * fsm_automatic.h
- *
- *  Created on: Nov 9, 2022
- *      Author: lephu
- */
 
 #ifndef INC_FSM_AUTOMATIC_H_
 #define INC_FSM_AUTOMATIC_H_

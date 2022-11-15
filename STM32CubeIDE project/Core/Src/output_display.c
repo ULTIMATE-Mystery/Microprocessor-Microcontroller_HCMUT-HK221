@@ -1,9 +1,3 @@
-/*
- * output_display.c
- *
- *  Created on: Nov 8, 2022
- *      Author: lephu
- */
 
 #include "output_display.h"
 

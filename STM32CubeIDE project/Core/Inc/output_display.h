@@ -1,9 +1,3 @@
-/*
- * output_display.h
- *
- *  Created on: Nov 8, 2022
- *      Author: lephu
- */
 
 #ifndef INC_OUTPUT_DISPLAY_H_
 #define INC_OUTPUT_DISPLAY_H_

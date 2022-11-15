@@ -1,9 +1,3 @@
-/*
- * fsm_display.c
- *
- *  Created on: Nov 9, 2022
- *      Author: lephu
- */
 
 #include "fsm_display.h"
 

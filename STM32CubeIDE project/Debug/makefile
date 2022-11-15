@@ -34,37 +34,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Microcontroller-Lab-3
+BUILD_ARTIFACT_NAME := Lab 3
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Microcontroller-Lab-3.elf \
+Lab\ 3.elf \
 
 MAP_FILES += \
-Microcontroller-Lab-3.map \
+Lab\ 3.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Microcontroller-Lab-3.list \
+Lab\ 3.list \
 
 OBJCOPY_HEX += \
-Microcontroller-Lab-3.hex \
+Lab\ 3.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Microcontroller-Lab-3.elf secondary-outputs
+main-build: Lab\ 3.elf secondary-outputs
 
 # Tool invocations
-Microcontroller-Lab-3.elf Microcontroller-Lab-3.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Lab\ 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE\ project\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Microcontroller-Lab-3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Lab 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE project\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Microcontroller-Lab-3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Lab\ 3.elf Lab\ 3.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Lab\ 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE\ project\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Lab 3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Lab 3\Microprocessor-Microcontroller_HCMUT-HK221\STM32CubeIDE project\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab 3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -73,19 +73,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Microcontroller-Lab-3.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Microcontroller-Lab-3.list"
+Lab\ 3.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Lab 3.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Microcontroller-Lab-3.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Microcontroller-Lab-3.hex"
+Lab\ 3.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Lab 3.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Microcontroller-Lab-3.elf Microcontroller-Lab-3.hex Microcontroller-Lab-3.list Microcontroller-Lab-3.map default.size.stdout
+	-$(RM) Lab\ 3.elf Lab\ 3.hex Lab\ 3.list Lab\ 3.map Lab\\ 3.elf default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

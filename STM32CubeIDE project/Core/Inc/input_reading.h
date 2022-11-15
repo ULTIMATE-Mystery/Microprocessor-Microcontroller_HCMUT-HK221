@@ -1,9 +1,3 @@
-/*
- * input_reading.h
- *
- *  Created on: Nov 9, 2022
- *      Author: lephu
- */
 
 #ifndef INC_INPUT_READING_H_
 #define INC_INPUT_READING_H_
@@ -14,7 +8,7 @@
 #include "main.h"
 
 /* Define -----*/
-#define SELECT_BUTTON 0
+#define MODE_BUTTON 0
 #define MODIFY_BUTTON 1
 #define SET_BUTTON 2
 
