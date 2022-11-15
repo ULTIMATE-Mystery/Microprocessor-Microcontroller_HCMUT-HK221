@@ -84,8 +84,8 @@ void Error_Handler(void);
 #define EN2_GPIO_Port GPIOA
 #define EN3_Pin GPIO_PIN_10
 #define EN3_GPIO_Port GPIOA
-#define SELECT_Pin GPIO_PIN_11
-#define SELECT_GPIO_Port GPIOA
+#define MODE_Pin GPIO_PIN_11
+#define MODE_GPIO_Port GPIOA
 #define MODIFY_Pin GPIO_PIN_12
 #define MODIFY_GPIO_Port GPIOA
 #define SET_Pin GPIO_PIN_13
@@ -107,5 +107,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

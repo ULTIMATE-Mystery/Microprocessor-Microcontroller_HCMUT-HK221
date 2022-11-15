@@ -17,7 +17,7 @@ extern int time_green;
 
 /* Timer -----*/
 #define NO_Timer 7 //Number of timer
-#define TIME_CYCLE 10 //Time Cycle = 10ms
+#define TIMER_CYCLE 10 //Timer Cycle = 10ms
 #define TIME_UNIT 1000 //1s = 1000ms
 
 /* LED -----*/

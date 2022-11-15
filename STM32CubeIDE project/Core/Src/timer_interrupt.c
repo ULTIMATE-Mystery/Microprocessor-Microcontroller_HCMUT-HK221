@@ -15,7 +15,7 @@ int flag[NO_Timer] = {0};
 //Set time on timer[index] = duration
 void setTimer(int duration, int index) {
   if(index >= 0 && index < NO_Timer) {
-	  counter[index] = duration / TIME_CYCLE;
+	  counter[index] = duration / TIMER_CYCLE;
 	  flag[index] = 0;
   }
 }

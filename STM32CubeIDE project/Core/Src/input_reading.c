@@ -14,7 +14,7 @@
 
 /* Init -----*/
 //Button Pin
-uint16_t BUTTON[NO_BUTTON] = {SELECT_Pin, MODIFY_Pin, SET_Pin};
+uint16_t BUTTON[NO_BUTTON] = {MODE_Pin, MODIFY_Pin, SET_Pin};
 /* Flag for button
  * Check button state
  * Array with size = NUM_BUTTON
