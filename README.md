@@ -1,1 +1,0 @@
-Microprocessor - Microcontroller HCMUT HK221: Traffic Light (Assignment)
