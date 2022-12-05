@@ -111,10 +111,10 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   SCH_Init();
   SCH_Add_Task(LED1, 100, 100);
-  SCH_Add_Task(LED2, 100, 200);
-  SCH_Add_Task(LED3, 100, 300);
-  SCH_Add_Task(LED4, 100, 400);
-  SCH_Add_Task(LED5, 100, 0);
+  SCH_Add_Task(LED2, 200, 200);
+  SCH_Add_Task(LED3, 300, 300);
+  SCH_Add_Task(LED4, 400, 400);
+  SCH_Add_Task(LED5, 500, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */

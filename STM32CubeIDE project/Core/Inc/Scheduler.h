@@ -1,9 +1,3 @@
-/*
- * Scheduler.h
- *
- *  Created on: Nov 16, 2022
- *      Author: lephu
- */
 
 #ifndef INC_SCHEDULER_H_
 #define INC_SCHEDULER_H_
