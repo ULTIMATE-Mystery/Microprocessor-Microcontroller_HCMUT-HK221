@@ -188,27 +188,27 @@ int main(void)
  80001c6:	f001 fa75 	bl	80016b4 <HAL_TIM_Base_Start_IT>
   SCH_Init();
  80001ca:	f000 f8f7 	bl	80003bc <SCH_Init>
-  SCH_Add_Task(LED1, 100, 100); //Periodic task, executed regularly every 1 second with the delay of 1 second
+  SCH_Add_Task(LED1, 100, 100); // Periodic task, executed regularly every 1 second after the delay of 1 second
  80001ce:	2264      	movs	r2, #100	; 0x64
  80001d0:	2164      	movs	r1, #100	; 0x64
  80001d2:	4810      	ldr	r0, [pc, #64]	; (8000214 <main+0x64>)
  80001d4:	f000 f95a 	bl	800048c <SCH_Add_Task>
-  SCH_Add_Task(LED2, 200, 200); //Periodic task, executed regularly every 2 seconds with the delay of 2 seconds
+  SCH_Add_Task(LED2, 200, 200); // Periodic task, executed regularly every 2 seconds after the delay of 2 seconds
  80001d8:	22c8      	movs	r2, #200	; 0xc8
  80001da:	21c8      	movs	r1, #200	; 0xc8
  80001dc:	480e      	ldr	r0, [pc, #56]	; (8000218 <main+0x68>)
  80001de:	f000 f955 	bl	800048c <SCH_Add_Task>
-  SCH_Add_Task(LED3, 300, 300); //Periodic task, executed regularly every 3 seconds with the delay of 3 seconds
+  SCH_Add_Task(LED3, 300, 300); // Periodic task, executed regularly every 3 seconds after the delay of 3 seconds
  80001e2:	f44f 7296 	mov.w	r2, #300	; 0x12c
  80001e6:	f44f 7196 	mov.w	r1, #300	; 0x12c
  80001ea:	480c      	ldr	r0, [pc, #48]	; (800021c <main+0x6c>)
  80001ec:	f000 f94e 	bl	800048c <SCH_Add_Task>
-  SCH_Add_Task(LED4, 400, 400); //Periodic task, executed regularly every 4 seconds with the delay of 4 seconds
+  SCH_Add_Task(LED4, 400, 400); // Periodic task, executed regularly every 4 seconds after the delay of 4 seconds
  80001f0:	f44f 72c8 	mov.w	r2, #400	; 0x190
  80001f4:	f44f 71c8 	mov.w	r1, #400	; 0x190
  80001f8:	4809      	ldr	r0, [pc, #36]	; (8000220 <main+0x70>)
  80001fa:	f000 f947 	bl	800048c <SCH_Add_Task>
-  SCH_Add_Task(LED5, 500, 0); //One-shot task, executed once after 5 seconds with the delay of 5 seconds
+  SCH_Add_Task(LED5, 500, 0); // One-shot task, executed once after the delay of 5 seconds
  80001fe:	2200      	movs	r2, #0
  8000200:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
  8000204:	4807      	ldr	r0, [pc, #28]	; (8000224 <main+0x74>)

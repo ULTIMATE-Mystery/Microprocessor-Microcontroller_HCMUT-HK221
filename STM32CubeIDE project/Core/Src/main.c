@@ -110,11 +110,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   SCH_Init();
-  SCH_Add_Task(LED1, 100, 100); //Periodic task, executed regularly every 1 second with the delay of 1 second
-  SCH_Add_Task(LED2, 200, 200); //Periodic task, executed regularly every 2 seconds with the delay of 2 seconds
-  SCH_Add_Task(LED3, 300, 300); //Periodic task, executed regularly every 3 seconds with the delay of 3 seconds
-  SCH_Add_Task(LED4, 400, 400); //Periodic task, executed regularly every 4 seconds with the delay of 4 seconds
-  SCH_Add_Task(LED5, 500, 0); //One-shot task, executed once after 5 seconds with the delay of 5 seconds
+  SCH_Add_Task(LED1, 100, 100); // Periodic task, executed regularly every 1 second after the delay of 1 second
+  SCH_Add_Task(LED2, 200, 200); // Periodic task, executed regularly every 2 seconds after the delay of 2 seconds
+  SCH_Add_Task(LED3, 300, 300); // Periodic task, executed regularly every 3 seconds after the delay of 3 seconds
+  SCH_Add_Task(LED4, 400, 400); // Periodic task, executed regularly every 4 seconds after the delay of 4 seconds
+  SCH_Add_Task(LED5, 500, 0); // One-shot task, executed once after the delay of 5 seconds
   /* USER CODE END 2 */
 
   /* Infinite loop */
