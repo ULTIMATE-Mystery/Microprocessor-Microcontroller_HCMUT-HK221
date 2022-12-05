@@ -76,914 +76,914 @@ Disassembly of section .text:
  8000144:	20000010 	.word	0x20000010
  8000148:	08001e34 	.word	0x08001e34
 
-0800014c <SCH_Init>:
-#define SCH_MAX_TASKS 5
-
-sTask SCH_tasks_G[SCH_MAX_TASKS];
-uint32_t current_index_task = 0;
-
-void SCH_Init(void) {
- 800014c:	b480      	push	{r7}
- 800014e:	af00      	add	r7, sp, #0
-  current_index_task = 0;
- 8000150:	4b03      	ldr	r3, [pc, #12]	; (8000160 <SCH_Init+0x14>)
- 8000152:	2200      	movs	r2, #0
- 8000154:	601a      	str	r2, [r3, #0]
-}
- 8000156:	bf00      	nop
- 8000158:	46bd      	mov	sp, r7
- 800015a:	bc80      	pop	{r7}
- 800015c:	4770      	bx	lr
- 800015e:	bf00      	nop
- 8000160:	2000008c 	.word	0x2000008c
-
-08000164 <SCH_Update>:
-
-void SCH_Update(void) {
- 8000164:	b480      	push	{r7}
- 8000166:	b083      	sub	sp, #12
- 8000168:	af00      	add	r7, sp, #0
-  for(int i = 0; i < current_index_task; i++) {
- 800016a:	2300      	movs	r3, #0
- 800016c:	607b      	str	r3, [r7, #4]
- 800016e:	e046      	b.n	80001fe <SCH_Update+0x9a>
-    if(SCH_tasks_G[i].Delay > 0) {
- 8000170:	4928      	ldr	r1, [pc, #160]	; (8000214 <SCH_Update+0xb0>)
- 8000172:	687a      	ldr	r2, [r7, #4]
- 8000174:	4613      	mov	r3, r2
- 8000176:	009b      	lsls	r3, r3, #2
- 8000178:	4413      	add	r3, r2
- 800017a:	009b      	lsls	r3, r3, #2
- 800017c:	440b      	add	r3, r1
- 800017e:	3304      	adds	r3, #4
- 8000180:	681b      	ldr	r3, [r3, #0]
- 8000182:	2b00      	cmp	r3, #0
- 8000184:	d013      	beq.n	80001ae <SCH_Update+0x4a>
-      SCH_tasks_G[i].Delay--;
- 8000186:	4923      	ldr	r1, [pc, #140]	; (8000214 <SCH_Update+0xb0>)
- 8000188:	687a      	ldr	r2, [r7, #4]
- 800018a:	4613      	mov	r3, r2
- 800018c:	009b      	lsls	r3, r3, #2
- 800018e:	4413      	add	r3, r2
- 8000190:	009b      	lsls	r3, r3, #2
- 8000192:	440b      	add	r3, r1
- 8000194:	3304      	adds	r3, #4
- 8000196:	681b      	ldr	r3, [r3, #0]
- 8000198:	1e59      	subs	r1, r3, #1
- 800019a:	481e      	ldr	r0, [pc, #120]	; (8000214 <SCH_Update+0xb0>)
- 800019c:	687a      	ldr	r2, [r7, #4]
- 800019e:	4613      	mov	r3, r2
- 80001a0:	009b      	lsls	r3, r3, #2
- 80001a2:	4413      	add	r3, r2
- 80001a4:	009b      	lsls	r3, r3, #2
- 80001a6:	4403      	add	r3, r0
- 80001a8:	3304      	adds	r3, #4
- 80001aa:	6019      	str	r1, [r3, #0]
- 80001ac:	e024      	b.n	80001f8 <SCH_Update+0x94>
-    }
-    else {
-      SCH_tasks_G[i].Delay = SCH_tasks_G[i].Period;
- 80001ae:	4919      	ldr	r1, [pc, #100]	; (8000214 <SCH_Update+0xb0>)
- 80001b0:	687a      	ldr	r2, [r7, #4]
- 80001b2:	4613      	mov	r3, r2
- 80001b4:	009b      	lsls	r3, r3, #2
- 80001b6:	4413      	add	r3, r2
- 80001b8:	009b      	lsls	r3, r3, #2
- 80001ba:	440b      	add	r3, r1
- 80001bc:	3308      	adds	r3, #8
- 80001be:	6819      	ldr	r1, [r3, #0]
- 80001c0:	4814      	ldr	r0, [pc, #80]	; (8000214 <SCH_Update+0xb0>)
- 80001c2:	687a      	ldr	r2, [r7, #4]
- 80001c4:	4613      	mov	r3, r2
- 80001c6:	009b      	lsls	r3, r3, #2
- 80001c8:	4413      	add	r3, r2
- 80001ca:	009b      	lsls	r3, r3, #2
- 80001cc:	4403      	add	r3, r0
- 80001ce:	3304      	adds	r3, #4
- 80001d0:	6019      	str	r1, [r3, #0]
-      SCH_tasks_G[i].RunMe++;
- 80001d2:	4910      	ldr	r1, [pc, #64]	; (8000214 <SCH_Update+0xb0>)
- 80001d4:	687a      	ldr	r2, [r7, #4]
- 80001d6:	4613      	mov	r3, r2
- 80001d8:	009b      	lsls	r3, r3, #2
- 80001da:	4413      	add	r3, r2
- 80001dc:	009b      	lsls	r3, r3, #2
- 80001de:	440b      	add	r3, r1
- 80001e0:	330c      	adds	r3, #12
- 80001e2:	681b      	ldr	r3, [r3, #0]
- 80001e4:	1c59      	adds	r1, r3, #1
- 80001e6:	480b      	ldr	r0, [pc, #44]	; (8000214 <SCH_Update+0xb0>)
- 80001e8:	687a      	ldr	r2, [r7, #4]
- 80001ea:	4613      	mov	r3, r2
- 80001ec:	009b      	lsls	r3, r3, #2
- 80001ee:	4413      	add	r3, r2
- 80001f0:	009b      	lsls	r3, r3, #2
- 80001f2:	4403      	add	r3, r0
- 80001f4:	330c      	adds	r3, #12
- 80001f6:	6019      	str	r1, [r3, #0]
-  for(int i = 0; i < current_index_task; i++) {
- 80001f8:	687b      	ldr	r3, [r7, #4]
- 80001fa:	3301      	adds	r3, #1
- 80001fc:	607b      	str	r3, [r7, #4]
- 80001fe:	687a      	ldr	r2, [r7, #4]
- 8000200:	4b05      	ldr	r3, [pc, #20]	; (8000218 <SCH_Update+0xb4>)
- 8000202:	681b      	ldr	r3, [r3, #0]
- 8000204:	429a      	cmp	r2, r3
- 8000206:	d3b3      	bcc.n	8000170 <SCH_Update+0xc>
-    }
-  }
-}
- 8000208:	bf00      	nop
- 800020a:	bf00      	nop
- 800020c:	370c      	adds	r7, #12
- 800020e:	46bd      	mov	sp, r7
- 8000210:	bc80      	pop	{r7}
- 8000212:	4770      	bx	lr
- 8000214:	20000028 	.word	0x20000028
- 8000218:	2000008c 	.word	0x2000008c
-
-0800021c <SCH_Add_Task>:
-
-void SCH_Add_Task(void (*pFunction)(), uint32_t Delay, uint32_t Period) {
- 800021c:	b480      	push	{r7}
- 800021e:	b085      	sub	sp, #20
- 8000220:	af00      	add	r7, sp, #0
- 8000222:	60f8      	str	r0, [r7, #12]
- 8000224:	60b9      	str	r1, [r7, #8]
- 8000226:	607a      	str	r2, [r7, #4]
-  if(current_index_task < SCH_MAX_TASKS) {
- 8000228:	4b22      	ldr	r3, [pc, #136]	; (80002b4 <SCH_Add_Task+0x98>)
- 800022a:	681b      	ldr	r3, [r3, #0]
- 800022c:	2b04      	cmp	r3, #4
- 800022e:	d83b      	bhi.n	80002a8 <SCH_Add_Task+0x8c>
-    SCH_tasks_G[current_index_task].pTask = pFunction;
- 8000230:	4b20      	ldr	r3, [pc, #128]	; (80002b4 <SCH_Add_Task+0x98>)
- 8000232:	681a      	ldr	r2, [r3, #0]
- 8000234:	4920      	ldr	r1, [pc, #128]	; (80002b8 <SCH_Add_Task+0x9c>)
- 8000236:	4613      	mov	r3, r2
- 8000238:	009b      	lsls	r3, r3, #2
- 800023a:	4413      	add	r3, r2
- 800023c:	009b      	lsls	r3, r3, #2
- 800023e:	440b      	add	r3, r1
- 8000240:	68fa      	ldr	r2, [r7, #12]
- 8000242:	601a      	str	r2, [r3, #0]
-    SCH_tasks_G[current_index_task].Delay = Delay;
- 8000244:	4b1b      	ldr	r3, [pc, #108]	; (80002b4 <SCH_Add_Task+0x98>)
- 8000246:	681a      	ldr	r2, [r3, #0]
- 8000248:	491b      	ldr	r1, [pc, #108]	; (80002b8 <SCH_Add_Task+0x9c>)
- 800024a:	4613      	mov	r3, r2
- 800024c:	009b      	lsls	r3, r3, #2
- 800024e:	4413      	add	r3, r2
- 8000250:	009b      	lsls	r3, r3, #2
- 8000252:	440b      	add	r3, r1
- 8000254:	3304      	adds	r3, #4
- 8000256:	68ba      	ldr	r2, [r7, #8]
- 8000258:	601a      	str	r2, [r3, #0]
-    SCH_tasks_G[current_index_task].Period = Period;
- 800025a:	4b16      	ldr	r3, [pc, #88]	; (80002b4 <SCH_Add_Task+0x98>)
- 800025c:	681a      	ldr	r2, [r3, #0]
- 800025e:	4916      	ldr	r1, [pc, #88]	; (80002b8 <SCH_Add_Task+0x9c>)
- 8000260:	4613      	mov	r3, r2
- 8000262:	009b      	lsls	r3, r3, #2
- 8000264:	4413      	add	r3, r2
- 8000266:	009b      	lsls	r3, r3, #2
- 8000268:	440b      	add	r3, r1
- 800026a:	3308      	adds	r3, #8
- 800026c:	687a      	ldr	r2, [r7, #4]
- 800026e:	601a      	str	r2, [r3, #0]
-    SCH_tasks_G[current_index_task].RunMe = 0;
- 8000270:	4b10      	ldr	r3, [pc, #64]	; (80002b4 <SCH_Add_Task+0x98>)
- 8000272:	681a      	ldr	r2, [r3, #0]
- 8000274:	4910      	ldr	r1, [pc, #64]	; (80002b8 <SCH_Add_Task+0x9c>)
- 8000276:	4613      	mov	r3, r2
- 8000278:	009b      	lsls	r3, r3, #2
- 800027a:	4413      	add	r3, r2
- 800027c:	009b      	lsls	r3, r3, #2
- 800027e:	440b      	add	r3, r1
- 8000280:	330c      	adds	r3, #12
- 8000282:	2200      	movs	r2, #0
- 8000284:	601a      	str	r2, [r3, #0]
-    SCH_tasks_G[current_index_task].TaskID = current_index_task;
- 8000286:	4b0b      	ldr	r3, [pc, #44]	; (80002b4 <SCH_Add_Task+0x98>)
- 8000288:	681a      	ldr	r2, [r3, #0]
- 800028a:	4b0a      	ldr	r3, [pc, #40]	; (80002b4 <SCH_Add_Task+0x98>)
- 800028c:	6819      	ldr	r1, [r3, #0]
- 800028e:	480a      	ldr	r0, [pc, #40]	; (80002b8 <SCH_Add_Task+0x9c>)
- 8000290:	4613      	mov	r3, r2
- 8000292:	009b      	lsls	r3, r3, #2
- 8000294:	4413      	add	r3, r2
- 8000296:	009b      	lsls	r3, r3, #2
- 8000298:	4403      	add	r3, r0
- 800029a:	3310      	adds	r3, #16
- 800029c:	6019      	str	r1, [r3, #0]
-
-    current_index_task++;
- 800029e:	4b05      	ldr	r3, [pc, #20]	; (80002b4 <SCH_Add_Task+0x98>)
- 80002a0:	681b      	ldr	r3, [r3, #0]
- 80002a2:	3301      	adds	r3, #1
- 80002a4:	4a03      	ldr	r2, [pc, #12]	; (80002b4 <SCH_Add_Task+0x98>)
- 80002a6:	6013      	str	r3, [r2, #0]
-  }
-}
- 80002a8:	bf00      	nop
- 80002aa:	3714      	adds	r7, #20
- 80002ac:	46bd      	mov	sp, r7
- 80002ae:	bc80      	pop	{r7}
- 80002b0:	4770      	bx	lr
- 80002b2:	bf00      	nop
- 80002b4:	2000008c 	.word	0x2000008c
- 80002b8:	20000028 	.word	0x20000028
-
-080002bc <SCH_Dispatch_Tasks>:
-
-void SCH_Dispatch_Tasks(void) {
- 80002bc:	b580      	push	{r7, lr}
- 80002be:	b082      	sub	sp, #8
- 80002c0:	af00      	add	r7, sp, #0
-  for(int i = 0; i < current_index_task; i++) {
- 80002c2:	2300      	movs	r3, #0
- 80002c4:	607b      	str	r3, [r7, #4]
- 80002c6:	e038      	b.n	800033a <SCH_Dispatch_Tasks+0x7e>
-    if(SCH_tasks_G[i].RunMe > 0) {
- 80002c8:	4921      	ldr	r1, [pc, #132]	; (8000350 <SCH_Dispatch_Tasks+0x94>)
- 80002ca:	687a      	ldr	r2, [r7, #4]
- 80002cc:	4613      	mov	r3, r2
- 80002ce:	009b      	lsls	r3, r3, #2
- 80002d0:	4413      	add	r3, r2
- 80002d2:	009b      	lsls	r3, r3, #2
- 80002d4:	440b      	add	r3, r1
- 80002d6:	330c      	adds	r3, #12
- 80002d8:	681b      	ldr	r3, [r3, #0]
- 80002da:	2b00      	cmp	r3, #0
- 80002dc:	d02a      	beq.n	8000334 <SCH_Dispatch_Tasks+0x78>
-      SCH_tasks_G[i].RunMe--;
- 80002de:	491c      	ldr	r1, [pc, #112]	; (8000350 <SCH_Dispatch_Tasks+0x94>)
- 80002e0:	687a      	ldr	r2, [r7, #4]
- 80002e2:	4613      	mov	r3, r2
- 80002e4:	009b      	lsls	r3, r3, #2
- 80002e6:	4413      	add	r3, r2
- 80002e8:	009b      	lsls	r3, r3, #2
- 80002ea:	440b      	add	r3, r1
- 80002ec:	330c      	adds	r3, #12
- 80002ee:	681b      	ldr	r3, [r3, #0]
- 80002f0:	1e59      	subs	r1, r3, #1
- 80002f2:	4817      	ldr	r0, [pc, #92]	; (8000350 <SCH_Dispatch_Tasks+0x94>)
- 80002f4:	687a      	ldr	r2, [r7, #4]
- 80002f6:	4613      	mov	r3, r2
- 80002f8:	009b      	lsls	r3, r3, #2
- 80002fa:	4413      	add	r3, r2
- 80002fc:	009b      	lsls	r3, r3, #2
- 80002fe:	4403      	add	r3, r0
- 8000300:	330c      	adds	r3, #12
- 8000302:	6019      	str	r1, [r3, #0]
-      (*SCH_tasks_G[i].pTask)();
- 8000304:	4912      	ldr	r1, [pc, #72]	; (8000350 <SCH_Dispatch_Tasks+0x94>)
- 8000306:	687a      	ldr	r2, [r7, #4]
- 8000308:	4613      	mov	r3, r2
- 800030a:	009b      	lsls	r3, r3, #2
- 800030c:	4413      	add	r3, r2
- 800030e:	009b      	lsls	r3, r3, #2
- 8000310:	440b      	add	r3, r1
- 8000312:	681b      	ldr	r3, [r3, #0]
- 8000314:	4798      	blx	r3
-      if(SCH_tasks_G[i].Period == 0)
- 8000316:	490e      	ldr	r1, [pc, #56]	; (8000350 <SCH_Dispatch_Tasks+0x94>)
- 8000318:	687a      	ldr	r2, [r7, #4]
- 800031a:	4613      	mov	r3, r2
- 800031c:	009b      	lsls	r3, r3, #2
- 800031e:	4413      	add	r3, r2
- 8000320:	009b      	lsls	r3, r3, #2
- 8000322:	440b      	add	r3, r1
- 8000324:	3308      	adds	r3, #8
- 8000326:	681b      	ldr	r3, [r3, #0]
- 8000328:	2b00      	cmp	r3, #0
- 800032a:	d103      	bne.n	8000334 <SCH_Dispatch_Tasks+0x78>
-    	  SCH_Delete_Task(i);
- 800032c:	687b      	ldr	r3, [r7, #4]
- 800032e:	4618      	mov	r0, r3
- 8000330:	f000 f812 	bl	8000358 <SCH_Delete_Task>
-  for(int i = 0; i < current_index_task; i++) {
- 8000334:	687b      	ldr	r3, [r7, #4]
- 8000336:	3301      	adds	r3, #1
- 8000338:	607b      	str	r3, [r7, #4]
- 800033a:	687a      	ldr	r2, [r7, #4]
- 800033c:	4b05      	ldr	r3, [pc, #20]	; (8000354 <SCH_Dispatch_Tasks+0x98>)
- 800033e:	681b      	ldr	r3, [r3, #0]
- 8000340:	429a      	cmp	r2, r3
- 8000342:	d3c1      	bcc.n	80002c8 <SCH_Dispatch_Tasks+0xc>
-    }
-  }
-}
- 8000344:	bf00      	nop
- 8000346:	bf00      	nop
- 8000348:	3708      	adds	r7, #8
- 800034a:	46bd      	mov	sp, r7
- 800034c:	bd80      	pop	{r7, pc}
- 800034e:	bf00      	nop
- 8000350:	20000028 	.word	0x20000028
- 8000354:	2000008c 	.word	0x2000008c
-
-08000358 <SCH_Delete_Task>:
-void SCH_Delete_Task(uint32_t ID)
-{
- 8000358:	b480      	push	{r7}
- 800035a:	b085      	sub	sp, #20
- 800035c:	af00      	add	r7, sp, #0
- 800035e:	6078      	str	r0, [r7, #4]
-  if(ID < current_index_task - 1)
- 8000360:	4b39      	ldr	r3, [pc, #228]	; (8000448 <SCH_Delete_Task+0xf0>)
- 8000362:	681b      	ldr	r3, [r3, #0]
- 8000364:	3b01      	subs	r3, #1
- 8000366:	687a      	ldr	r2, [r7, #4]
- 8000368:	429a      	cmp	r2, r3
- 800036a:	d263      	bcs.n	8000434 <SCH_Delete_Task+0xdc>
-  {
-	for(int i = ID; i < current_index_task - 1; i++)
- 800036c:	687b      	ldr	r3, [r7, #4]
- 800036e:	60fb      	str	r3, [r7, #12]
- 8000370:	e05a      	b.n	8000428 <SCH_Delete_Task+0xd0>
-	{
-		SCH_tasks_G[i].pTask = SCH_tasks_G[i].pTask;
- 8000372:	4936      	ldr	r1, [pc, #216]	; (800044c <SCH_Delete_Task+0xf4>)
- 8000374:	68fa      	ldr	r2, [r7, #12]
- 8000376:	4613      	mov	r3, r2
- 8000378:	009b      	lsls	r3, r3, #2
- 800037a:	4413      	add	r3, r2
- 800037c:	009b      	lsls	r3, r3, #2
- 800037e:	440b      	add	r3, r1
- 8000380:	6819      	ldr	r1, [r3, #0]
- 8000382:	4832      	ldr	r0, [pc, #200]	; (800044c <SCH_Delete_Task+0xf4>)
- 8000384:	68fa      	ldr	r2, [r7, #12]
- 8000386:	4613      	mov	r3, r2
- 8000388:	009b      	lsls	r3, r3, #2
- 800038a:	4413      	add	r3, r2
- 800038c:	009b      	lsls	r3, r3, #2
- 800038e:	4403      	add	r3, r0
- 8000390:	6019      	str	r1, [r3, #0]
-		SCH_tasks_G[i].Delay = SCH_tasks_G[i].Delay;
- 8000392:	492e      	ldr	r1, [pc, #184]	; (800044c <SCH_Delete_Task+0xf4>)
- 8000394:	68fa      	ldr	r2, [r7, #12]
- 8000396:	4613      	mov	r3, r2
- 8000398:	009b      	lsls	r3, r3, #2
- 800039a:	4413      	add	r3, r2
- 800039c:	009b      	lsls	r3, r3, #2
- 800039e:	440b      	add	r3, r1
- 80003a0:	3304      	adds	r3, #4
- 80003a2:	6819      	ldr	r1, [r3, #0]
- 80003a4:	4829      	ldr	r0, [pc, #164]	; (800044c <SCH_Delete_Task+0xf4>)
- 80003a6:	68fa      	ldr	r2, [r7, #12]
- 80003a8:	4613      	mov	r3, r2
- 80003aa:	009b      	lsls	r3, r3, #2
- 80003ac:	4413      	add	r3, r2
- 80003ae:	009b      	lsls	r3, r3, #2
- 80003b0:	4403      	add	r3, r0
- 80003b2:	3304      	adds	r3, #4
- 80003b4:	6019      	str	r1, [r3, #0]
-		SCH_tasks_G[i].Period = SCH_tasks_G[i].Period;
- 80003b6:	4925      	ldr	r1, [pc, #148]	; (800044c <SCH_Delete_Task+0xf4>)
- 80003b8:	68fa      	ldr	r2, [r7, #12]
- 80003ba:	4613      	mov	r3, r2
- 80003bc:	009b      	lsls	r3, r3, #2
- 80003be:	4413      	add	r3, r2
- 80003c0:	009b      	lsls	r3, r3, #2
- 80003c2:	440b      	add	r3, r1
- 80003c4:	3308      	adds	r3, #8
- 80003c6:	6819      	ldr	r1, [r3, #0]
- 80003c8:	4820      	ldr	r0, [pc, #128]	; (800044c <SCH_Delete_Task+0xf4>)
- 80003ca:	68fa      	ldr	r2, [r7, #12]
- 80003cc:	4613      	mov	r3, r2
- 80003ce:	009b      	lsls	r3, r3, #2
- 80003d0:	4413      	add	r3, r2
- 80003d2:	009b      	lsls	r3, r3, #2
- 80003d4:	4403      	add	r3, r0
- 80003d6:	3308      	adds	r3, #8
- 80003d8:	6019      	str	r1, [r3, #0]
-		SCH_tasks_G[i].RunMe = SCH_tasks_G[i].RunMe;
- 80003da:	491c      	ldr	r1, [pc, #112]	; (800044c <SCH_Delete_Task+0xf4>)
- 80003dc:	68fa      	ldr	r2, [r7, #12]
- 80003de:	4613      	mov	r3, r2
- 80003e0:	009b      	lsls	r3, r3, #2
- 80003e2:	4413      	add	r3, r2
- 80003e4:	009b      	lsls	r3, r3, #2
- 80003e6:	440b      	add	r3, r1
- 80003e8:	330c      	adds	r3, #12
- 80003ea:	6819      	ldr	r1, [r3, #0]
- 80003ec:	4817      	ldr	r0, [pc, #92]	; (800044c <SCH_Delete_Task+0xf4>)
- 80003ee:	68fa      	ldr	r2, [r7, #12]
- 80003f0:	4613      	mov	r3, r2
- 80003f2:	009b      	lsls	r3, r3, #2
- 80003f4:	4413      	add	r3, r2
- 80003f6:	009b      	lsls	r3, r3, #2
- 80003f8:	4403      	add	r3, r0
- 80003fa:	330c      	adds	r3, #12
- 80003fc:	6019      	str	r1, [r3, #0]
-		SCH_tasks_G[i].TaskID = SCH_tasks_G[i].TaskID;
- 80003fe:	4913      	ldr	r1, [pc, #76]	; (800044c <SCH_Delete_Task+0xf4>)
- 8000400:	68fa      	ldr	r2, [r7, #12]
- 8000402:	4613      	mov	r3, r2
- 8000404:	009b      	lsls	r3, r3, #2
- 8000406:	4413      	add	r3, r2
- 8000408:	009b      	lsls	r3, r3, #2
- 800040a:	440b      	add	r3, r1
- 800040c:	3310      	adds	r3, #16
- 800040e:	6819      	ldr	r1, [r3, #0]
- 8000410:	480e      	ldr	r0, [pc, #56]	; (800044c <SCH_Delete_Task+0xf4>)
- 8000412:	68fa      	ldr	r2, [r7, #12]
- 8000414:	4613      	mov	r3, r2
- 8000416:	009b      	lsls	r3, r3, #2
- 8000418:	4413      	add	r3, r2
- 800041a:	009b      	lsls	r3, r3, #2
- 800041c:	4403      	add	r3, r0
- 800041e:	3310      	adds	r3, #16
- 8000420:	6019      	str	r1, [r3, #0]
-	for(int i = ID; i < current_index_task - 1; i++)
- 8000422:	68fb      	ldr	r3, [r7, #12]
- 8000424:	3301      	adds	r3, #1
- 8000426:	60fb      	str	r3, [r7, #12]
- 8000428:	4b07      	ldr	r3, [pc, #28]	; (8000448 <SCH_Delete_Task+0xf0>)
- 800042a:	681b      	ldr	r3, [r3, #0]
- 800042c:	1e5a      	subs	r2, r3, #1
- 800042e:	68fb      	ldr	r3, [r7, #12]
- 8000430:	429a      	cmp	r2, r3
- 8000432:	d89e      	bhi.n	8000372 <SCH_Delete_Task+0x1a>
-	}
-  }
-  current_index_task--;
- 8000434:	4b04      	ldr	r3, [pc, #16]	; (8000448 <SCH_Delete_Task+0xf0>)
- 8000436:	681b      	ldr	r3, [r3, #0]
- 8000438:	3b01      	subs	r3, #1
- 800043a:	4a03      	ldr	r2, [pc, #12]	; (8000448 <SCH_Delete_Task+0xf0>)
- 800043c:	6013      	str	r3, [r2, #0]
-}
- 800043e:	bf00      	nop
- 8000440:	3714      	adds	r7, #20
- 8000442:	46bd      	mov	sp, r7
- 8000444:	bc80      	pop	{r7}
- 8000446:	4770      	bx	lr
- 8000448:	2000008c 	.word	0x2000008c
- 800044c:	20000028 	.word	0x20000028
-
-08000450 <LED1>:
+0800014c <LED1>:
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void LED1(void)
 {
- 8000450:	b580      	push	{r7, lr}
- 8000452:	af00      	add	r7, sp, #0
+ 800014c:	b580      	push	{r7, lr}
+ 800014e:	af00      	add	r7, sp, #0
   HAL_GPIO_TogglePin(GPIOA, LED1_Pin);
- 8000454:	2102      	movs	r1, #2
- 8000456:	4802      	ldr	r0, [pc, #8]	; (8000460 <LED1+0x10>)
- 8000458:	f000 fcda 	bl	8000e10 <HAL_GPIO_TogglePin>
+ 8000150:	2102      	movs	r1, #2
+ 8000152:	4802      	ldr	r0, [pc, #8]	; (800015c <LED1+0x10>)
+ 8000154:	f000 fe5c 	bl	8000e10 <HAL_GPIO_TogglePin>
 }
- 800045c:	bf00      	nop
- 800045e:	bd80      	pop	{r7, pc}
- 8000460:	40010800 	.word	0x40010800
+ 8000158:	bf00      	nop
+ 800015a:	bd80      	pop	{r7, pc}
+ 800015c:	40010800 	.word	0x40010800
 
-08000464 <LED2>:
+08000160 <LED2>:
 void LED2(void)
 {
- 8000464:	b580      	push	{r7, lr}
- 8000466:	af00      	add	r7, sp, #0
+ 8000160:	b580      	push	{r7, lr}
+ 8000162:	af00      	add	r7, sp, #0
   HAL_GPIO_TogglePin(GPIOA, LED2_Pin);
- 8000468:	2104      	movs	r1, #4
- 800046a:	4802      	ldr	r0, [pc, #8]	; (8000474 <LED2+0x10>)
- 800046c:	f000 fcd0 	bl	8000e10 <HAL_GPIO_TogglePin>
+ 8000164:	2104      	movs	r1, #4
+ 8000166:	4802      	ldr	r0, [pc, #8]	; (8000170 <LED2+0x10>)
+ 8000168:	f000 fe52 	bl	8000e10 <HAL_GPIO_TogglePin>
 }
- 8000470:	bf00      	nop
- 8000472:	bd80      	pop	{r7, pc}
- 8000474:	40010800 	.word	0x40010800
+ 800016c:	bf00      	nop
+ 800016e:	bd80      	pop	{r7, pc}
+ 8000170:	40010800 	.word	0x40010800
 
-08000478 <LED3>:
+08000174 <LED3>:
 void LED3(void)
 {
- 8000478:	b580      	push	{r7, lr}
- 800047a:	af00      	add	r7, sp, #0
+ 8000174:	b580      	push	{r7, lr}
+ 8000176:	af00      	add	r7, sp, #0
   HAL_GPIO_TogglePin(GPIOA, LED3_Pin);
- 800047c:	2108      	movs	r1, #8
- 800047e:	4802      	ldr	r0, [pc, #8]	; (8000488 <LED3+0x10>)
- 8000480:	f000 fcc6 	bl	8000e10 <HAL_GPIO_TogglePin>
+ 8000178:	2108      	movs	r1, #8
+ 800017a:	4802      	ldr	r0, [pc, #8]	; (8000184 <LED3+0x10>)
+ 800017c:	f000 fe48 	bl	8000e10 <HAL_GPIO_TogglePin>
 }
- 8000484:	bf00      	nop
- 8000486:	bd80      	pop	{r7, pc}
- 8000488:	40010800 	.word	0x40010800
+ 8000180:	bf00      	nop
+ 8000182:	bd80      	pop	{r7, pc}
+ 8000184:	40010800 	.word	0x40010800
 
-0800048c <LED4>:
+08000188 <LED4>:
 void LED4(void)
 {
- 800048c:	b580      	push	{r7, lr}
- 800048e:	af00      	add	r7, sp, #0
+ 8000188:	b580      	push	{r7, lr}
+ 800018a:	af00      	add	r7, sp, #0
   HAL_GPIO_TogglePin(GPIOA, LED4_Pin);
- 8000490:	2110      	movs	r1, #16
- 8000492:	4802      	ldr	r0, [pc, #8]	; (800049c <LED4+0x10>)
- 8000494:	f000 fcbc 	bl	8000e10 <HAL_GPIO_TogglePin>
+ 800018c:	2110      	movs	r1, #16
+ 800018e:	4802      	ldr	r0, [pc, #8]	; (8000198 <LED4+0x10>)
+ 8000190:	f000 fe3e 	bl	8000e10 <HAL_GPIO_TogglePin>
 }
- 8000498:	bf00      	nop
- 800049a:	bd80      	pop	{r7, pc}
- 800049c:	40010800 	.word	0x40010800
+ 8000194:	bf00      	nop
+ 8000196:	bd80      	pop	{r7, pc}
+ 8000198:	40010800 	.word	0x40010800
 
-080004a0 <LED5>:
+0800019c <LED5>:
 void LED5(void)
 {
- 80004a0:	b580      	push	{r7, lr}
- 80004a2:	af00      	add	r7, sp, #0
+ 800019c:	b580      	push	{r7, lr}
+ 800019e:	af00      	add	r7, sp, #0
   HAL_GPIO_TogglePin(GPIOA, LED5_Pin);
- 80004a4:	2120      	movs	r1, #32
- 80004a6:	4802      	ldr	r0, [pc, #8]	; (80004b0 <LED5+0x10>)
- 80004a8:	f000 fcb2 	bl	8000e10 <HAL_GPIO_TogglePin>
+ 80001a0:	2120      	movs	r1, #32
+ 80001a2:	4802      	ldr	r0, [pc, #8]	; (80001ac <LED5+0x10>)
+ 80001a4:	f000 fe34 	bl	8000e10 <HAL_GPIO_TogglePin>
 }
- 80004ac:	bf00      	nop
- 80004ae:	bd80      	pop	{r7, pc}
- 80004b0:	40010800 	.word	0x40010800
+ 80001a8:	bf00      	nop
+ 80001aa:	bd80      	pop	{r7, pc}
+ 80001ac:	40010800 	.word	0x40010800
 
-080004b4 <main>:
+080001b0 <main>:
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
- 80004b4:	b580      	push	{r7, lr}
- 80004b6:	af00      	add	r7, sp, #0
+ 80001b0:	b580      	push	{r7, lr}
+ 80001b2:	af00      	add	r7, sp, #0
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
- 80004b8:	f000 f9a6 	bl	8000808 <HAL_Init>
+ 80001b4:	f000 fb28 	bl	8000808 <HAL_Init>
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
- 80004bc:	f000 f836 	bl	800052c <SystemClock_Config>
+ 80001b8:	f000 f836 	bl	8000228 <SystemClock_Config>
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
- 80004c0:	f000 f8bc 	bl	800063c <MX_GPIO_Init>
+ 80001bc:	f000 f8bc 	bl	8000338 <MX_GPIO_Init>
   MX_TIM2_Init();
- 80004c4:	f000 f86e 	bl	80005a4 <MX_TIM2_Init>
+ 80001c0:	f000 f86e 	bl	80002a0 <MX_TIM2_Init>
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
- 80004c8:	4812      	ldr	r0, [pc, #72]	; (8000514 <main+0x60>)
- 80004ca:	f001 f8f3 	bl	80016b4 <HAL_TIM_Base_Start_IT>
+ 80001c4:	4812      	ldr	r0, [pc, #72]	; (8000210 <main+0x60>)
+ 80001c6:	f001 fa75 	bl	80016b4 <HAL_TIM_Base_Start_IT>
   SCH_Init();
- 80004ce:	f7ff fe3d 	bl	800014c <SCH_Init>
-  SCH_Add_Task(LED1, 100, 100);
- 80004d2:	2264      	movs	r2, #100	; 0x64
- 80004d4:	2164      	movs	r1, #100	; 0x64
- 80004d6:	4810      	ldr	r0, [pc, #64]	; (8000518 <main+0x64>)
- 80004d8:	f7ff fea0 	bl	800021c <SCH_Add_Task>
-  SCH_Add_Task(LED2, 200, 200);
- 80004dc:	22c8      	movs	r2, #200	; 0xc8
- 80004de:	21c8      	movs	r1, #200	; 0xc8
- 80004e0:	480e      	ldr	r0, [pc, #56]	; (800051c <main+0x68>)
- 80004e2:	f7ff fe9b 	bl	800021c <SCH_Add_Task>
-  SCH_Add_Task(LED3, 300, 300);
- 80004e6:	f44f 7296 	mov.w	r2, #300	; 0x12c
- 80004ea:	f44f 7196 	mov.w	r1, #300	; 0x12c
- 80004ee:	480c      	ldr	r0, [pc, #48]	; (8000520 <main+0x6c>)
- 80004f0:	f7ff fe94 	bl	800021c <SCH_Add_Task>
-  SCH_Add_Task(LED4, 400, 400);
- 80004f4:	f44f 72c8 	mov.w	r2, #400	; 0x190
- 80004f8:	f44f 71c8 	mov.w	r1, #400	; 0x190
- 80004fc:	4809      	ldr	r0, [pc, #36]	; (8000524 <main+0x70>)
- 80004fe:	f7ff fe8d 	bl	800021c <SCH_Add_Task>
-  SCH_Add_Task(LED5, 500, 0);
- 8000502:	2200      	movs	r2, #0
- 8000504:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
- 8000508:	4807      	ldr	r0, [pc, #28]	; (8000528 <main+0x74>)
- 800050a:	f7ff fe87 	bl	800021c <SCH_Add_Task>
+ 80001ca:	f000 f8f7 	bl	80003bc <SCH_Init>
+  SCH_Add_Task(LED1, 100, 100); //Periodic task, executed regularly every 1 second with the delay of 1 second
+ 80001ce:	2264      	movs	r2, #100	; 0x64
+ 80001d0:	2164      	movs	r1, #100	; 0x64
+ 80001d2:	4810      	ldr	r0, [pc, #64]	; (8000214 <main+0x64>)
+ 80001d4:	f000 f95a 	bl	800048c <SCH_Add_Task>
+  SCH_Add_Task(LED2, 200, 200); //Periodic task, executed regularly every 2 seconds with the delay of 2 seconds
+ 80001d8:	22c8      	movs	r2, #200	; 0xc8
+ 80001da:	21c8      	movs	r1, #200	; 0xc8
+ 80001dc:	480e      	ldr	r0, [pc, #56]	; (8000218 <main+0x68>)
+ 80001de:	f000 f955 	bl	800048c <SCH_Add_Task>
+  SCH_Add_Task(LED3, 300, 300); //Periodic task, executed regularly every 3 seconds with the delay of 3 seconds
+ 80001e2:	f44f 7296 	mov.w	r2, #300	; 0x12c
+ 80001e6:	f44f 7196 	mov.w	r1, #300	; 0x12c
+ 80001ea:	480c      	ldr	r0, [pc, #48]	; (800021c <main+0x6c>)
+ 80001ec:	f000 f94e 	bl	800048c <SCH_Add_Task>
+  SCH_Add_Task(LED4, 400, 400); //Periodic task, executed regularly every 4 seconds with the delay of 4 seconds
+ 80001f0:	f44f 72c8 	mov.w	r2, #400	; 0x190
+ 80001f4:	f44f 71c8 	mov.w	r1, #400	; 0x190
+ 80001f8:	4809      	ldr	r0, [pc, #36]	; (8000220 <main+0x70>)
+ 80001fa:	f000 f947 	bl	800048c <SCH_Add_Task>
+  SCH_Add_Task(LED5, 500, 0); //One-shot task, executed once after 5 seconds with the delay of 5 seconds
+ 80001fe:	2200      	movs	r2, #0
+ 8000200:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+ 8000204:	4807      	ldr	r0, [pc, #28]	; (8000224 <main+0x74>)
+ 8000206:	f000 f941 	bl	800048c <SCH_Add_Task>
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
 	SCH_Dispatch_Tasks();
- 800050e:	f7ff fed5 	bl	80002bc <SCH_Dispatch_Tasks>
- 8000512:	e7fc      	b.n	800050e <main+0x5a>
- 8000514:	20000090 	.word	0x20000090
- 8000518:	08000451 	.word	0x08000451
- 800051c:	08000465 	.word	0x08000465
- 8000520:	08000479 	.word	0x08000479
- 8000524:	0800048d 	.word	0x0800048d
- 8000528:	080004a1 	.word	0x080004a1
+ 800020a:	f000 f98f 	bl	800052c <SCH_Dispatch_Tasks>
+ 800020e:	e7fc      	b.n	800020a <main+0x5a>
+ 8000210:	20000028 	.word	0x20000028
+ 8000214:	0800014d 	.word	0x0800014d
+ 8000218:	08000161 	.word	0x08000161
+ 800021c:	08000175 	.word	0x08000175
+ 8000220:	08000189 	.word	0x08000189
+ 8000224:	0800019d 	.word	0x0800019d
 
-0800052c <SystemClock_Config>:
+08000228 <SystemClock_Config>:
 /**
   * @brief System Clock Configuration
   * @retval None
   */
 void SystemClock_Config(void)
 {
- 800052c:	b580      	push	{r7, lr}
- 800052e:	b090      	sub	sp, #64	; 0x40
- 8000530:	af00      	add	r7, sp, #0
+ 8000228:	b580      	push	{r7, lr}
+ 800022a:	b090      	sub	sp, #64	; 0x40
+ 800022c:	af00      	add	r7, sp, #0
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
- 8000532:	f107 0318 	add.w	r3, r7, #24
- 8000536:	2228      	movs	r2, #40	; 0x28
- 8000538:	2100      	movs	r1, #0
- 800053a:	4618      	mov	r0, r3
- 800053c:	f001 fc72 	bl	8001e24 <memset>
+ 800022e:	f107 0318 	add.w	r3, r7, #24
+ 8000232:	2228      	movs	r2, #40	; 0x28
+ 8000234:	2100      	movs	r1, #0
+ 8000236:	4618      	mov	r0, r3
+ 8000238:	f001 fdf4 	bl	8001e24 <memset>
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 8000540:	1d3b      	adds	r3, r7, #4
- 8000542:	2200      	movs	r2, #0
- 8000544:	601a      	str	r2, [r3, #0]
- 8000546:	605a      	str	r2, [r3, #4]
- 8000548:	609a      	str	r2, [r3, #8]
- 800054a:	60da      	str	r2, [r3, #12]
- 800054c:	611a      	str	r2, [r3, #16]
+ 800023c:	1d3b      	adds	r3, r7, #4
+ 800023e:	2200      	movs	r2, #0
+ 8000240:	601a      	str	r2, [r3, #0]
+ 8000242:	605a      	str	r2, [r3, #4]
+ 8000244:	609a      	str	r2, [r3, #8]
+ 8000246:	60da      	str	r2, [r3, #12]
+ 8000248:	611a      	str	r2, [r3, #16]
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
- 800054e:	2302      	movs	r3, #2
- 8000550:	61bb      	str	r3, [r7, #24]
+ 800024a:	2302      	movs	r3, #2
+ 800024c:	61bb      	str	r3, [r7, #24]
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 8000552:	2301      	movs	r3, #1
- 8000554:	62bb      	str	r3, [r7, #40]	; 0x28
+ 800024e:	2301      	movs	r3, #1
+ 8000250:	62bb      	str	r3, [r7, #40]	; 0x28
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 8000556:	2310      	movs	r3, #16
- 8000558:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8000252:	2310      	movs	r3, #16
+ 8000254:	62fb      	str	r3, [r7, #44]	; 0x2c
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
- 800055a:	2300      	movs	r3, #0
- 800055c:	637b      	str	r3, [r7, #52]	; 0x34
+ 8000256:	2300      	movs	r3, #0
+ 8000258:	637b      	str	r3, [r7, #52]	; 0x34
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 800055e:	f107 0318 	add.w	r3, r7, #24
- 8000562:	4618      	mov	r0, r3
- 8000564:	f000 fc6e 	bl	8000e44 <HAL_RCC_OscConfig>
- 8000568:	4603      	mov	r3, r0
- 800056a:	2b00      	cmp	r3, #0
- 800056c:	d001      	beq.n	8000572 <SystemClock_Config+0x46>
+ 800025a:	f107 0318 	add.w	r3, r7, #24
+ 800025e:	4618      	mov	r0, r3
+ 8000260:	f000 fdf0 	bl	8000e44 <HAL_RCC_OscConfig>
+ 8000264:	4603      	mov	r3, r0
+ 8000266:	2b00      	cmp	r3, #0
+ 8000268:	d001      	beq.n	800026e <SystemClock_Config+0x46>
   {
     Error_Handler();
- 800056e:	f000 f8a1 	bl	80006b4 <Error_Handler>
+ 800026a:	f000 f8a1 	bl	80003b0 <Error_Handler>
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 8000572:	230f      	movs	r3, #15
- 8000574:	607b      	str	r3, [r7, #4]
+ 800026e:	230f      	movs	r3, #15
+ 8000270:	607b      	str	r3, [r7, #4]
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 8000576:	2300      	movs	r3, #0
- 8000578:	60bb      	str	r3, [r7, #8]
+ 8000272:	2300      	movs	r3, #0
+ 8000274:	60bb      	str	r3, [r7, #8]
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 800057a:	2300      	movs	r3, #0
- 800057c:	60fb      	str	r3, [r7, #12]
+ 8000276:	2300      	movs	r3, #0
+ 8000278:	60fb      	str	r3, [r7, #12]
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 800057e:	2300      	movs	r3, #0
- 8000580:	613b      	str	r3, [r7, #16]
+ 800027a:	2300      	movs	r3, #0
+ 800027c:	613b      	str	r3, [r7, #16]
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 8000582:	2300      	movs	r3, #0
- 8000584:	617b      	str	r3, [r7, #20]
+ 800027e:	2300      	movs	r3, #0
+ 8000280:	617b      	str	r3, [r7, #20]
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
- 8000586:	1d3b      	adds	r3, r7, #4
- 8000588:	2100      	movs	r1, #0
- 800058a:	4618      	mov	r0, r3
- 800058c:	f000 fedc 	bl	8001348 <HAL_RCC_ClockConfig>
- 8000590:	4603      	mov	r3, r0
- 8000592:	2b00      	cmp	r3, #0
- 8000594:	d001      	beq.n	800059a <SystemClock_Config+0x6e>
+ 8000282:	1d3b      	adds	r3, r7, #4
+ 8000284:	2100      	movs	r1, #0
+ 8000286:	4618      	mov	r0, r3
+ 8000288:	f001 f85e 	bl	8001348 <HAL_RCC_ClockConfig>
+ 800028c:	4603      	mov	r3, r0
+ 800028e:	2b00      	cmp	r3, #0
+ 8000290:	d001      	beq.n	8000296 <SystemClock_Config+0x6e>
   {
     Error_Handler();
- 8000596:	f000 f88d 	bl	80006b4 <Error_Handler>
+ 8000292:	f000 f88d 	bl	80003b0 <Error_Handler>
   }
 }
- 800059a:	bf00      	nop
- 800059c:	3740      	adds	r7, #64	; 0x40
- 800059e:	46bd      	mov	sp, r7
- 80005a0:	bd80      	pop	{r7, pc}
+ 8000296:	bf00      	nop
+ 8000298:	3740      	adds	r7, #64	; 0x40
+ 800029a:	46bd      	mov	sp, r7
+ 800029c:	bd80      	pop	{r7, pc}
 	...
 
-080005a4 <MX_TIM2_Init>:
+080002a0 <MX_TIM2_Init>:
   * @brief TIM2 Initialization Function
   * @param None
   * @retval None
   */
 static void MX_TIM2_Init(void)
 {
- 80005a4:	b580      	push	{r7, lr}
- 80005a6:	b086      	sub	sp, #24
- 80005a8:	af00      	add	r7, sp, #0
+ 80002a0:	b580      	push	{r7, lr}
+ 80002a2:	b086      	sub	sp, #24
+ 80002a4:	af00      	add	r7, sp, #0
 
   /* USER CODE BEGIN TIM2_Init 0 */
 
   /* USER CODE END TIM2_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
- 80005aa:	f107 0308 	add.w	r3, r7, #8
- 80005ae:	2200      	movs	r2, #0
- 80005b0:	601a      	str	r2, [r3, #0]
- 80005b2:	605a      	str	r2, [r3, #4]
- 80005b4:	609a      	str	r2, [r3, #8]
- 80005b6:	60da      	str	r2, [r3, #12]
+ 80002a6:	f107 0308 	add.w	r3, r7, #8
+ 80002aa:	2200      	movs	r2, #0
+ 80002ac:	601a      	str	r2, [r3, #0]
+ 80002ae:	605a      	str	r2, [r3, #4]
+ 80002b0:	609a      	str	r2, [r3, #8]
+ 80002b2:	60da      	str	r2, [r3, #12]
   TIM_MasterConfigTypeDef sMasterConfig = {0};
- 80005b8:	463b      	mov	r3, r7
- 80005ba:	2200      	movs	r2, #0
- 80005bc:	601a      	str	r2, [r3, #0]
- 80005be:	605a      	str	r2, [r3, #4]
+ 80002b4:	463b      	mov	r3, r7
+ 80002b6:	2200      	movs	r2, #0
+ 80002b8:	601a      	str	r2, [r3, #0]
+ 80002ba:	605a      	str	r2, [r3, #4]
 
   /* USER CODE BEGIN TIM2_Init 1 */
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
- 80005c0:	4b1d      	ldr	r3, [pc, #116]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005c2:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
- 80005c6:	601a      	str	r2, [r3, #0]
+ 80002bc:	4b1d      	ldr	r3, [pc, #116]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002be:	f04f 4280 	mov.w	r2, #1073741824	; 0x40000000
+ 80002c2:	601a      	str	r2, [r3, #0]
   htim2.Init.Prescaler = 7999;
- 80005c8:	4b1b      	ldr	r3, [pc, #108]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005ca:	f641 723f 	movw	r2, #7999	; 0x1f3f
- 80005ce:	605a      	str	r2, [r3, #4]
+ 80002c4:	4b1b      	ldr	r3, [pc, #108]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002c6:	f641 723f 	movw	r2, #7999	; 0x1f3f
+ 80002ca:	605a      	str	r2, [r3, #4]
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
- 80005d0:	4b19      	ldr	r3, [pc, #100]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005d2:	2200      	movs	r2, #0
- 80005d4:	609a      	str	r2, [r3, #8]
+ 80002cc:	4b19      	ldr	r3, [pc, #100]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002ce:	2200      	movs	r2, #0
+ 80002d0:	609a      	str	r2, [r3, #8]
   htim2.Init.Period = 9;
- 80005d6:	4b18      	ldr	r3, [pc, #96]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005d8:	2209      	movs	r2, #9
- 80005da:	60da      	str	r2, [r3, #12]
+ 80002d2:	4b18      	ldr	r3, [pc, #96]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002d4:	2209      	movs	r2, #9
+ 80002d6:	60da      	str	r2, [r3, #12]
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
- 80005dc:	4b16      	ldr	r3, [pc, #88]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005de:	2200      	movs	r2, #0
- 80005e0:	611a      	str	r2, [r3, #16]
+ 80002d8:	4b16      	ldr	r3, [pc, #88]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002da:	2200      	movs	r2, #0
+ 80002dc:	611a      	str	r2, [r3, #16]
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
- 80005e2:	4b15      	ldr	r3, [pc, #84]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005e4:	2200      	movs	r2, #0
- 80005e6:	619a      	str	r2, [r3, #24]
+ 80002de:	4b15      	ldr	r3, [pc, #84]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002e0:	2200      	movs	r2, #0
+ 80002e2:	619a      	str	r2, [r3, #24]
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
- 80005e8:	4813      	ldr	r0, [pc, #76]	; (8000638 <MX_TIM2_Init+0x94>)
- 80005ea:	f001 f813 	bl	8001614 <HAL_TIM_Base_Init>
- 80005ee:	4603      	mov	r3, r0
- 80005f0:	2b00      	cmp	r3, #0
- 80005f2:	d001      	beq.n	80005f8 <MX_TIM2_Init+0x54>
+ 80002e4:	4813      	ldr	r0, [pc, #76]	; (8000334 <MX_TIM2_Init+0x94>)
+ 80002e6:	f001 f995 	bl	8001614 <HAL_TIM_Base_Init>
+ 80002ea:	4603      	mov	r3, r0
+ 80002ec:	2b00      	cmp	r3, #0
+ 80002ee:	d001      	beq.n	80002f4 <MX_TIM2_Init+0x54>
   {
     Error_Handler();
- 80005f4:	f000 f85e 	bl	80006b4 <Error_Handler>
+ 80002f0:	f000 f85e 	bl	80003b0 <Error_Handler>
   }
   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
- 80005f8:	f44f 5380 	mov.w	r3, #4096	; 0x1000
- 80005fc:	60bb      	str	r3, [r7, #8]
+ 80002f4:	f44f 5380 	mov.w	r3, #4096	; 0x1000
+ 80002f8:	60bb      	str	r3, [r7, #8]
   if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
- 80005fe:	f107 0308 	add.w	r3, r7, #8
- 8000602:	4619      	mov	r1, r3
- 8000604:	480c      	ldr	r0, [pc, #48]	; (8000638 <MX_TIM2_Init+0x94>)
- 8000606:	f001 f9a9 	bl	800195c <HAL_TIM_ConfigClockSource>
- 800060a:	4603      	mov	r3, r0
- 800060c:	2b00      	cmp	r3, #0
- 800060e:	d001      	beq.n	8000614 <MX_TIM2_Init+0x70>
+ 80002fa:	f107 0308 	add.w	r3, r7, #8
+ 80002fe:	4619      	mov	r1, r3
+ 8000300:	480c      	ldr	r0, [pc, #48]	; (8000334 <MX_TIM2_Init+0x94>)
+ 8000302:	f001 fb2b 	bl	800195c <HAL_TIM_ConfigClockSource>
+ 8000306:	4603      	mov	r3, r0
+ 8000308:	2b00      	cmp	r3, #0
+ 800030a:	d001      	beq.n	8000310 <MX_TIM2_Init+0x70>
   {
     Error_Handler();
- 8000610:	f000 f850 	bl	80006b4 <Error_Handler>
+ 800030c:	f000 f850 	bl	80003b0 <Error_Handler>
   }
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
- 8000614:	2300      	movs	r3, #0
- 8000616:	603b      	str	r3, [r7, #0]
+ 8000310:	2300      	movs	r3, #0
+ 8000312:	603b      	str	r3, [r7, #0]
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
- 8000618:	2300      	movs	r3, #0
- 800061a:	607b      	str	r3, [r7, #4]
+ 8000314:	2300      	movs	r3, #0
+ 8000316:	607b      	str	r3, [r7, #4]
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
- 800061c:	463b      	mov	r3, r7
- 800061e:	4619      	mov	r1, r3
- 8000620:	4805      	ldr	r0, [pc, #20]	; (8000638 <MX_TIM2_Init+0x94>)
- 8000622:	f001 fb71 	bl	8001d08 <HAL_TIMEx_MasterConfigSynchronization>
- 8000626:	4603      	mov	r3, r0
- 8000628:	2b00      	cmp	r3, #0
- 800062a:	d001      	beq.n	8000630 <MX_TIM2_Init+0x8c>
+ 8000318:	463b      	mov	r3, r7
+ 800031a:	4619      	mov	r1, r3
+ 800031c:	4805      	ldr	r0, [pc, #20]	; (8000334 <MX_TIM2_Init+0x94>)
+ 800031e:	f001 fcf3 	bl	8001d08 <HAL_TIMEx_MasterConfigSynchronization>
+ 8000322:	4603      	mov	r3, r0
+ 8000324:	2b00      	cmp	r3, #0
+ 8000326:	d001      	beq.n	800032c <MX_TIM2_Init+0x8c>
   {
     Error_Handler();
- 800062c:	f000 f842 	bl	80006b4 <Error_Handler>
+ 8000328:	f000 f842 	bl	80003b0 <Error_Handler>
   }
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
 
 }
- 8000630:	bf00      	nop
- 8000632:	3718      	adds	r7, #24
- 8000634:	46bd      	mov	sp, r7
- 8000636:	bd80      	pop	{r7, pc}
- 8000638:	20000090 	.word	0x20000090
+ 800032c:	bf00      	nop
+ 800032e:	3718      	adds	r7, #24
+ 8000330:	46bd      	mov	sp, r7
+ 8000332:	bd80      	pop	{r7, pc}
+ 8000334:	20000028 	.word	0x20000028
 
-0800063c <MX_GPIO_Init>:
+08000338 <MX_GPIO_Init>:
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
   */
 static void MX_GPIO_Init(void)
 {
- 800063c:	b580      	push	{r7, lr}
- 800063e:	b086      	sub	sp, #24
- 8000640:	af00      	add	r7, sp, #0
+ 8000338:	b580      	push	{r7, lr}
+ 800033a:	b086      	sub	sp, #24
+ 800033c:	af00      	add	r7, sp, #0
   GPIO_InitTypeDef GPIO_InitStruct = {0};
- 8000642:	f107 0308 	add.w	r3, r7, #8
- 8000646:	2200      	movs	r2, #0
- 8000648:	601a      	str	r2, [r3, #0]
- 800064a:	605a      	str	r2, [r3, #4]
- 800064c:	609a      	str	r2, [r3, #8]
- 800064e:	60da      	str	r2, [r3, #12]
+ 800033e:	f107 0308 	add.w	r3, r7, #8
+ 8000342:	2200      	movs	r2, #0
+ 8000344:	601a      	str	r2, [r3, #0]
+ 8000346:	605a      	str	r2, [r3, #4]
+ 8000348:	609a      	str	r2, [r3, #8]
+ 800034a:	60da      	str	r2, [r3, #12]
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
- 8000650:	4b11      	ldr	r3, [pc, #68]	; (8000698 <MX_GPIO_Init+0x5c>)
- 8000652:	699b      	ldr	r3, [r3, #24]
- 8000654:	4a10      	ldr	r2, [pc, #64]	; (8000698 <MX_GPIO_Init+0x5c>)
- 8000656:	f043 0304 	orr.w	r3, r3, #4
- 800065a:	6193      	str	r3, [r2, #24]
- 800065c:	4b0e      	ldr	r3, [pc, #56]	; (8000698 <MX_GPIO_Init+0x5c>)
- 800065e:	699b      	ldr	r3, [r3, #24]
- 8000660:	f003 0304 	and.w	r3, r3, #4
- 8000664:	607b      	str	r3, [r7, #4]
- 8000666:	687b      	ldr	r3, [r7, #4]
+ 800034c:	4b11      	ldr	r3, [pc, #68]	; (8000394 <MX_GPIO_Init+0x5c>)
+ 800034e:	699b      	ldr	r3, [r3, #24]
+ 8000350:	4a10      	ldr	r2, [pc, #64]	; (8000394 <MX_GPIO_Init+0x5c>)
+ 8000352:	f043 0304 	orr.w	r3, r3, #4
+ 8000356:	6193      	str	r3, [r2, #24]
+ 8000358:	4b0e      	ldr	r3, [pc, #56]	; (8000394 <MX_GPIO_Init+0x5c>)
+ 800035a:	699b      	ldr	r3, [r3, #24]
+ 800035c:	f003 0304 	and.w	r3, r3, #4
+ 8000360:	607b      	str	r3, [r7, #4]
+ 8000362:	687b      	ldr	r3, [r7, #4]
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
- 8000668:	2200      	movs	r2, #0
- 800066a:	213e      	movs	r1, #62	; 0x3e
- 800066c:	480b      	ldr	r0, [pc, #44]	; (800069c <MX_GPIO_Init+0x60>)
- 800066e:	f000 fbb7 	bl	8000de0 <HAL_GPIO_WritePin>
+ 8000364:	2200      	movs	r2, #0
+ 8000366:	213e      	movs	r1, #62	; 0x3e
+ 8000368:	480b      	ldr	r0, [pc, #44]	; (8000398 <MX_GPIO_Init+0x60>)
+ 800036a:	f000 fd39 	bl	8000de0 <HAL_GPIO_WritePin>
                           |LED5_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED1_Pin LED2_Pin LED3_Pin LED4_Pin
                            LED5_Pin */
   GPIO_InitStruct.Pin = LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
- 8000672:	233e      	movs	r3, #62	; 0x3e
- 8000674:	60bb      	str	r3, [r7, #8]
+ 800036e:	233e      	movs	r3, #62	; 0x3e
+ 8000370:	60bb      	str	r3, [r7, #8]
                           |LED5_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8000676:	2301      	movs	r3, #1
- 8000678:	60fb      	str	r3, [r7, #12]
+ 8000372:	2301      	movs	r3, #1
+ 8000374:	60fb      	str	r3, [r7, #12]
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800067a:	2300      	movs	r3, #0
- 800067c:	613b      	str	r3, [r7, #16]
+ 8000376:	2300      	movs	r3, #0
+ 8000378:	613b      	str	r3, [r7, #16]
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 800067e:	2302      	movs	r3, #2
- 8000680:	617b      	str	r3, [r7, #20]
+ 800037a:	2302      	movs	r3, #2
+ 800037c:	617b      	str	r3, [r7, #20]
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 8000682:	f107 0308 	add.w	r3, r7, #8
- 8000686:	4619      	mov	r1, r3
- 8000688:	4804      	ldr	r0, [pc, #16]	; (800069c <MX_GPIO_Init+0x60>)
- 800068a:	f000 fa2d 	bl	8000ae8 <HAL_GPIO_Init>
+ 800037e:	f107 0308 	add.w	r3, r7, #8
+ 8000382:	4619      	mov	r1, r3
+ 8000384:	4804      	ldr	r0, [pc, #16]	; (8000398 <MX_GPIO_Init+0x60>)
+ 8000386:	f000 fbaf 	bl	8000ae8 <HAL_GPIO_Init>
 
 }
- 800068e:	bf00      	nop
- 8000690:	3718      	adds	r7, #24
- 8000692:	46bd      	mov	sp, r7
- 8000694:	bd80      	pop	{r7, pc}
- 8000696:	bf00      	nop
- 8000698:	40021000 	.word	0x40021000
- 800069c:	40010800 	.word	0x40010800
+ 800038a:	bf00      	nop
+ 800038c:	3718      	adds	r7, #24
+ 800038e:	46bd      	mov	sp, r7
+ 8000390:	bd80      	pop	{r7, pc}
+ 8000392:	bf00      	nop
+ 8000394:	40021000 	.word	0x40021000
+ 8000398:	40010800 	.word	0x40010800
 
-080006a0 <HAL_TIM_PeriodElapsedCallback>:
+0800039c <HAL_TIM_PeriodElapsedCallback>:
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
- 80006a0:	b580      	push	{r7, lr}
- 80006a2:	b082      	sub	sp, #8
- 80006a4:	af00      	add	r7, sp, #0
- 80006a6:	6078      	str	r0, [r7, #4]
+ 800039c:	b580      	push	{r7, lr}
+ 800039e:	b082      	sub	sp, #8
+ 80003a0:	af00      	add	r7, sp, #0
+ 80003a2:	6078      	str	r0, [r7, #4]
   SCH_Update();
- 80006a8:	f7ff fd5c 	bl	8000164 <SCH_Update>
+ 80003a4:	f000 f816 	bl	80003d4 <SCH_Update>
 }
- 80006ac:	bf00      	nop
- 80006ae:	3708      	adds	r7, #8
- 80006b0:	46bd      	mov	sp, r7
- 80006b2:	bd80      	pop	{r7, pc}
+ 80003a8:	bf00      	nop
+ 80003aa:	3708      	adds	r7, #8
+ 80003ac:	46bd      	mov	sp, r7
+ 80003ae:	bd80      	pop	{r7, pc}
 
-080006b4 <Error_Handler>:
+080003b0 <Error_Handler>:
 /**
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
 void Error_Handler(void)
 {
- 80006b4:	b480      	push	{r7}
- 80006b6:	af00      	add	r7, sp, #0
+ 80003b0:	b480      	push	{r7}
+ 80003b2:	af00      	add	r7, sp, #0
   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
            Can only be executed in Privileged modes.
  */
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
   __ASM volatile ("cpsid i" : : : "memory");
- 80006b8:	b672      	cpsid	i
+ 80003b4:	b672      	cpsid	i
 }
- 80006ba:	bf00      	nop
+ 80003b6:	bf00      	nop
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)
- 80006bc:	e7fe      	b.n	80006bc <Error_Handler+0x8>
+ 80003b8:	e7fe      	b.n	80003b8 <Error_Handler+0x8>
 	...
+
+080003bc <SCH_Init>:
+#define SCH_MAX_TASKS 5
+
+sTask SCH_tasks_G[SCH_MAX_TASKS];
+uint32_t current_index_task = 0;
+
+void SCH_Init(void) {
+ 80003bc:	b480      	push	{r7}
+ 80003be:	af00      	add	r7, sp, #0
+  current_index_task = 0;
+ 80003c0:	4b03      	ldr	r3, [pc, #12]	; (80003d0 <SCH_Init+0x14>)
+ 80003c2:	2200      	movs	r2, #0
+ 80003c4:	601a      	str	r2, [r3, #0]
+}
+ 80003c6:	bf00      	nop
+ 80003c8:	46bd      	mov	sp, r7
+ 80003ca:	bc80      	pop	{r7}
+ 80003cc:	4770      	bx	lr
+ 80003ce:	bf00      	nop
+ 80003d0:	200000d4 	.word	0x200000d4
+
+080003d4 <SCH_Update>:
+
+void SCH_Update(void) {
+ 80003d4:	b480      	push	{r7}
+ 80003d6:	b083      	sub	sp, #12
+ 80003d8:	af00      	add	r7, sp, #0
+  for(int i = 0; i < current_index_task; i++) {
+ 80003da:	2300      	movs	r3, #0
+ 80003dc:	607b      	str	r3, [r7, #4]
+ 80003de:	e046      	b.n	800046e <SCH_Update+0x9a>
+    if(SCH_tasks_G[i].Delay > 0) {
+ 80003e0:	4928      	ldr	r1, [pc, #160]	; (8000484 <SCH_Update+0xb0>)
+ 80003e2:	687a      	ldr	r2, [r7, #4]
+ 80003e4:	4613      	mov	r3, r2
+ 80003e6:	009b      	lsls	r3, r3, #2
+ 80003e8:	4413      	add	r3, r2
+ 80003ea:	009b      	lsls	r3, r3, #2
+ 80003ec:	440b      	add	r3, r1
+ 80003ee:	3304      	adds	r3, #4
+ 80003f0:	681b      	ldr	r3, [r3, #0]
+ 80003f2:	2b00      	cmp	r3, #0
+ 80003f4:	d013      	beq.n	800041e <SCH_Update+0x4a>
+      SCH_tasks_G[i].Delay--;
+ 80003f6:	4923      	ldr	r1, [pc, #140]	; (8000484 <SCH_Update+0xb0>)
+ 80003f8:	687a      	ldr	r2, [r7, #4]
+ 80003fa:	4613      	mov	r3, r2
+ 80003fc:	009b      	lsls	r3, r3, #2
+ 80003fe:	4413      	add	r3, r2
+ 8000400:	009b      	lsls	r3, r3, #2
+ 8000402:	440b      	add	r3, r1
+ 8000404:	3304      	adds	r3, #4
+ 8000406:	681b      	ldr	r3, [r3, #0]
+ 8000408:	1e59      	subs	r1, r3, #1
+ 800040a:	481e      	ldr	r0, [pc, #120]	; (8000484 <SCH_Update+0xb0>)
+ 800040c:	687a      	ldr	r2, [r7, #4]
+ 800040e:	4613      	mov	r3, r2
+ 8000410:	009b      	lsls	r3, r3, #2
+ 8000412:	4413      	add	r3, r2
+ 8000414:	009b      	lsls	r3, r3, #2
+ 8000416:	4403      	add	r3, r0
+ 8000418:	3304      	adds	r3, #4
+ 800041a:	6019      	str	r1, [r3, #0]
+ 800041c:	e024      	b.n	8000468 <SCH_Update+0x94>
+    }
+    else {
+      SCH_tasks_G[i].Delay = SCH_tasks_G[i].Period;
+ 800041e:	4919      	ldr	r1, [pc, #100]	; (8000484 <SCH_Update+0xb0>)
+ 8000420:	687a      	ldr	r2, [r7, #4]
+ 8000422:	4613      	mov	r3, r2
+ 8000424:	009b      	lsls	r3, r3, #2
+ 8000426:	4413      	add	r3, r2
+ 8000428:	009b      	lsls	r3, r3, #2
+ 800042a:	440b      	add	r3, r1
+ 800042c:	3308      	adds	r3, #8
+ 800042e:	6819      	ldr	r1, [r3, #0]
+ 8000430:	4814      	ldr	r0, [pc, #80]	; (8000484 <SCH_Update+0xb0>)
+ 8000432:	687a      	ldr	r2, [r7, #4]
+ 8000434:	4613      	mov	r3, r2
+ 8000436:	009b      	lsls	r3, r3, #2
+ 8000438:	4413      	add	r3, r2
+ 800043a:	009b      	lsls	r3, r3, #2
+ 800043c:	4403      	add	r3, r0
+ 800043e:	3304      	adds	r3, #4
+ 8000440:	6019      	str	r1, [r3, #0]
+      SCH_tasks_G[i].RunMe++;
+ 8000442:	4910      	ldr	r1, [pc, #64]	; (8000484 <SCH_Update+0xb0>)
+ 8000444:	687a      	ldr	r2, [r7, #4]
+ 8000446:	4613      	mov	r3, r2
+ 8000448:	009b      	lsls	r3, r3, #2
+ 800044a:	4413      	add	r3, r2
+ 800044c:	009b      	lsls	r3, r3, #2
+ 800044e:	440b      	add	r3, r1
+ 8000450:	330c      	adds	r3, #12
+ 8000452:	681b      	ldr	r3, [r3, #0]
+ 8000454:	1c59      	adds	r1, r3, #1
+ 8000456:	480b      	ldr	r0, [pc, #44]	; (8000484 <SCH_Update+0xb0>)
+ 8000458:	687a      	ldr	r2, [r7, #4]
+ 800045a:	4613      	mov	r3, r2
+ 800045c:	009b      	lsls	r3, r3, #2
+ 800045e:	4413      	add	r3, r2
+ 8000460:	009b      	lsls	r3, r3, #2
+ 8000462:	4403      	add	r3, r0
+ 8000464:	330c      	adds	r3, #12
+ 8000466:	6019      	str	r1, [r3, #0]
+  for(int i = 0; i < current_index_task; i++) {
+ 8000468:	687b      	ldr	r3, [r7, #4]
+ 800046a:	3301      	adds	r3, #1
+ 800046c:	607b      	str	r3, [r7, #4]
+ 800046e:	687a      	ldr	r2, [r7, #4]
+ 8000470:	4b05      	ldr	r3, [pc, #20]	; (8000488 <SCH_Update+0xb4>)
+ 8000472:	681b      	ldr	r3, [r3, #0]
+ 8000474:	429a      	cmp	r2, r3
+ 8000476:	d3b3      	bcc.n	80003e0 <SCH_Update+0xc>
+    }
+  }
+}
+ 8000478:	bf00      	nop
+ 800047a:	bf00      	nop
+ 800047c:	370c      	adds	r7, #12
+ 800047e:	46bd      	mov	sp, r7
+ 8000480:	bc80      	pop	{r7}
+ 8000482:	4770      	bx	lr
+ 8000484:	20000070 	.word	0x20000070
+ 8000488:	200000d4 	.word	0x200000d4
+
+0800048c <SCH_Add_Task>:
+
+void SCH_Add_Task(void (*pFunction)(), uint32_t Delay, uint32_t Period) {
+ 800048c:	b480      	push	{r7}
+ 800048e:	b085      	sub	sp, #20
+ 8000490:	af00      	add	r7, sp, #0
+ 8000492:	60f8      	str	r0, [r7, #12]
+ 8000494:	60b9      	str	r1, [r7, #8]
+ 8000496:	607a      	str	r2, [r7, #4]
+  if(current_index_task < SCH_MAX_TASKS) {
+ 8000498:	4b22      	ldr	r3, [pc, #136]	; (8000524 <SCH_Add_Task+0x98>)
+ 800049a:	681b      	ldr	r3, [r3, #0]
+ 800049c:	2b04      	cmp	r3, #4
+ 800049e:	d83b      	bhi.n	8000518 <SCH_Add_Task+0x8c>
+    SCH_tasks_G[current_index_task].pTask = pFunction;
+ 80004a0:	4b20      	ldr	r3, [pc, #128]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004a2:	681a      	ldr	r2, [r3, #0]
+ 80004a4:	4920      	ldr	r1, [pc, #128]	; (8000528 <SCH_Add_Task+0x9c>)
+ 80004a6:	4613      	mov	r3, r2
+ 80004a8:	009b      	lsls	r3, r3, #2
+ 80004aa:	4413      	add	r3, r2
+ 80004ac:	009b      	lsls	r3, r3, #2
+ 80004ae:	440b      	add	r3, r1
+ 80004b0:	68fa      	ldr	r2, [r7, #12]
+ 80004b2:	601a      	str	r2, [r3, #0]
+    SCH_tasks_G[current_index_task].Delay = Delay;
+ 80004b4:	4b1b      	ldr	r3, [pc, #108]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004b6:	681a      	ldr	r2, [r3, #0]
+ 80004b8:	491b      	ldr	r1, [pc, #108]	; (8000528 <SCH_Add_Task+0x9c>)
+ 80004ba:	4613      	mov	r3, r2
+ 80004bc:	009b      	lsls	r3, r3, #2
+ 80004be:	4413      	add	r3, r2
+ 80004c0:	009b      	lsls	r3, r3, #2
+ 80004c2:	440b      	add	r3, r1
+ 80004c4:	3304      	adds	r3, #4
+ 80004c6:	68ba      	ldr	r2, [r7, #8]
+ 80004c8:	601a      	str	r2, [r3, #0]
+    SCH_tasks_G[current_index_task].Period = Period;
+ 80004ca:	4b16      	ldr	r3, [pc, #88]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004cc:	681a      	ldr	r2, [r3, #0]
+ 80004ce:	4916      	ldr	r1, [pc, #88]	; (8000528 <SCH_Add_Task+0x9c>)
+ 80004d0:	4613      	mov	r3, r2
+ 80004d2:	009b      	lsls	r3, r3, #2
+ 80004d4:	4413      	add	r3, r2
+ 80004d6:	009b      	lsls	r3, r3, #2
+ 80004d8:	440b      	add	r3, r1
+ 80004da:	3308      	adds	r3, #8
+ 80004dc:	687a      	ldr	r2, [r7, #4]
+ 80004de:	601a      	str	r2, [r3, #0]
+    SCH_tasks_G[current_index_task].RunMe = 0;
+ 80004e0:	4b10      	ldr	r3, [pc, #64]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004e2:	681a      	ldr	r2, [r3, #0]
+ 80004e4:	4910      	ldr	r1, [pc, #64]	; (8000528 <SCH_Add_Task+0x9c>)
+ 80004e6:	4613      	mov	r3, r2
+ 80004e8:	009b      	lsls	r3, r3, #2
+ 80004ea:	4413      	add	r3, r2
+ 80004ec:	009b      	lsls	r3, r3, #2
+ 80004ee:	440b      	add	r3, r1
+ 80004f0:	330c      	adds	r3, #12
+ 80004f2:	2200      	movs	r2, #0
+ 80004f4:	601a      	str	r2, [r3, #0]
+    SCH_tasks_G[current_index_task].TaskID = current_index_task;
+ 80004f6:	4b0b      	ldr	r3, [pc, #44]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004f8:	681a      	ldr	r2, [r3, #0]
+ 80004fa:	4b0a      	ldr	r3, [pc, #40]	; (8000524 <SCH_Add_Task+0x98>)
+ 80004fc:	6819      	ldr	r1, [r3, #0]
+ 80004fe:	480a      	ldr	r0, [pc, #40]	; (8000528 <SCH_Add_Task+0x9c>)
+ 8000500:	4613      	mov	r3, r2
+ 8000502:	009b      	lsls	r3, r3, #2
+ 8000504:	4413      	add	r3, r2
+ 8000506:	009b      	lsls	r3, r3, #2
+ 8000508:	4403      	add	r3, r0
+ 800050a:	3310      	adds	r3, #16
+ 800050c:	6019      	str	r1, [r3, #0]
+
+    current_index_task++;
+ 800050e:	4b05      	ldr	r3, [pc, #20]	; (8000524 <SCH_Add_Task+0x98>)
+ 8000510:	681b      	ldr	r3, [r3, #0]
+ 8000512:	3301      	adds	r3, #1
+ 8000514:	4a03      	ldr	r2, [pc, #12]	; (8000524 <SCH_Add_Task+0x98>)
+ 8000516:	6013      	str	r3, [r2, #0]
+  }
+}
+ 8000518:	bf00      	nop
+ 800051a:	3714      	adds	r7, #20
+ 800051c:	46bd      	mov	sp, r7
+ 800051e:	bc80      	pop	{r7}
+ 8000520:	4770      	bx	lr
+ 8000522:	bf00      	nop
+ 8000524:	200000d4 	.word	0x200000d4
+ 8000528:	20000070 	.word	0x20000070
+
+0800052c <SCH_Dispatch_Tasks>:
+
+void SCH_Dispatch_Tasks(void) {
+ 800052c:	b580      	push	{r7, lr}
+ 800052e:	b082      	sub	sp, #8
+ 8000530:	af00      	add	r7, sp, #0
+  for(int i = 0; i < current_index_task; i++) {
+ 8000532:	2300      	movs	r3, #0
+ 8000534:	607b      	str	r3, [r7, #4]
+ 8000536:	e038      	b.n	80005aa <SCH_Dispatch_Tasks+0x7e>
+    if(SCH_tasks_G[i].RunMe > 0) {
+ 8000538:	4921      	ldr	r1, [pc, #132]	; (80005c0 <SCH_Dispatch_Tasks+0x94>)
+ 800053a:	687a      	ldr	r2, [r7, #4]
+ 800053c:	4613      	mov	r3, r2
+ 800053e:	009b      	lsls	r3, r3, #2
+ 8000540:	4413      	add	r3, r2
+ 8000542:	009b      	lsls	r3, r3, #2
+ 8000544:	440b      	add	r3, r1
+ 8000546:	330c      	adds	r3, #12
+ 8000548:	681b      	ldr	r3, [r3, #0]
+ 800054a:	2b00      	cmp	r3, #0
+ 800054c:	d02a      	beq.n	80005a4 <SCH_Dispatch_Tasks+0x78>
+      SCH_tasks_G[i].RunMe--;
+ 800054e:	491c      	ldr	r1, [pc, #112]	; (80005c0 <SCH_Dispatch_Tasks+0x94>)
+ 8000550:	687a      	ldr	r2, [r7, #4]
+ 8000552:	4613      	mov	r3, r2
+ 8000554:	009b      	lsls	r3, r3, #2
+ 8000556:	4413      	add	r3, r2
+ 8000558:	009b      	lsls	r3, r3, #2
+ 800055a:	440b      	add	r3, r1
+ 800055c:	330c      	adds	r3, #12
+ 800055e:	681b      	ldr	r3, [r3, #0]
+ 8000560:	1e59      	subs	r1, r3, #1
+ 8000562:	4817      	ldr	r0, [pc, #92]	; (80005c0 <SCH_Dispatch_Tasks+0x94>)
+ 8000564:	687a      	ldr	r2, [r7, #4]
+ 8000566:	4613      	mov	r3, r2
+ 8000568:	009b      	lsls	r3, r3, #2
+ 800056a:	4413      	add	r3, r2
+ 800056c:	009b      	lsls	r3, r3, #2
+ 800056e:	4403      	add	r3, r0
+ 8000570:	330c      	adds	r3, #12
+ 8000572:	6019      	str	r1, [r3, #0]
+      (*SCH_tasks_G[i].pTask)();
+ 8000574:	4912      	ldr	r1, [pc, #72]	; (80005c0 <SCH_Dispatch_Tasks+0x94>)
+ 8000576:	687a      	ldr	r2, [r7, #4]
+ 8000578:	4613      	mov	r3, r2
+ 800057a:	009b      	lsls	r3, r3, #2
+ 800057c:	4413      	add	r3, r2
+ 800057e:	009b      	lsls	r3, r3, #2
+ 8000580:	440b      	add	r3, r1
+ 8000582:	681b      	ldr	r3, [r3, #0]
+ 8000584:	4798      	blx	r3
+      if(SCH_tasks_G[i].Period == 0)
+ 8000586:	490e      	ldr	r1, [pc, #56]	; (80005c0 <SCH_Dispatch_Tasks+0x94>)
+ 8000588:	687a      	ldr	r2, [r7, #4]
+ 800058a:	4613      	mov	r3, r2
+ 800058c:	009b      	lsls	r3, r3, #2
+ 800058e:	4413      	add	r3, r2
+ 8000590:	009b      	lsls	r3, r3, #2
+ 8000592:	440b      	add	r3, r1
+ 8000594:	3308      	adds	r3, #8
+ 8000596:	681b      	ldr	r3, [r3, #0]
+ 8000598:	2b00      	cmp	r3, #0
+ 800059a:	d103      	bne.n	80005a4 <SCH_Dispatch_Tasks+0x78>
+    	  SCH_Delete_Task(i);
+ 800059c:	687b      	ldr	r3, [r7, #4]
+ 800059e:	4618      	mov	r0, r3
+ 80005a0:	f000 f812 	bl	80005c8 <SCH_Delete_Task>
+  for(int i = 0; i < current_index_task; i++) {
+ 80005a4:	687b      	ldr	r3, [r7, #4]
+ 80005a6:	3301      	adds	r3, #1
+ 80005a8:	607b      	str	r3, [r7, #4]
+ 80005aa:	687a      	ldr	r2, [r7, #4]
+ 80005ac:	4b05      	ldr	r3, [pc, #20]	; (80005c4 <SCH_Dispatch_Tasks+0x98>)
+ 80005ae:	681b      	ldr	r3, [r3, #0]
+ 80005b0:	429a      	cmp	r2, r3
+ 80005b2:	d3c1      	bcc.n	8000538 <SCH_Dispatch_Tasks+0xc>
+    }
+  }
+}
+ 80005b4:	bf00      	nop
+ 80005b6:	bf00      	nop
+ 80005b8:	3708      	adds	r7, #8
+ 80005ba:	46bd      	mov	sp, r7
+ 80005bc:	bd80      	pop	{r7, pc}
+ 80005be:	bf00      	nop
+ 80005c0:	20000070 	.word	0x20000070
+ 80005c4:	200000d4 	.word	0x200000d4
+
+080005c8 <SCH_Delete_Task>:
+void SCH_Delete_Task(uint32_t ID)
+{
+ 80005c8:	b480      	push	{r7}
+ 80005ca:	b085      	sub	sp, #20
+ 80005cc:	af00      	add	r7, sp, #0
+ 80005ce:	6078      	str	r0, [r7, #4]
+  if(ID < current_index_task - 1)
+ 80005d0:	4b39      	ldr	r3, [pc, #228]	; (80006b8 <SCH_Delete_Task+0xf0>)
+ 80005d2:	681b      	ldr	r3, [r3, #0]
+ 80005d4:	3b01      	subs	r3, #1
+ 80005d6:	687a      	ldr	r2, [r7, #4]
+ 80005d8:	429a      	cmp	r2, r3
+ 80005da:	d263      	bcs.n	80006a4 <SCH_Delete_Task+0xdc>
+  {
+	for(int i = ID; i < current_index_task - 1; i++)
+ 80005dc:	687b      	ldr	r3, [r7, #4]
+ 80005de:	60fb      	str	r3, [r7, #12]
+ 80005e0:	e05a      	b.n	8000698 <SCH_Delete_Task+0xd0>
+	{
+		SCH_tasks_G[i].pTask = SCH_tasks_G[i].pTask;
+ 80005e2:	4936      	ldr	r1, [pc, #216]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 80005e4:	68fa      	ldr	r2, [r7, #12]
+ 80005e6:	4613      	mov	r3, r2
+ 80005e8:	009b      	lsls	r3, r3, #2
+ 80005ea:	4413      	add	r3, r2
+ 80005ec:	009b      	lsls	r3, r3, #2
+ 80005ee:	440b      	add	r3, r1
+ 80005f0:	6819      	ldr	r1, [r3, #0]
+ 80005f2:	4832      	ldr	r0, [pc, #200]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 80005f4:	68fa      	ldr	r2, [r7, #12]
+ 80005f6:	4613      	mov	r3, r2
+ 80005f8:	009b      	lsls	r3, r3, #2
+ 80005fa:	4413      	add	r3, r2
+ 80005fc:	009b      	lsls	r3, r3, #2
+ 80005fe:	4403      	add	r3, r0
+ 8000600:	6019      	str	r1, [r3, #0]
+		SCH_tasks_G[i].Delay = SCH_tasks_G[i].Delay;
+ 8000602:	492e      	ldr	r1, [pc, #184]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 8000604:	68fa      	ldr	r2, [r7, #12]
+ 8000606:	4613      	mov	r3, r2
+ 8000608:	009b      	lsls	r3, r3, #2
+ 800060a:	4413      	add	r3, r2
+ 800060c:	009b      	lsls	r3, r3, #2
+ 800060e:	440b      	add	r3, r1
+ 8000610:	3304      	adds	r3, #4
+ 8000612:	6819      	ldr	r1, [r3, #0]
+ 8000614:	4829      	ldr	r0, [pc, #164]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 8000616:	68fa      	ldr	r2, [r7, #12]
+ 8000618:	4613      	mov	r3, r2
+ 800061a:	009b      	lsls	r3, r3, #2
+ 800061c:	4413      	add	r3, r2
+ 800061e:	009b      	lsls	r3, r3, #2
+ 8000620:	4403      	add	r3, r0
+ 8000622:	3304      	adds	r3, #4
+ 8000624:	6019      	str	r1, [r3, #0]
+		SCH_tasks_G[i].Period = SCH_tasks_G[i].Period;
+ 8000626:	4925      	ldr	r1, [pc, #148]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 8000628:	68fa      	ldr	r2, [r7, #12]
+ 800062a:	4613      	mov	r3, r2
+ 800062c:	009b      	lsls	r3, r3, #2
+ 800062e:	4413      	add	r3, r2
+ 8000630:	009b      	lsls	r3, r3, #2
+ 8000632:	440b      	add	r3, r1
+ 8000634:	3308      	adds	r3, #8
+ 8000636:	6819      	ldr	r1, [r3, #0]
+ 8000638:	4820      	ldr	r0, [pc, #128]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 800063a:	68fa      	ldr	r2, [r7, #12]
+ 800063c:	4613      	mov	r3, r2
+ 800063e:	009b      	lsls	r3, r3, #2
+ 8000640:	4413      	add	r3, r2
+ 8000642:	009b      	lsls	r3, r3, #2
+ 8000644:	4403      	add	r3, r0
+ 8000646:	3308      	adds	r3, #8
+ 8000648:	6019      	str	r1, [r3, #0]
+		SCH_tasks_G[i].RunMe = SCH_tasks_G[i].RunMe;
+ 800064a:	491c      	ldr	r1, [pc, #112]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 800064c:	68fa      	ldr	r2, [r7, #12]
+ 800064e:	4613      	mov	r3, r2
+ 8000650:	009b      	lsls	r3, r3, #2
+ 8000652:	4413      	add	r3, r2
+ 8000654:	009b      	lsls	r3, r3, #2
+ 8000656:	440b      	add	r3, r1
+ 8000658:	330c      	adds	r3, #12
+ 800065a:	6819      	ldr	r1, [r3, #0]
+ 800065c:	4817      	ldr	r0, [pc, #92]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 800065e:	68fa      	ldr	r2, [r7, #12]
+ 8000660:	4613      	mov	r3, r2
+ 8000662:	009b      	lsls	r3, r3, #2
+ 8000664:	4413      	add	r3, r2
+ 8000666:	009b      	lsls	r3, r3, #2
+ 8000668:	4403      	add	r3, r0
+ 800066a:	330c      	adds	r3, #12
+ 800066c:	6019      	str	r1, [r3, #0]
+		SCH_tasks_G[i].TaskID = SCH_tasks_G[i].TaskID;
+ 800066e:	4913      	ldr	r1, [pc, #76]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 8000670:	68fa      	ldr	r2, [r7, #12]
+ 8000672:	4613      	mov	r3, r2
+ 8000674:	009b      	lsls	r3, r3, #2
+ 8000676:	4413      	add	r3, r2
+ 8000678:	009b      	lsls	r3, r3, #2
+ 800067a:	440b      	add	r3, r1
+ 800067c:	3310      	adds	r3, #16
+ 800067e:	6819      	ldr	r1, [r3, #0]
+ 8000680:	480e      	ldr	r0, [pc, #56]	; (80006bc <SCH_Delete_Task+0xf4>)
+ 8000682:	68fa      	ldr	r2, [r7, #12]
+ 8000684:	4613      	mov	r3, r2
+ 8000686:	009b      	lsls	r3, r3, #2
+ 8000688:	4413      	add	r3, r2
+ 800068a:	009b      	lsls	r3, r3, #2
+ 800068c:	4403      	add	r3, r0
+ 800068e:	3310      	adds	r3, #16
+ 8000690:	6019      	str	r1, [r3, #0]
+	for(int i = ID; i < current_index_task - 1; i++)
+ 8000692:	68fb      	ldr	r3, [r7, #12]
+ 8000694:	3301      	adds	r3, #1
+ 8000696:	60fb      	str	r3, [r7, #12]
+ 8000698:	4b07      	ldr	r3, [pc, #28]	; (80006b8 <SCH_Delete_Task+0xf0>)
+ 800069a:	681b      	ldr	r3, [r3, #0]
+ 800069c:	1e5a      	subs	r2, r3, #1
+ 800069e:	68fb      	ldr	r3, [r7, #12]
+ 80006a0:	429a      	cmp	r2, r3
+ 80006a2:	d89e      	bhi.n	80005e2 <SCH_Delete_Task+0x1a>
+	}
+  }
+  current_index_task--;
+ 80006a4:	4b04      	ldr	r3, [pc, #16]	; (80006b8 <SCH_Delete_Task+0xf0>)
+ 80006a6:	681b      	ldr	r3, [r3, #0]
+ 80006a8:	3b01      	subs	r3, #1
+ 80006aa:	4a03      	ldr	r2, [pc, #12]	; (80006b8 <SCH_Delete_Task+0xf0>)
+ 80006ac:	6013      	str	r3, [r2, #0]
+}
+ 80006ae:	bf00      	nop
+ 80006b0:	3714      	adds	r7, #20
+ 80006b2:	46bd      	mov	sp, r7
+ 80006b4:	bc80      	pop	{r7}
+ 80006b6:	4770      	bx	lr
+ 80006b8:	200000d4 	.word	0x200000d4
+ 80006bc:	20000070 	.word	0x20000070
 
 080006c0 <HAL_MspInit>:
 /* USER CODE END 0 */
@@ -1268,7 +1268,7 @@ void TIM2_IRQHandler(void)
  80007a6:	bf00      	nop
  80007a8:	bd80      	pop	{r7, pc}
  80007aa:	bf00      	nop
- 80007ac:	20000090 	.word	0x20000090
+ 80007ac:	20000028 	.word	0x20000028
 
 080007b0 <SystemInit>:
   * @note   This function should be used only after reset.
@@ -1361,7 +1361,7 @@ LoopFillZerobss:
  80007e6:	f001 faf9 	bl	8001ddc <__libc_init_array>
 /* Call the application's entry point.*/
   bl main
- 80007ea:	f7ff fe63 	bl	80004b4 <main>
+ 80007ea:	f7ff fce1 	bl	80001b0 <main>
   bx lr
  80007ee:	4770      	bx	lr
   ldr r0, =_sdata
@@ -4420,7 +4420,7 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
 #else
       HAL_TIM_PeriodElapsedCallback(htim);
  80018ca:	6878      	ldr	r0, [r7, #4]
- 80018cc:	f7fe fee8 	bl	80006a0 <HAL_TIM_PeriodElapsedCallback>
+ 80018cc:	f7fe fd66 	bl	800039c <HAL_TIM_PeriodElapsedCallback>
 #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
     }
   }
