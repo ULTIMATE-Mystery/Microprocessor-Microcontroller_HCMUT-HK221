@@ -58,18 +58,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LED1_Pin GPIO_PIN_1
-#define LED1_GPIO_Port GPIOA
-#define LED2_Pin GPIO_PIN_2
-#define LED2_GPIO_Port GPIOA
-#define LED3_Pin GPIO_PIN_3
-#define LED3_GPIO_Port GPIOA
-#define LED4_Pin GPIO_PIN_4
-#define LED4_GPIO_Port GPIOA
-#define LED5_Pin GPIO_PIN_5
-#define LED5_GPIO_Port GPIOA
+#define LED1_Pin GPIO_PIN_0
+#define LED1_GPIO_Port GPIOB
+#define LED2_Pin GPIO_PIN_1
+#define LED2_GPIO_Port GPIOB
+#define LED3_Pin GPIO_PIN_2
+#define LED3_GPIO_Port GPIOB
+#define LED4_Pin GPIO_PIN_3
+#define LED4_GPIO_Port GPIOB
+#define LED5_Pin GPIO_PIN_4
+#define LED5_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+// Comment this line out if error reporting is NOT required
+//#define SCH_REPORT_ERRORS
+//Where error reporting is required, the port on which error codes will be displayed
+//is also determined via main.h:
+#ifdef SCH_REPORT_ERRORS
+//The port on which error codes will be displayed
+//ONLY USED IF ERRORS ARE REPORTED
+#define Error_port PORTA
+#endif
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
@@ -77,3 +85,5 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

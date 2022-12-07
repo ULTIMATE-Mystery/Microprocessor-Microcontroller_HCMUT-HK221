@@ -45,7 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 TIM_HandleTypeDef htim2;
 
-UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
@@ -53,17 +53,26 @@ UART_HandleTypeDef huart1;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_TIM2_Init(void);
 static void MX_GPIO_Init(void);
-static void MX_USART1_UART_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void LEDInit(void){
+	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 1);
+	HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+	HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, 1);
+	HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, 1);
+	HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, 1);
+}
+
 uint8_t var[30];
 int time_Stamp = 0;
+//char str[50];
 void Toggle_Led1(){
 	/* Toggle led */
 	HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
@@ -72,7 +81,7 @@ void Toggle_Led1(){
 	itoa(time_Stamp*10, var, 10);
 	strcat(showTimeStamp, var);
 	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart1, &showTimeStamp[0], strlen(showTimeStamp), 100);
+	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
 void Toggle_Led2(){
 	/* Toggle led */
@@ -82,7 +91,7 @@ void Toggle_Led2(){
 	itoa(time_Stamp*10, var, 10);
 	strcat(showTimeStamp, var);
 	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart1, &showTimeStamp[0], strlen(showTimeStamp), 100);
+	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
 void Toggle_Led3(){
 	/* Toggle led */
@@ -92,7 +101,7 @@ void Toggle_Led3(){
 	itoa(time_Stamp*10, var, 10);
 	strcat(showTimeStamp, var);
 	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart1, &showTimeStamp[0], strlen(showTimeStamp), 100);
+	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
 void Toggle_Led4(){
 	/* Toggle led */
@@ -102,7 +111,7 @@ void Toggle_Led4(){
 	itoa(time_Stamp*10, var, 10);
 	strcat(showTimeStamp, var);
 	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart1, &showTimeStamp[0], strlen(showTimeStamp), 100);
+	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
 void One_Shot_Led(){
 	/* Toggle led */
@@ -112,7 +121,7 @@ void One_Shot_Led(){
 	itoa(time_Stamp*10, var, 10);
 	strcat(showTimeStamp, var);
 	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart1, &showTimeStamp[0], strlen(showTimeStamp), 100);
+	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
 /* USER CODE END 0 */
 
@@ -123,6 +132,7 @@ void One_Shot_Led(){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -142,32 +152,27 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_TIM2_Init();
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
+  MX_TIM2_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  /* Turn off all led */
-  HAL_TIM_Base_Start_IT (& htim2 ) ;
-  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, SET);
-  HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, SET);
-  HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, SET);
-  HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, SET);
-  HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, SET);
-  /* Add task */
-  SCH_Add_Task(Toggle_Led1, 101, 50);
-  SCH_Add_Task(Toggle_Led2, 102, 100);
-  SCH_Add_Task(Toggle_Led3, 103, 150);
-  SCH_Add_Task(Toggle_Led4, 104, 200);
-  SCH_Add_Task(One_Shot_Led, 305, 0);
+  HAL_TIM_Base_Start_IT(&htim2);
+  SCH_Init();
+  LEDInit();
+  setTimer1(100);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  SCH_Add_Task(Toggle_Led1, 0, 200);
+  SCH_Add_Task(Toggle_Led2, 200, 100);
+  SCH_Add_Task(Toggle_Led3, 300, 200);
+  SCH_Add_Task(Toggle_Led4, 400, 300);
+  SCH_Add_Task(One_Shot_Led, 500, 0);
   while (1)
   {
-	  SCH_Dispatch_Tasks();
     /* USER CODE END WHILE */
-
+	  SCH_Dispatch_Tasks();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -193,7 +198,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -255,35 +259,35 @@ static void MX_TIM2_Init(void)
 }
 
 /**
-  * @brief USART1 Initialization Function
+  * @brief USART2 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_USART1_UART_Init(void)
+static void MX_USART2_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART1_Init 0 */
+  /* USER CODE BEGIN USART2_Init 0 */
 
-  /* USER CODE END USART1_Init 0 */
+  /* USER CODE END USART2_Init 0 */
 
-  /* USER CODE BEGIN USART1_Init 1 */
+  /* USER CODE BEGIN USART2_Init 1 */
 
-  /* USER CODE END USART1_Init 1 */
-  huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
-  huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  huart1.Init.StopBits = UART_STOPBITS_1;
-  huart1.Init.Parity = UART_PARITY_NONE;
-  huart1.Init.Mode = UART_MODE_TX_RX;
-  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&huart1) != HAL_OK)
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART1_Init 2 */
+  /* USER CODE BEGIN USART2_Init 2 */
 
-  /* USER CODE END USART1_Init 2 */
+  /* USER CODE END USART2_Init 2 */
 
 }
 
@@ -298,9 +302,10 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
+  HAL_GPIO_WritePin(GPIOB, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
                           |LED5_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED1_Pin LED2_Pin LED3_Pin LED4_Pin
@@ -310,14 +315,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
-	SCH_Update () ;
-	time_Stamp++;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2)
+{
+  SCH_Update();
+  time_Stamp++;
+  timerRun();
 }
 /* USER CODE END 4 */
 
@@ -352,3 +359,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
