@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "scheduler.h"
@@ -35,6 +34,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,7 +46,6 @@
 TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -83,6 +82,7 @@ void Toggle_Led1(){
 	strcat(showTimeStamp, "ms\r\n");
 	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
+
 void Toggle_Led2(){
 	/* Toggle led */
 	HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
@@ -93,6 +93,7 @@ void Toggle_Led2(){
 	strcat(showTimeStamp, "ms\r\n");
 	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
+
 void Toggle_Led3(){
 	/* Toggle led */
 	HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
@@ -103,6 +104,7 @@ void Toggle_Led3(){
 	strcat(showTimeStamp, "ms\r\n");
 	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
+
 void Toggle_Led4(){
 	/* Toggle led */
 	HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
@@ -113,6 +115,7 @@ void Toggle_Led4(){
 	strcat(showTimeStamp, "ms\r\n");
 	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
 }
+
 void One_Shot_Led(){
 	/* Toggle led */
 	HAL_GPIO_TogglePin(LED5_GPIO_Port, LED5_Pin);
@@ -129,8 +132,7 @@ void One_Shot_Led(){
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
-{
+int main(void) {
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -160,22 +162,22 @@ int main(void)
   SCH_Init();
   LEDInit();
   setTimer1(100);
-  /* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   SCH_Add_Task(Toggle_Led1, 0, 200);
   SCH_Add_Task(Toggle_Led2, 200, 100);
   SCH_Add_Task(Toggle_Led3, 300, 200);
   SCH_Add_Task(Toggle_Led4, 400, 300);
-  SCH_Add_Task(One_Shot_Led, 500, 0);
-  while (1)
-  {
-    /* USER CODE END WHILE */
-	  SCH_Dispatch_Tasks();
+  SCH_Add_Task(One_Shot_Led, 500, 0); //One-shot task
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1) {
     /* USER CODE BEGIN 3 */
+    SCH_Dispatch_Tasks();
+    /* USER CODE END 3 */
   }
-  /* USER CODE END 3 */
+  /* USER CODE END WHILE */
 }
 
 /**
@@ -320,8 +322,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2)
-{
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2) {
   SCH_Update();
   time_Stamp++;
   timerRun();
