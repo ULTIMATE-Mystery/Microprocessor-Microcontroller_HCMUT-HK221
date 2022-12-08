@@ -18,7 +18,6 @@
   + Vàng1 sẽ được chỉnh từ 1->đỏ2. Đặt lại xanh2 = đỏ1 - vàng2. Tương tự với Vàng2.
   + Khi Button1 được nhấn sẽ chuyển sang auto mode.
 
-Pedestrian button: khi nhấn nút này đèn của ng đi bộ sẽ hiển thị theo đèn trên tuyến đường. Buzzer sẽ kêu khi đèn ng đi đường là đèn xanh và khi counter
+Pedestrian button: khi nhấn nút này đèn của người đi bộ sẽ hiển thị theo đèn trên tuyến đường. Buzzer sẽ kêu khi đèn người đi đường là đèn xanh và khi counter
 của đèn xanh càng giảm thì buzzer kêu càng to. Nút nhấn này chỉ hoạt động khi hệ thống đang ở auto mode hoặc manual mode. Chức năng này sẽ tự động tắt ở cuối
 chu kì đèn vàng thứ 2 tính từ khi được nhấn. 
-
