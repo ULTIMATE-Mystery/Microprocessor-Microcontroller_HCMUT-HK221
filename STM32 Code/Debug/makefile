@@ -12,7 +12,6 @@ RM := rm -rf
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include Core/Inc/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -35,37 +34,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Traffic_Light
+BUILD_ARTIFACT_NAME := Assignment
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Traffic_Light.elf \
+Assignment.elf \
 
 MAP_FILES += \
-Traffic_Light.map \
+Assignment.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Traffic_Light.list \
+Assignment.list \
 
 OBJCOPY_HEX += \
-Traffic_Light.hex \
+Assignment.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Traffic_Light.elf secondary-outputs
+main-build: Assignment.elf secondary-outputs
 
 # Tool invocations
-Traffic_Light.elf Traffic_Light.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Microprocessor-Microcontroller_HCMUT-HK221\STM32\ Code\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Traffic_Light.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Microprocessor-Microcontroller_HCMUT-HK221\STM32 Code\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Traffic_Light.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Assignment.elf Assignment.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Assignment\STM32\ Code\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Assignment.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Assignment\STM32 Code\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,19 +73,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Traffic_Light.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Traffic_Light.list"
+Assignment.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Assignment.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Traffic_Light.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Traffic_Light.hex"
+Assignment.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Assignment.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Traffic_Light.elf Traffic_Light.hex Traffic_Light.list Traffic_Light.map default.size.stdout
+	-$(RM) Assignment.elf Assignment.hex Assignment.list Assignment.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

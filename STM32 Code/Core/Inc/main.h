@@ -32,7 +32,10 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+extern UART_HandleTypeDef huart2;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -50,6 +53,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -58,14 +63,28 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define BUTTON_Pin GPIO_PIN_7
-#define BUTTON_GPIO_Port GPIOA
-#define LED_Button_Pin GPIO_PIN_3
-#define LED_Button_GPIO_Port GPIOB
-#define TL1_B_Pin GPIO_PIN_4
-#define TL1_B_GPIO_Port GPIOB
-#define TL1_A_Pin GPIO_PIN_5
-#define TL1_A_GPIO_Port GPIOB
+#define PedestrianButton_Pin GPIO_PIN_0
+#define PedestrianButton_GPIO_Port GPIOA
+#define Button1_Pin GPIO_PIN_1
+#define Button1_GPIO_Port GPIOA
+#define Button2_Pin GPIO_PIN_4
+#define Button2_GPIO_Port GPIOA
+#define Buzzer_Pin GPIO_PIN_6
+#define Buzzer_GPIO_Port GPIOA
+#define Button3_Pin GPIO_PIN_0
+#define Button3_GPIO_Port GPIOB
+#define PedestrianLight_0_Pin GPIO_PIN_10
+#define PedestrianLight_0_GPIO_Port GPIOB
+#define PedestrianLight_1_Pin GPIO_PIN_8
+#define PedestrianLight_1_GPIO_Port GPIOA
+#define TrafficLight1_0_Pin GPIO_PIN_10
+#define TrafficLight1_0_GPIO_Port GPIOA
+#define TrafficLight1_1_Pin GPIO_PIN_3
+#define TrafficLight1_1_GPIO_Port GPIOB
+#define TrafficLight2_1_Pin GPIO_PIN_4
+#define TrafficLight2_1_GPIO_Port GPIOB
+#define TrafficLight2_0_Pin GPIO_PIN_5
+#define TrafficLight2_0_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
