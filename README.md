@@ -1,4 +1,4 @@
-# Project_MCU
+# Microprocessor - Microcontroller assignment
 
 - Auto mode:
   + Đèn sẽ hoạt động bình thường theo chu kì (Đỏ-xanh -> Đỏ-vàng -> xanh-đỏ -> Vàng-Đỏ).
