@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004bbc  0800010c  0800010c  0001010c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000068  08004cc8  08004cc8  00014cc8  2**2
+  2 .rodata       0000006c  08004cc8  08004cc8  00014cc8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08004d30  08004d30  00020098  2**0
+  3 .ARM.extab    00000000  08004d34  08004d34  00020098  2**0
                   CONTENTS
-  4 .ARM          00000000  08004d30  08004d30  00020098  2**0
+  4 .ARM          00000000  08004d34  08004d34  00020098  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08004d30  08004d30  00020098  2**0
+  5 .preinit_array 00000000  08004d34  08004d34  00020098  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004d30  08004d30  00014d30  2**2
+  6 .init_array   00000004  08004d34  08004d34  00014d34  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08004d34  08004d34  00014d34  2**2
+  7 .fini_array   00000004  08004d38  08004d38  00014d38  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000098  20000000  08004d38  00020000  2**2
+  8 .data         00000098  20000000  08004d3c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000004bc  20000098  08004dd0  00020098  2**2
+  9 .bss          000004bc  20000098  08004dd4  00020098  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000554  08004dd0  00020554  2**0
+ 10 ._user_heap_stack 00000604  20000554  08004dd4  00020554  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020098  2**0
                   CONTENTS, READONLY
@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00011eb3  00000000  00000000  0004a96e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008afd4  00000000  00000000  0005c821  2**0
+ 18 .debug_str    0008b017  00000000  00000000  0005c821  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000e77f5  2**0
+ 19 .comment      00000050  00000000  00000000  000e7838  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003be8  00000000  00000000  000e7848  2**2
+ 20 .debug_frame  00003be8  00000000  00000000  000e7888  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2909,7 +2909,7 @@ Disassembly of section .text:
  8001b9a:	4907      	ldr	r1, [pc, #28]	; (8001bb8 <displayCounter+0x50>)
  8001b9c:	4807      	ldr	r0, [pc, #28]	; (8001bbc <displayCounter+0x54>)
  8001b9e:	f002 fc0d 	bl	80043bc <siprintf>
- 8001ba2:	2209      	movs	r2, #9
+ 8001ba2:	220f      	movs	r2, #15
  8001ba4:	4905      	ldr	r1, [pc, #20]	; (8001bbc <displayCounter+0x54>)
  8001ba6:	4806      	ldr	r0, [pc, #24]	; (8001bc0 <displayCounter+0x58>)
  8001ba8:	f001 ffe3 	bl	8003b72 <HAL_UART_Transmit_IT>
@@ -2955,7 +2955,7 @@ Disassembly of section .text:
  8001bf6:	4770      	bx	lr
  8001bf8:	20000000 	.word	0x20000000
  8001bfc:	20000098 	.word	0x20000098
- 8001c00:	08004d38 	.word	0x08004d38
+ 8001c00:	08004d3c 	.word	0x08004d3c
  8001c04:	20000098 	.word	0x20000098
  8001c08:	20000554 	.word	0x20000554
 
@@ -4626,7 +4626,7 @@ Disassembly of section .text:
  8002aaa:	bf00      	nop
  8002aac:	40022000 	.word	0x40022000
  8002ab0:	40021000 	.word	0x40021000
- 8002ab4:	08004ce4 	.word	0x08004ce4
+ 8002ab4:	08004ce8 	.word	0x08004ce8
  8002ab8:	20000028 	.word	0x20000028
  8002abc:	2000002c 	.word	0x2000002c
 
@@ -4706,7 +4706,7 @@ Disassembly of section .text:
  8002b66:	bc90      	pop	{r4, r7}
  8002b68:	4770      	bx	lr
  8002b6a:	bf00      	nop
- 8002b6c:	08004cd4 	.word	0x08004cd4
+ 8002b6c:	08004cd8 	.word	0x08004cd8
  8002b70:	40021000 	.word	0x40021000
  8002b74:	007a1200 	.word	0x007a1200
  8002b78:	003d0900 	.word	0x003d0900
@@ -4737,7 +4737,7 @@ Disassembly of section .text:
  8002bac:	4618      	mov	r0, r3
  8002bae:	bd80      	pop	{r7, pc}
  8002bb0:	40021000 	.word	0x40021000
- 8002bb4:	08004cf4 	.word	0x08004cf4
+ 8002bb4:	08004cf8 	.word	0x08004cf8
 
 08002bb8 <HAL_RCC_GetPCLK2Freq>:
  8002bb8:	b580      	push	{r7, lr}
@@ -4754,7 +4754,7 @@ Disassembly of section .text:
  8002bd4:	4618      	mov	r0, r3
  8002bd6:	bd80      	pop	{r7, pc}
  8002bd8:	40021000 	.word	0x40021000
- 8002bdc:	08004cf4 	.word	0x08004cf4
+ 8002bdc:	08004cf8 	.word	0x08004cf8
 
 08002be0 <RCC_Delay>:
  8002be0:	b480      	push	{r7}
@@ -7522,10 +7522,10 @@ Disassembly of section .text:
  8004396:	4798      	blx	r3
  8004398:	3601      	adds	r6, #1
  800439a:	e7f2      	b.n	8004382 <__libc_init_array+0x1e>
- 800439c:	08004d30 	.word	0x08004d30
- 80043a0:	08004d30 	.word	0x08004d30
- 80043a4:	08004d30 	.word	0x08004d30
- 80043a8:	08004d34 	.word	0x08004d34
+ 800439c:	08004d34 	.word	0x08004d34
+ 80043a0:	08004d34 	.word	0x08004d34
+ 80043a4:	08004d34 	.word	0x08004d34
+ 80043a8:	08004d38 	.word	0x08004d38
 
 080043ac <memset>:
  80043ac:	4603      	mov	r3, r0
@@ -7843,9 +7843,9 @@ Disassembly of section .text:
  8004698:	f000 f87c 	bl	8004794 <_printf_i>
  800469c:	e7eb      	b.n	8004676 <_svfiprintf_r+0x1c2>
  800469e:	bf00      	nop
- 80046a0:	08004cfc 	.word	0x08004cfc
- 80046a4:	08004d02 	.word	0x08004d02
- 80046a8:	08004d06 	.word	0x08004d06
+ 80046a0:	08004d00 	.word	0x08004d00
+ 80046a4:	08004d06 	.word	0x08004d06
+ 80046a8:	08004d0a 	.word	0x08004d0a
  80046ac:	00000000 	.word	0x00000000
  80046b0:	080043fd 	.word	0x080043fd
 
@@ -8184,8 +8184,8 @@ Disassembly of section .text:
  80049d0:	2500      	movs	r5, #0
  80049d2:	f104 0619 	add.w	r6, r4, #25
  80049d6:	e7f5      	b.n	80049c4 <_printf_i+0x230>
- 80049d8:	08004d0d 	.word	0x08004d0d
- 80049dc:	08004d1e 	.word	0x08004d1e
+ 80049d8:	08004d11 	.word	0x08004d11
+ 80049dc:	08004d22 	.word	0x08004d22
 
 080049e0 <memchr>:
  80049e0:	4603      	mov	r3, r0

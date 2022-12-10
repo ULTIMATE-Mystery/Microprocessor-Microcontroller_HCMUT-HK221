@@ -128,6 +128,6 @@ void acceptTraffic2Yellow(){
 }
 
 void displayCounter(){
-	sprintf(str, "!7SEG:%d%d#", counter/10, counter%10);
-	HAL_UART_Transmit_IT(&huart2, (void*)str, 9);
+	sprintf(str, "!7SEG:%d%d#\r\n", counter/10, counter%10);
+	HAL_UART_Transmit_IT(&huart2, (void*)str, 15);
 }

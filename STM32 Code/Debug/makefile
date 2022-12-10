@@ -63,8 +63,8 @@ all: main-build
 main-build: Assignment.elf secondary-outputs
 
 # Tool invocations
-Assignment.elf Assignment.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Assignment\STM32\ Code\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Assignment.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Assignment\STM32 Code\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Assignment.elf Assignment.map: $(OBJS) $(USER_OBJS) C:\Projects\Microprocessor\ -\ Microcontroller\Microprocessor-Microcontroller_HCMUT-HK221\STM32\ Code\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Assignment.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Projects\Microprocessor - Microcontroller\Microprocessor-Microcontroller_HCMUT-HK221\STM32 Code\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Assignment.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
