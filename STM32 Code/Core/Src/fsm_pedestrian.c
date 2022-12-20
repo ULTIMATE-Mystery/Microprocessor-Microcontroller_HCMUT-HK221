@@ -1,5 +1,4 @@
 
-
 #include "fsm_pedestrian.h"
 
 int PWM = 0;
@@ -16,20 +15,16 @@ void fsm_pedestrian_run(){
 					pedestrianStatus = PED_GREEN;
 					setPedestrianGreen();
 					setTimer2(250);
-				}else if(status == MAN_RED_GREEN || status == MAN_RED_YELLOW ){
-					pedestrianStatus = PED_GREEN;
-					setPedestrianGreen();
-					setTimer2(0);
 				}
-				else if(status == AUTO_GREEN_RED || status == MAN_GREEN_RED || status == AUTO_YELLOW_RED || status == MAN_YELLOW_RED){
+				else if (status == AUTO_GREEN_RED || status == AUTO_YELLOW_RED){
 					pedestrianStatus = PED_RED;
 					setPedestrianRed();
 				}
 			}
 			break;
 		case PED_RED:
-			if(timer3_flag){
-				timer3_flag = 0;
+			if(timer2_flag){
+				timer2_flag = 0;
 				pedestrianStatus = PED_NONE;
 				clearPedestrian();
 				break;
@@ -39,16 +34,11 @@ void fsm_pedestrian_run(){
 				setPedestrianGreen();
 				setTimer2(250);
 			}
-			else if (status == MAN_RED_GREEN){
-				pedestrianStatus = PED_GREEN;
-				setPedestrianGreen();
-				setTimer2(0);
-			}
 			break;
 		case PED_GREEN:
 			if(timer2_flag){
 				if(PWM == 0){
-					PWM = 63-63*counter/max_red1;
+					PWM = 63-63*counter/(double)max_red1;
 					__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,PWM);
 				} else {
 					PWM = 0;
@@ -56,9 +46,9 @@ void fsm_pedestrian_run(){
 				}
 				setTimer2(250);
 			}
-			if(status == AUTO_GREEN_RED || status == MAN_GREEN_RED || status == AUTO_YELLOW_RED || status == MAN_YELLOW_RED){
+			if(status == AUTO_GREEN_RED || status == AUTO_YELLOW_RED){
 				pedestrianStatus = PED_RED;
-				setTimer3(2000);
+				setTimer2(2000);
 				setPedestrianRed();
 				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,0);
 			}

@@ -25,13 +25,13 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			isButtonPressed(2);
-			isButtonPressed(3);
+			//isButtonPressed(2);
+			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
-			setTimer1(60000);
+			setTimer1(30000);
 			setTraffic1Red();
 			setTraffic2Green();
-			counter = 99;
+			counter = 0;
 			displayCounter();
 			break;
 		}
@@ -50,13 +50,13 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			isButtonPressed(2);
-			isButtonPressed(3);
+			//isButtonPressed(2);
+			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
-			setTimer1(60000);
+			setTimer1(30000);
 			setTraffic1Red();
 			setTraffic2Green();
-			counter = 99;
+			counter = 0;
 			displayCounter();
 			break;
 		}
@@ -75,13 +75,13 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			isButtonPressed(2);
-			isButtonPressed(3);
+			//isButtonPressed(2);
+			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
-			setTimer1(60000);
+			setTimer1(30000);
 			setTraffic1Red();
 			setTraffic2Green();
-			counter = 99;
+			counter = 0;
 			displayCounter();
 			break;
 		}
@@ -101,14 +101,14 @@ void fsm_auto_run(){
 			displayCounter();
 		}
 
-		if(isButtonPressed(1)==1){
-			isButtonPressed(2);
-			isButtonPressed(3);
+		if(isButtonPressed(1)){
+			//isButtonPressed(2);
+			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
-			setTimer1(60000);
+			setTimer1(30000);
 			setTraffic1Red();
 			setTraffic2Green();
-			counter = 99;
+			counter = 0;
 			displayCounter();
 			break;
 		}

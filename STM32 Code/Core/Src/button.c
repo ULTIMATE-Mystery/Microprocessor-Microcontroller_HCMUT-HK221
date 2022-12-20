@@ -33,7 +33,6 @@ void button_reading(){
 		debounce_buffer3[i] = debounce_buffer2[i];
 		debounce_buffer2[i] = debounce_buffer1[i];
 		// readpin
-		//...
 
 		if(i == 0) debounce_buffer1[i] = HAL_GPIO_ReadPin(PedestrianButton_GPIO_Port, PedestrianButton_Pin);
 		else if(i == 1) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin);
@@ -66,7 +65,7 @@ void button_reading(){
 				}
 				break;
 			case BUTTON_IS_LONG_PRESSED:
-	            //if the button continues being pressed in duration, the button only triggered in a period defined previous.
+	            //if the button continues being pressed in duration, the button only triggered in a period defined previous
 				counter_for_button_pressed[i]++;
 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
 					button_process(i);

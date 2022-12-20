@@ -7,7 +7,7 @@ void fsm_tuning_run(){
 
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic1Red();
 		}
 
@@ -48,7 +48,7 @@ void fsm_tuning_run(){
 	case TUNING_RED2:
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic2Red();
 		}
 
@@ -89,7 +89,7 @@ void fsm_tuning_run(){
 
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic1Green();
 		}
 
@@ -120,7 +120,7 @@ void fsm_tuning_run(){
 
 		if(isButtonPressed(3)){
 			counter++;
-			if(counter > max_red2 - 1){
+			if(counter == max_red2){
 				counter = 1;
 			}
 			displayCounter();
@@ -130,7 +130,7 @@ void fsm_tuning_run(){
 
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic2Green();
 		}
 
@@ -161,7 +161,7 @@ void fsm_tuning_run(){
 
 		if(isButtonPressed(3)){
 			counter++;
-			if(counter > max_red1 - 1){
+			if(counter == max_red1){
 				counter = 1;
 			}
 			displayCounter();
@@ -170,7 +170,7 @@ void fsm_tuning_run(){
 	case TUNING_YELLOW1:
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic1Yellow();
 		}
 		if(isButtonPressed(1)){
@@ -200,7 +200,7 @@ void fsm_tuning_run(){
 
 		if(isButtonPressed(3)){
 			counter++;
-			if(counter > max_red2 - 1){
+			if(counter == max_red2){
 				counter = 1;
 			}
 			displayCounter();
@@ -209,7 +209,7 @@ void fsm_tuning_run(){
 	case TUNING_YELLOW2:
 		if(timer1_flag){
 			timer1_flag = 0;
-			setTimer1(1000);
+			setTimer1(500);
 			toggleTraffic2Yellow();
 		}
 
@@ -240,7 +240,7 @@ void fsm_tuning_run(){
 
 		if(isButtonPressed(3)){
 			counter++;
-			if(counter > max_red1 - 1){
+			if(counter == max_red1){
 				counter = 1;
 			}
 			displayCounter();
