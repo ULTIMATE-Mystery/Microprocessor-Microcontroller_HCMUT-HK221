@@ -4,7 +4,7 @@ Hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người
 
 *) 4 nút nhấn hoạt động như sau:
 
-- Button0 - Pedestrian button (nút nhấn dành cho người đi bộ): Khi nhấn nút này, đèn của người đi bộ sẽ hiển thị theo đèn trên tuyến đường. Buzzer (loa) sẽ kêu khi đèn người đi đường là đèn xanh và khi counter (thời gian) của đèn xanh càng giảm thì buzzer kêu càng to. Nút nhấn này chỉ hoạt động khi hệ thống đang ở Auto mode. Chức năng này sẽ tự động tắt ở cuối chu kì đèn vàng thứ 2 tính từ khi được nhấn.
+- Button0 - Pedestrian button (nút nhấn dành cho người đi bộ): Khi nhấn nút này, đèn của người đi bộ sẽ hiển thị theo đèn trên tuyến đường. Buzzer (loa) sẽ kêu khi đèn người đi đường là đèn xanh và khi counter (thời gian) của đèn xanh càng giảm thì buzzer kêu càng to. Nút nhấn này hoạt động khi hệ thống đang ở Auto mode và Manual mode. Chức năng này sẽ tự động tắt ở cuối chu kì đèn vàng thứ 2 tính từ khi được nhấn.
 
 - Button1 - Mode button: Nhấn nút này để chuyển mode theo tuần tự: Auto mode -> Manual mode -> Tuning mode.
 
