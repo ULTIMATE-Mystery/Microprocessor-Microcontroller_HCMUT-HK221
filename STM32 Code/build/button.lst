@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
   55 0000 00000000 		.space	16
   55      00000000 
   55      00000000 
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 2
 
 
   55      00000000 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
   18:./Core/Src/button.c **** 		button_flag[index] = 0;
   92              		.loc 1 18 22
   93 0014 064A     		ldr	r2, .L4
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 3
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 3
 
 
   94 0016 7B68     		ldr	r3, [r7, #4]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
   25:./Core/Src/button.c **** 	if(index >= 0 && index < NO_OF_BUTTONS){
  144              		.loc 1 25 4
  145 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 4
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 4
 
 
  146 000a 002B     		cmp	r3, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
  197              	.LBB2:
   31:./Core/Src/button.c **** 	for(uint8_t i = 0 ; i < NO_OF_BUTTONS; i++){
  198              		.loc 1 31 14
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 5
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 5
 
 
  199 0006 0023     		movs	r3, #0
@@ -270,137 +270,136 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
  222 0026 7149     		ldr	r1, .L33
  223 0028 41F82320 		str	r2, [r1, r3, lsl #2]
   35:./Core/Src/button.c **** 		// readpin
-  36:./Core/Src/button.c **** 		//...
-  37:./Core/Src/button.c **** 
-  38:./Core/Src/button.c **** 		if(i == 0) debounce_buffer1[i] = HAL_GPIO_ReadPin(PedestrianButton_GPIO_Port, PedestrianButton_Pi
- 224              		.loc 1 38 5
+  36:./Core/Src/button.c **** 
+  37:./Core/Src/button.c **** 		if(i == 0) debounce_buffer1[i] = HAL_GPIO_ReadPin(PedestrianButton_GPIO_Port, PedestrianButton_Pi
+ 224              		.loc 1 37 5
  225 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  226 002e 002B     		cmp	r3, #0
  227 0030 0BD1     		bne	.L13
- 228              		.loc 1 38 36 discriminator 1
+ 228              		.loc 1 37 36 discriminator 1
  229 0032 0121     		movs	r1, #1
  230 0034 7048     		ldr	r0, .L33+12
  231 0036 FFF7FEFF 		bl	HAL_GPIO_ReadPin
  232 003a 0346     		mov	r3, r0
  233 003c 1A46     		mov	r2, r3
- 234              		.loc 1 38 30 discriminator 1
+ 234              		.loc 1 37 30 discriminator 1
  235 003e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 236              		.loc 1 38 36 discriminator 1
+ 236              		.loc 1 37 36 discriminator 1
  237 0040 1146     		mov	r1, r2
- 238              		.loc 1 38 34 discriminator 1
+ 238              		.loc 1 37 34 discriminator 1
  239 0042 6C4A     		ldr	r2, .L33+8
  240 0044 42F82310 		str	r1, [r2, r3, lsl #2]
  241 0048 2BE0     		b	.L14
  242              	.L13:
-  39:./Core/Src/button.c **** 		else if(i == 1) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin);
- 243              		.loc 1 39 10
+  38:./Core/Src/button.c **** 		else if(i == 1) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin);
+ 243              		.loc 1 38 10
  244 004a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  245 004c 012B     		cmp	r3, #1
  246 004e 0BD1     		bne	.L15
- 247              		.loc 1 39 41 discriminator 1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 6
-
-
+ 247              		.loc 1 38 41 discriminator 1
  248 0050 0221     		movs	r1, #2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 6
+
+
  249 0052 6948     		ldr	r0, .L33+12
  250 0054 FFF7FEFF 		bl	HAL_GPIO_ReadPin
  251 0058 0346     		mov	r3, r0
  252 005a 1A46     		mov	r2, r3
- 253              		.loc 1 39 35 discriminator 1
+ 253              		.loc 1 38 35 discriminator 1
  254 005c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 255              		.loc 1 39 41 discriminator 1
+ 255              		.loc 1 38 41 discriminator 1
  256 005e 1146     		mov	r1, r2
- 257              		.loc 1 39 39 discriminator 1
+ 257              		.loc 1 38 39 discriminator 1
  258 0060 644A     		ldr	r2, .L33+8
  259 0062 42F82310 		str	r1, [r2, r3, lsl #2]
  260 0066 1CE0     		b	.L14
  261              	.L15:
-  40:./Core/Src/button.c **** 		else if(i == 2) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button2_GPIO_Port, Button2_Pin);
- 262              		.loc 1 40 10
+  39:./Core/Src/button.c **** 		else if(i == 2) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button2_GPIO_Port, Button2_Pin);
+ 262              		.loc 1 39 10
  263 0068 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  264 006a 022B     		cmp	r3, #2
  265 006c 0BD1     		bne	.L16
- 266              		.loc 1 40 41 discriminator 1
+ 266              		.loc 1 39 41 discriminator 1
  267 006e 1021     		movs	r1, #16
  268 0070 6148     		ldr	r0, .L33+12
  269 0072 FFF7FEFF 		bl	HAL_GPIO_ReadPin
  270 0076 0346     		mov	r3, r0
  271 0078 1A46     		mov	r2, r3
- 272              		.loc 1 40 35 discriminator 1
+ 272              		.loc 1 39 35 discriminator 1
  273 007a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 274              		.loc 1 40 41 discriminator 1
+ 274              		.loc 1 39 41 discriminator 1
  275 007c 1146     		mov	r1, r2
- 276              		.loc 1 40 39 discriminator 1
+ 276              		.loc 1 39 39 discriminator 1
  277 007e 5D4A     		ldr	r2, .L33+8
  278 0080 42F82310 		str	r1, [r2, r3, lsl #2]
  279 0084 0DE0     		b	.L14
  280              	.L16:
-  41:./Core/Src/button.c **** 		else if(i == 3) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button3_GPIO_Port, Button3_Pin);
- 281              		.loc 1 41 10
+  40:./Core/Src/button.c **** 		else if(i == 3) debounce_buffer1[i] = HAL_GPIO_ReadPin(Button3_GPIO_Port, Button3_Pin);
+ 281              		.loc 1 40 10
  282 0086 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  283 0088 032B     		cmp	r3, #3
  284 008a 0AD1     		bne	.L14
- 285              		.loc 1 41 41 discriminator 1
+ 285              		.loc 1 40 41 discriminator 1
  286 008c 0121     		movs	r1, #1
  287 008e 5B48     		ldr	r0, .L33+16
  288 0090 FFF7FEFF 		bl	HAL_GPIO_ReadPin
  289 0094 0346     		mov	r3, r0
  290 0096 1A46     		mov	r2, r3
- 291              		.loc 1 41 35 discriminator 1
+ 291              		.loc 1 40 35 discriminator 1
  292 0098 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 293              		.loc 1 41 41 discriminator 1
+ 293              		.loc 1 40 41 discriminator 1
  294 009a 1146     		mov	r1, r2
- 295              		.loc 1 41 39 discriminator 1
+ 295              		.loc 1 40 39 discriminator 1
  296 009c 554A     		ldr	r2, .L33+8
  297 009e 42F82310 		str	r1, [r2, r3, lsl #2]
  298              	.L14:
+  41:./Core/Src/button.c **** 
   42:./Core/Src/button.c **** 
-  43:./Core/Src/button.c **** 
-  44:./Core/Src/button.c ****         //process after debouncing
-  45:./Core/Src/button.c **** 		if((debounce_buffer3[i] == debounce_buffer2[i]) && debounce_buffer2[i] == debounce_buffer1[i]){
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 7
+  43:./Core/Src/button.c ****         //process after debouncing
+  44:./Core/Src/button.c **** 		if((debounce_buffer3[i] == debounce_buffer2[i]) && debounce_buffer2[i] == debounce_buffer1[i]){
+ 299              		.loc 1 44 23
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 7
 
 
- 299              		.loc 1 45 23
  300 00a2 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  301 00a4 524A     		ldr	r2, .L33+4
  302 00a6 52F82320 		ldr	r2, [r2, r3, lsl #2]
- 303              		.loc 1 45 46
+ 303              		.loc 1 44 46
  304 00aa FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  305 00ac 4F49     		ldr	r1, .L33
  306 00ae 51F82330 		ldr	r3, [r1, r3, lsl #2]
- 307              		.loc 1 45 5
+ 307              		.loc 1 44 5
  308 00b2 9A42     		cmp	r2, r3
  309 00b4 40F08480 		bne	.L28
- 310              		.loc 1 45 70 discriminator 1
+ 310              		.loc 1 44 70 discriminator 1
  311 00b8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  312 00ba 4C4A     		ldr	r2, .L33
  313 00bc 52F82320 		ldr	r2, [r2, r3, lsl #2]
- 314              		.loc 1 45 93 discriminator 1
+ 314              		.loc 1 44 93 discriminator 1
  315 00c0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  316 00c2 4C49     		ldr	r1, .L33+8
  317 00c4 51F82330 		ldr	r3, [r1, r3, lsl #2]
- 318              		.loc 1 45 51 discriminator 1
+ 318              		.loc 1 44 51 discriminator 1
  319 00c8 9A42     		cmp	r2, r3
  320 00ca 79D1     		bne	.L28
-  46:./Core/Src/button.c **** 			button_buffer[i] = debounce_buffer3[i];
- 321              		.loc 1 46 39
+  45:./Core/Src/button.c **** 			button_buffer[i] = debounce_buffer3[i];
+ 321              		.loc 1 45 39
  322 00cc FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
- 323              		.loc 1 46 17
+ 323              		.loc 1 45 17
  324 00ce FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 325              		.loc 1 46 39
+ 325              		.loc 1 45 39
  326 00d0 4749     		ldr	r1, .L33+4
  327 00d2 51F82220 		ldr	r2, [r1, r2, lsl #2]
- 328              		.loc 1 46 21
+ 328              		.loc 1 45 21
  329 00d6 4A49     		ldr	r1, .L33+20
  330 00d8 41F82320 		str	r2, [r1, r3, lsl #2]
-  47:./Core/Src/button.c **** 			// fsm for processing button
-  48:./Core/Src/button.c **** 			switch(button_state[i]){
- 331              		.loc 1 48 23
+  46:./Core/Src/button.c **** 			// fsm for processing button
+  47:./Core/Src/button.c **** 			switch(button_state[i]){
+ 331              		.loc 1 47 23
  332 00dc FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  333 00de 494A     		ldr	r2, .L33+24
  334 00e0 52F82330 		ldr	r3, [r2, r3, lsl #2]
- 335              		.loc 1 48 4
+ 335              		.loc 1 47 4
  336 00e4 0D2B     		cmp	r3, #13
  337 00e6 43D0     		beq	.L18
  338 00e8 0D2B     		cmp	r3, #13
@@ -409,235 +408,235 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
  341 00ee 02D0     		beq	.L20
  342 00f0 0C2B     		cmp	r3, #12
  343 00f2 2DD0     		beq	.L21
-  49:./Core/Src/button.c **** 			case BUTTON_IS_PRESSED:
-  50:./Core/Src/button.c **** 		        //waiting for a period if the button is pressed in a duration
-  51:./Core/Src/button.c **** 				counter_for_button_pressed[i]++;
-  52:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
-  53:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
-  54:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
-  55:./Core/Src/button.c **** 					button_process(i);
-  56:./Core/Src/button.c **** 				}
-  57:./Core/Src/button.c **** 				if(button_buffer[i] == RELEASED_STATE){
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 8
+  48:./Core/Src/button.c **** 			case BUTTON_IS_PRESSED:
+  49:./Core/Src/button.c **** 		        //waiting for a period if the button is pressed in a duration
+  50:./Core/Src/button.c **** 				counter_for_button_pressed[i]++;
+  51:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
+  52:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
+  53:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+  54:./Core/Src/button.c **** 					button_process(i);
+  55:./Core/Src/button.c **** 				}
+  56:./Core/Src/button.c **** 				if(button_buffer[i] == RELEASED_STATE){
+  57:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 8
 
 
-  58:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
-  59:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
-  60:./Core/Src/button.c **** 				}
-  61:./Core/Src/button.c **** 				break;
-  62:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
-  63:./Core/Src/button.c **** 				if(button_buffer[i] == PRESSED_STATE){
-  64:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
-  65:./Core/Src/button.c **** 					button_process(i);
-  66:./Core/Src/button.c **** 				}
-  67:./Core/Src/button.c **** 				break;
-  68:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
-  69:./Core/Src/button.c **** 	            //if the button continues being pressed in duration, the button only triggered in a pe
-  70:./Core/Src/button.c **** 				counter_for_button_pressed[i]++;
-  71:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
-  72:./Core/Src/button.c **** 					button_process(i);
-  73:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
-  74:./Core/Src/button.c **** 				}
-  75:./Core/Src/button.c **** 				if(button_buffer[i] == RELEASED_STATE){
-  76:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
-  77:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
-  78:./Core/Src/button.c **** 				}
-  79:./Core/Src/button.c **** 				break;
-  80:./Core/Src/button.c **** 			default:
-  81:./Core/Src/button.c **** 				break;
- 344              		.loc 1 81 5
+  58:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+  59:./Core/Src/button.c **** 				}
+  60:./Core/Src/button.c **** 				break;
+  61:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
+  62:./Core/Src/button.c **** 				if(button_buffer[i] == PRESSED_STATE){
+  63:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
+  64:./Core/Src/button.c **** 					button_process(i);
+  65:./Core/Src/button.c **** 				}
+  66:./Core/Src/button.c **** 				break;
+  67:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
+  68:./Core/Src/button.c **** 	            //if the button continues being pressed in duration, the button only triggered in a pe
+  69:./Core/Src/button.c **** 				counter_for_button_pressed[i]++;
+  70:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
+  71:./Core/Src/button.c **** 					button_process(i);
+  72:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+  73:./Core/Src/button.c **** 				}
+  74:./Core/Src/button.c **** 				if(button_buffer[i] == RELEASED_STATE){
+  75:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+  76:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+  77:./Core/Src/button.c **** 				}
+  78:./Core/Src/button.c **** 				break;
+  79:./Core/Src/button.c **** 			default:
+  80:./Core/Src/button.c **** 				break;
+ 344              		.loc 1 80 5
  345 00f4 66E0     		b	.L29
  346              	.L20:
-  51:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
- 347              		.loc 1 51 31
+  50:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
+ 347              		.loc 1 50 31
  348 00f6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  349 00f8 434A     		ldr	r2, .L33+28
  350 00fa 52F82320 		ldr	r2, [r2, r3, lsl #2]
-  51:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
- 351              		.loc 1 51 34
+  50:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == WAITING_TIME/TIMER_CYCLE){
+ 351              		.loc 1 50 34
  352 00fe 0132     		adds	r2, r2, #1
  353 0100 4149     		ldr	r1, .L33+28
  354 0102 41F82320 		str	r2, [r1, r3, lsl #2]
-  52:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
- 355              		.loc 1 52 34
+  51:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
+ 355              		.loc 1 51 34
  356 0106 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  357 0108 3F4A     		ldr	r2, .L33+28
  358 010a 52F82330 		ldr	r3, [r2, r3, lsl #2]
-  52:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
- 359              		.loc 1 52 7
+  51:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_LONG_PRESSED;
+ 359              		.loc 1 51 7
  360 010e 642B     		cmp	r3, #100
  361 0110 0DD1     		bne	.L22
-  53:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 362              		.loc 1 53 18
+  52:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 362              		.loc 1 52 18
  363 0112 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  53:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 364              		.loc 1 53 22
+  52:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 364              		.loc 1 52 22
  365 0114 3B4A     		ldr	r2, .L33+24
  366 0116 0D21     		movs	r1, #13
  367 0118 42F82310 		str	r1, [r2, r3, lsl #2]
-  54:./Core/Src/button.c **** 					button_process(i);
- 368              		.loc 1 54 32
+  53:./Core/Src/button.c **** 					button_process(i);
+ 368              		.loc 1 53 32
  369 011c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 9
+  53:./Core/Src/button.c **** 					button_process(i);
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 9
 
 
-  54:./Core/Src/button.c **** 					button_process(i);
- 370              		.loc 1 54 36
+ 370              		.loc 1 53 36
  371 011e 3A4A     		ldr	r2, .L33+28
  372 0120 0021     		movs	r1, #0
  373 0122 42F82310 		str	r1, [r2, r3, lsl #2]
-  55:./Core/Src/button.c **** 				}
- 374              		.loc 1 55 6
+  54:./Core/Src/button.c **** 				}
+ 374              		.loc 1 54 6
  375 0126 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  376 0128 1846     		mov	r0, r3
  377 012a FFF7FEFF 		bl	button_process
  378              	.L22:
-  57:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
- 379              		.loc 1 57 21
+  56:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+ 379              		.loc 1 56 21
  380 012e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  381 0130 334A     		ldr	r2, .L33+20
  382 0132 52F82330 		ldr	r3, [r2, r3, lsl #2]
-  57:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
- 383              		.loc 1 57 7
+  56:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+ 383              		.loc 1 56 7
  384 0136 012B     		cmp	r3, #1
  385 0138 46D1     		bne	.L30
-  58:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 386              		.loc 1 58 18
+  57:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 386              		.loc 1 57 18
  387 013a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  58:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 388              		.loc 1 58 22
+  57:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 388              		.loc 1 57 22
  389 013c 314A     		ldr	r2, .L33+24
  390 013e 0C21     		movs	r1, #12
  391 0140 42F82310 		str	r1, [r2, r3, lsl #2]
-  59:./Core/Src/button.c **** 				}
- 392              		.loc 1 59 32
+  58:./Core/Src/button.c **** 				}
+ 392              		.loc 1 58 32
  393 0144 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  59:./Core/Src/button.c **** 				}
- 394              		.loc 1 59 36
+  58:./Core/Src/button.c **** 				}
+ 394              		.loc 1 58 36
  395 0146 304A     		ldr	r2, .L33+28
  396 0148 0021     		movs	r1, #0
  397 014a 42F82310 		str	r1, [r2, r3, lsl #2]
-  61:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
- 398              		.loc 1 61 5
+  60:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
+ 398              		.loc 1 60 5
  399 014e 3BE0     		b	.L30
  400              	.L21:
-  63:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
- 401              		.loc 1 63 21
+  62:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
+ 401              		.loc 1 62 21
  402 0150 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  403 0152 2B4A     		ldr	r2, .L33+20
  404 0154 52F82330 		ldr	r3, [r2, r3, lsl #2]
-  63:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
- 405              		.loc 1 63 7
+  62:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_PRESSED;
+ 405              		.loc 1 62 7
  406 0158 002B     		cmp	r3, #0
  407 015a 37D1     		bne	.L31
-  64:./Core/Src/button.c **** 					button_process(i);
- 408              		.loc 1 64 18
+  63:./Core/Src/button.c **** 					button_process(i);
+ 408              		.loc 1 63 18
  409 015c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  64:./Core/Src/button.c **** 					button_process(i);
- 410              		.loc 1 64 22
+  63:./Core/Src/button.c **** 					button_process(i);
+ 410              		.loc 1 63 22
  411 015e 294A     		ldr	r2, .L33+24
  412 0160 0B21     		movs	r1, #11
  413 0162 42F82310 		str	r1, [r2, r3, lsl #2]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 10
+  64:./Core/Src/button.c **** 				}
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 10
 
 
-  65:./Core/Src/button.c **** 				}
- 414              		.loc 1 65 6
+ 414              		.loc 1 64 6
  415 0166 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  416 0168 1846     		mov	r0, r3
  417 016a FFF7FEFF 		bl	button_process
-  67:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
- 418              		.loc 1 67 5
+  66:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
+ 418              		.loc 1 66 5
  419 016e 2DE0     		b	.L31
  420              	.L18:
-  70:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
- 421              		.loc 1 70 31
+  69:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
+ 421              		.loc 1 69 31
  422 0170 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  423 0172 254A     		ldr	r2, .L33+28
  424 0174 52F82320 		ldr	r2, [r2, r3, lsl #2]
-  70:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
- 425              		.loc 1 70 34
+  69:./Core/Src/button.c **** 				if(counter_for_button_pressed[i] == TIME_OUT_FOR_KEY_PRESSED/TIMER_CYCLE){
+ 425              		.loc 1 69 34
  426 0178 0132     		adds	r2, r2, #1
  427 017a 2349     		ldr	r1, .L33+28
  428 017c 41F82320 		str	r2, [r1, r3, lsl #2]
-  71:./Core/Src/button.c **** 					button_process(i);
- 429              		.loc 1 71 34
+  70:./Core/Src/button.c **** 					button_process(i);
+ 429              		.loc 1 70 34
  430 0180 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  431 0182 214A     		ldr	r2, .L33+28
  432 0184 52F82330 		ldr	r3, [r2, r3, lsl #2]
-  71:./Core/Src/button.c **** 					button_process(i);
- 433              		.loc 1 71 7
+  70:./Core/Src/button.c **** 					button_process(i);
+ 433              		.loc 1 70 7
  434 0188 142B     		cmp	r3, #20
  435 018a 08D1     		bne	.L25
-  72:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 436              		.loc 1 72 6
+  71:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 436              		.loc 1 71 6
  437 018c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  438 018e 1846     		mov	r0, r3
  439 0190 FFF7FEFF 		bl	button_process
-  73:./Core/Src/button.c **** 				}
- 440              		.loc 1 73 32
+  72:./Core/Src/button.c **** 				}
+ 440              		.loc 1 72 32
  441 0194 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  73:./Core/Src/button.c **** 				}
- 442              		.loc 1 73 36
+  72:./Core/Src/button.c **** 				}
+ 442              		.loc 1 72 36
  443 0196 1C4A     		ldr	r2, .L33+28
  444 0198 0021     		movs	r1, #0
  445 019a 42F82310 		str	r1, [r2, r3, lsl #2]
  446              	.L25:
-  75:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
- 447              		.loc 1 75 21
+  74:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+ 447              		.loc 1 74 21
  448 019e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  449 01a0 174A     		ldr	r2, .L33+20
  450 01a2 52F82330 		ldr	r3, [r2, r3, lsl #2]
-  75:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
- 451              		.loc 1 75 7
+  74:./Core/Src/button.c **** 					button_state[i] = BUTTON_IS_RELEASED;
+ 451              		.loc 1 74 7
  452 01a6 012B     		cmp	r3, #1
  453 01a8 12D1     		bne	.L32
-  76:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 454              		.loc 1 76 18
+  75:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 454              		.loc 1 75 18
  455 01aa FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  76:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
- 456              		.loc 1 76 22
+  75:./Core/Src/button.c **** 					counter_for_button_pressed[i] = 0;
+ 456              		.loc 1 75 22
  457 01ac 154A     		ldr	r2, .L33+24
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 11
-
-
  458 01ae 0C21     		movs	r1, #12
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 11
+
+
  459 01b0 42F82310 		str	r1, [r2, r3, lsl #2]
-  77:./Core/Src/button.c **** 				}
- 460              		.loc 1 77 32
+  76:./Core/Src/button.c **** 				}
+ 460              		.loc 1 76 32
  461 01b4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-  77:./Core/Src/button.c **** 				}
- 462              		.loc 1 77 36
+  76:./Core/Src/button.c **** 				}
+ 462              		.loc 1 76 36
  463 01b6 144A     		ldr	r2, .L33+28
  464 01b8 0021     		movs	r1, #0
  465 01ba 42F82310 		str	r1, [r2, r3, lsl #2]
-  79:./Core/Src/button.c **** 			default:
- 466              		.loc 1 79 5
+  78:./Core/Src/button.c **** 			default:
+ 466              		.loc 1 78 5
  467 01be 07E0     		b	.L32
  468              	.L28:
-  82:./Core/Src/button.c **** 			}
-  83:./Core/Src/button.c **** 		}
- 469              		.loc 1 83 3
+  81:./Core/Src/button.c **** 			}
+  82:./Core/Src/button.c **** 		}
+ 469              		.loc 1 82 3
  470 01c0 00BF     		nop
  471 01c2 06E0     		b	.L17
  472              	.L29:
-  81:./Core/Src/button.c **** 			}
- 473              		.loc 1 81 5
+  80:./Core/Src/button.c **** 			}
+ 473              		.loc 1 80 5
  474 01c4 00BF     		nop
  475 01c6 04E0     		b	.L17
  476              	.L30:
-  61:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
- 477              		.loc 1 61 5
+  60:./Core/Src/button.c **** 			case BUTTON_IS_RELEASED:
+ 477              		.loc 1 60 5
  478 01c8 00BF     		nop
  479 01ca 02E0     		b	.L17
  480              	.L31:
-  67:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
- 481              		.loc 1 67 5
+  66:./Core/Src/button.c **** 			case BUTTON_IS_LONG_PRESSED:
+ 481              		.loc 1 66 5
  482 01cc 00BF     		nop
  483 01ce 00E0     		b	.L17
  484              	.L32:
-  79:./Core/Src/button.c **** 			default:
- 485              		.loc 1 79 5
+  78:./Core/Src/button.c **** 			default:
+ 485              		.loc 1 78 5
  486 01d0 00BF     		nop
  487              	.L17:
   31:./Core/Src/button.c ****         //debouncing button
@@ -652,16 +651,16 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
  495 01da 032B     		cmp	r3, #3
  496 01dc 7FF616AF 		bls	.L27
  497              	.LBE2:
-  84:./Core/Src/button.c **** 	}
-  85:./Core/Src/button.c **** }
- 498              		.loc 1 85 1
+  83:./Core/Src/button.c **** 	}
+  84:./Core/Src/button.c **** }
+ 498              		.loc 1 84 1
  499 01e0 00BF     		nop
  500 01e2 00BF     		nop
  501 01e4 0837     		adds	r7, r7, #8
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 12
-
-
  502              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 12
+
+
  503 01e6 BD46     		mov	sp, r7
  504              		.cfi_def_cfa_register 13
  505              		@ sp needed
@@ -685,34 +684,34 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 1
  524              		.file 3 "c:\\st\\stm32cubeide_1.10.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  525              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
  526              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 13
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 button.c
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:18     .bss.button_buffer:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:21     .bss.button_buffer:0000000000000000 button_buffer
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:24     .bss.debounce_buffer1:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:27     .bss.debounce_buffer1:0000000000000000 debounce_buffer1
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:30     .bss.debounce_buffer2:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:33     .bss.debounce_buffer2:0000000000000000 debounce_buffer2
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:36     .bss.debounce_buffer3:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:39     .bss.debounce_buffer3:0000000000000000 debounce_buffer3
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:42     .data.button_state:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:45     .data.button_state:0000000000000000 button_state
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:51     .bss.counter_for_button_pressed:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:54     .bss.counter_for_button_pressed:0000000000000000 counter_for_button_pressed
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:57     .bss.button_flag:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:60     .bss.button_flag:0000000000000000 button_flag
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:63     .text.isButtonPressed:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:69     .text.isButtonPressed:0000000000000000 isButtonPressed
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:118    .text.isButtonPressed:0000000000000030 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:123    .text.button_process:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:129    .text.button_process:0000000000000000 button_process
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:172    .text.button_process:0000000000000028 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:177    .text.button_reading:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:183    .text.button_reading:0000000000000000 button_reading
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:510    .text.button_reading:00000000000001ec $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:18     .bss.button_buffer:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:21     .bss.button_buffer:0000000000000000 button_buffer
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:24     .bss.debounce_buffer1:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:27     .bss.debounce_buffer1:0000000000000000 debounce_buffer1
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:30     .bss.debounce_buffer2:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:33     .bss.debounce_buffer2:0000000000000000 debounce_buffer2
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:36     .bss.debounce_buffer3:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:39     .bss.debounce_buffer3:0000000000000000 debounce_buffer3
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:42     .data.button_state:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:45     .data.button_state:0000000000000000 button_state
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:51     .bss.counter_for_button_pressed:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:54     .bss.counter_for_button_pressed:0000000000000000 counter_for_button_pressed
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:57     .bss.button_flag:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:60     .bss.button_flag:0000000000000000 button_flag
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:63     .text.isButtonPressed:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:69     .text.isButtonPressed:0000000000000000 isButtonPressed
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:118    .text.isButtonPressed:0000000000000030 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:123    .text.button_process:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:129    .text.button_process:0000000000000000 button_process
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:172    .text.button_process:0000000000000028 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:177    .text.button_reading:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:183    .text.button_reading:0000000000000000 button_reading
+C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s:510    .text.button_reading:00000000000001ec $d
                            .group:0000000000000000 wm4.0.cb5f01749778df26340c4505df3d34d0
                            .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
                            .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
@@ -745,7 +744,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s:510    .text.button_reading:0000
                            .group:0000000000000000 wm4.stm32f1xx_hal_cortex.h.22.b5f4174bb6a50d95405567b8f50e0900
                            .group:0000000000000000 wm4.stm32f1xx_hal_flash.h.22.5cea9a7210e6315b41724b47b5fdf203
                            .group:0000000000000000 wm4.stm32f1xx_hal_flash_ex.h.22.d4e19c21f2a86fa2f8ec2c2d5f1ab2af
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwa0MbM.s 			page 14
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cceCqwXa.s 			page 14
 
 
                            .group:0000000000000000 wm4.stm32f1xx_hal_pwr.h.22.3438c476faafc3240bf146f143df3fcd

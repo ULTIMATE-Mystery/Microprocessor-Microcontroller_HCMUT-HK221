@@ -22,8 +22,7 @@ build/traffic.o: Core/Src/traffic.c Core/Inc/traffic.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Core/Inc/global.h \
- Core/Inc/timer.h Core/Inc/button.h Core/Inc/traffic.h \
- Core/Inc/scheduler.h
+ Core/Inc/timer.h Core/Inc/button.h Core/Inc/traffic.h
 Core/Inc/traffic.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -55,4 +54,3 @@ Core/Inc/global.h:
 Core/Inc/timer.h:
 Core/Inc/button.h:
 Core/Inc/traffic.h:
-Core/Inc/scheduler.h:

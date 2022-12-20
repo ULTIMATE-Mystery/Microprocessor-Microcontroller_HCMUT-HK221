@@ -22,12 +22,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "scheduler.h"
 #include "fsm_auto.h"
 #include "fsm_manual.h"
 #include "fsm_tuning.h"
 #include "fsm_pedestrian.h"
-#include "scheduler.h"
 
 /* USER CODE END Includes */
 
@@ -109,8 +107,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  SCH_Init();
-//  SCH_Add_Task(test_IO, 10, 10);
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE END 2 */

@@ -7,7 +7,6 @@
 #include "main.h"
 #include "button.h"
 #include "traffic.h"
-#include "scheduler.h"
 
 #define	INIT			1
 #define	AUTO_RED_GREEN	2

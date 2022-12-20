@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 1
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -42,23 +42,23 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 1
   36              		.cfi_def_cfa_register 7
    5:./Core/Src/fsm_tuning.c **** 	switch(status){
   37              		.loc 1 5 2
-  38 0004 B64B     		ldr	r3, .L49
+  38 0004 AE4B     		ldr	r3, .L49
   39 0006 1B68     		ldr	r3, [r3]
   40 0008 153B     		subs	r3, r3, #21
   41 000a 052B     		cmp	r3, #5
-  42 000c 00F27682 		bhi	.L41
+  42 000c 00F23082 		bhi	.L41
   43 0010 01A2     		adr	r2, .L4
   44 0012 52F823F0 		ldr	pc, [r2, r3, lsl #2]
   45 0016 00BF     		.p2align 2
   46              	.L4:
   47 0018 31000000 		.word	.L9+1
-  48 001c F7000000 		.word	.L8+1
-  49 0020 BD010000 		.word	.L7+1
-  50 0024 87020000 		.word	.L6+1
-  51 0028 6D030000 		.word	.L5+1
-  52 002c 35040000 		.word	.L3+1
+  48 001c DF000000 		.word	.L8+1
+  49 0020 8D010000 		.word	.L7+1
+  50 0024 3F020000 		.word	.L6+1
+  51 0028 11030000 		.word	.L5+1
+  52 002c C1030000 		.word	.L3+1
   53              		.p2align 1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 2
 
 
   54              	.L9:
@@ -66,19 +66,19 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 1
    7:./Core/Src/fsm_tuning.c **** 
    8:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
   55              		.loc 1 8 6
-  56 0030 AC4B     		ldr	r3, .L49+4
+  56 0030 A44B     		ldr	r3, .L49+4
   57 0032 1B68     		ldr	r3, [r3]
   58              		.loc 1 8 5
   59 0034 002B     		cmp	r3, #0
   60 0036 08D0     		beq	.L10
    9:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
   61              		.loc 1 9 16
-  62 0038 AA4B     		ldr	r3, .L49+4
+  62 0038 A24B     		ldr	r3, .L49+4
   63 003a 0022     		movs	r2, #0
   64 003c 1A60     		str	r2, [r3]
-  10:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+  10:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
   65              		.loc 1 10 4
-  66 003e 4FF47A70 		mov	r0, #1000
+  66 003e 4FF4FA70 		mov	r0, #500
   67 0042 FFF7FEFF 		bl	setTimer1
   11:./Core/Src/fsm_tuning.c **** 			toggleTraffic1Red();
   68              		.loc 1 11 4
@@ -93,1086 +93,985 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 1
   74 0050 0346     		mov	r3, r0
   75              		.loc 1 14 5
   76 0052 002B     		cmp	r3, #0
-  77 0054 19D0     		beq	.L11
-  15:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
-  78              		.loc 1 15 4
-  79 0056 0220     		movs	r0, #2
-  80 0058 FFF7FEFF 		bl	isButtonPressed
-  16:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
-  81              		.loc 1 16 4
-  82 005c 0320     		movs	r0, #3
-  83 005e FFF7FEFF 		bl	isButtonPressed
+  77 0054 13D0     		beq	.L11
+  15:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+  16:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
   17:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
-  84              		.loc 1 17 11
-  85 0062 9F4B     		ldr	r3, .L49
-  86 0064 0222     		movs	r2, #2
-  87 0066 1A60     		str	r2, [r3]
+  78              		.loc 1 17 11
+  79 0056 9A4B     		ldr	r3, .L49
+  80 0058 0222     		movs	r2, #2
+  81 005a 1A60     		str	r2, [r3]
   18:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Red();
-  88              		.loc 1 18 4
-  89 0068 FFF7FEFF 		bl	acceptTraffic1Red
+  82              		.loc 1 18 4
+  83 005c FFF7FEFF 		bl	acceptTraffic1Red
   19:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
-  90              		.loc 1 19 4
-  91 006c 4FF47A70 		mov	r0, #1000
-  92 0070 FFF7FEFF 		bl	setTimer1
+  84              		.loc 1 19 4
+  85 0060 4FF47A70 		mov	r0, #1000
+  86 0064 FFF7FEFF 		bl	setTimer1
   20:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
-  93              		.loc 1 20 12
-  94 0074 9C4B     		ldr	r3, .L49+8
-  95 0076 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 3
-
-
-  96 0078 9C4A     		ldr	r2, .L49+12
-  97 007a 1360     		str	r3, [r2]
+  87              		.loc 1 20 12
+  88 0068 974B     		ldr	r3, .L49+8
+  89 006a 1B68     		ldr	r3, [r3]
+  90 006c 974A     		ldr	r2, .L49+12
+  91 006e 1360     		str	r3, [r2]
   21:./Core/Src/fsm_tuning.c **** 			displayCounter();
-  98              		.loc 1 21 4
-  99 007c FFF7FEFF 		bl	displayCounter
+  92              		.loc 1 21 4
+  93 0070 FFF7FEFF 		bl	displayCounter
   22:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
- 100              		.loc 1 22 4
- 101 0080 FFF7FEFF 		bl	setTraffic1Red
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 3
+
+
+  94              		.loc 1 22 4
+  95 0074 FFF7FEFF 		bl	setTraffic1Red
   23:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
- 102              		.loc 1 23 4
- 103 0084 FFF7FEFF 		bl	setTraffic2Green
+  96              		.loc 1 23 4
+  97 0078 FFF7FEFF 		bl	setTraffic2Green
   24:./Core/Src/fsm_tuning.c **** 			break;
- 104              		.loc 1 24 4
- 105 0088 45E2     		b	.L12
- 106              	.L11:
+  98              		.loc 1 24 4
+  99 007c 05E2     		b	.L12
+ 100              	.L11:
   25:./Core/Src/fsm_tuning.c **** 		}
   26:./Core/Src/fsm_tuning.c **** 
-  27:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 107              		.loc 1 27 6
- 108 008a 0020     		movs	r0, #0
- 109 008c FFF7FEFF 		bl	isButtonPressed
-  28:./Core/Src/fsm_tuning.c **** 
-  29:./Core/Src/fsm_tuning.c **** 		}
-  30:./Core/Src/fsm_tuning.c **** 
-  31:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
- 110              		.loc 1 31 6
- 111 0090 0220     		movs	r0, #2
- 112 0092 FFF7FEFF 		bl	isButtonPressed
- 113 0096 0346     		mov	r3, r0
- 114              		.loc 1 31 5
- 115 0098 002B     		cmp	r3, #0
- 116 009a 16D0     		beq	.L13
-  32:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 117              		.loc 1 32 4
- 118 009c 0320     		movs	r0, #3
- 119 009e FFF7FEFF 		bl	isButtonPressed
-  33:./Core/Src/fsm_tuning.c **** 			status = TUNING_RED2;
- 120              		.loc 1 33 11
- 121 00a2 8F4B     		ldr	r3, .L49
- 122 00a4 1622     		movs	r2, #22
- 123 00a6 1A60     		str	r2, [r3]
-  34:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+  27:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 101              		.loc 1 27 6
+ 102 007e 0220     		movs	r0, #2
+ 103 0080 FFF7FEFF 		bl	isButtonPressed
+ 104 0084 0346     		mov	r3, r0
+ 105              		.loc 1 27 5
+ 106 0086 002B     		cmp	r3, #0
+ 107 0088 13D0     		beq	.L13
+  28:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+  29:./Core/Src/fsm_tuning.c **** 			status = TUNING_RED2;
+ 108              		.loc 1 29 11
+ 109 008a 8D4B     		ldr	r3, .L49
+ 110 008c 1622     		movs	r2, #22
+ 111 008e 1A60     		str	r2, [r3]
+  30:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 112              		.loc 1 30 4
+ 113 0090 4FF47A70 		mov	r0, #1000
+ 114 0094 FFF7FEFF 		bl	setTimer1
+  31:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Red();
+ 115              		.loc 1 31 4
+ 116 0098 FFF7FEFF 		bl	acceptTraffic1Red
+  32:./Core/Src/fsm_tuning.c **** 			counter = max_red2;
+ 117              		.loc 1 32 12
+ 118 009c 8C4B     		ldr	r3, .L49+16
+ 119 009e 1B68     		ldr	r3, [r3]
+ 120 00a0 8A4A     		ldr	r2, .L49+12
+ 121 00a2 1360     		str	r3, [r2]
+  33:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 122              		.loc 1 33 4
+ 123 00a4 FFF7FEFF 		bl	displayCounter
+  34:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
  124              		.loc 1 34 4
- 125 00a8 4FF47A70 		mov	r0, #1000
- 126 00ac FFF7FEFF 		bl	setTimer1
-  35:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Red();
- 127              		.loc 1 35 4
- 128 00b0 FFF7FEFF 		bl	acceptTraffic1Red
-  36:./Core/Src/fsm_tuning.c **** 			counter = max_red2;
- 129              		.loc 1 36 12
- 130 00b4 8E4B     		ldr	r3, .L49+16
- 131 00b6 1B68     		ldr	r3, [r3]
- 132 00b8 8C4A     		ldr	r2, .L49+12
- 133 00ba 1360     		str	r3, [r2]
-  37:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 134              		.loc 1 37 4
- 135 00bc FFF7FEFF 		bl	displayCounter
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 4
+ 125 00a8 FFF7FEFF 		bl	clearTraffic1
+  35:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 126              		.loc 1 35 4
+ 127 00ac FFF7FEFF 		bl	clearTraffic2
+  36:./Core/Src/fsm_tuning.c **** 			break;
+ 128              		.loc 1 36 4
+ 129 00b0 EBE1     		b	.L12
+ 130              	.L13:
+  37:./Core/Src/fsm_tuning.c **** 		}
+  38:./Core/Src/fsm_tuning.c **** 
+  39:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ 131              		.loc 1 39 6
+ 132 00b2 0320     		movs	r0, #3
+ 133 00b4 FFF7FEFF 		bl	isButtonPressed
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 4
 
 
-  38:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 136              		.loc 1 38 4
- 137 00c0 FFF7FEFF 		bl	clearTraffic1
-  39:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 138              		.loc 1 39 4
- 139 00c4 FFF7FEFF 		bl	clearTraffic2
-  40:./Core/Src/fsm_tuning.c **** 			break;
- 140              		.loc 1 40 4
- 141 00c8 25E2     		b	.L12
- 142              	.L13:
-  41:./Core/Src/fsm_tuning.c **** 		}
-  42:./Core/Src/fsm_tuning.c **** 
-  43:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 143              		.loc 1 43 6
- 144 00ca 0320     		movs	r0, #3
- 145 00cc FFF7FEFF 		bl	isButtonPressed
- 146 00d0 0346     		mov	r3, r0
- 147              		.loc 1 43 5
- 148 00d2 002B     		cmp	r3, #0
- 149 00d4 00F01482 		beq	.L42
-  44:./Core/Src/fsm_tuning.c **** 			counter++;
- 150              		.loc 1 44 11
- 151 00d8 844B     		ldr	r3, .L49+12
- 152 00da 1B68     		ldr	r3, [r3]
- 153 00dc 0133     		adds	r3, r3, #1
- 154 00de 834A     		ldr	r2, .L49+12
- 155 00e0 1360     		str	r3, [r2]
-  45:./Core/Src/fsm_tuning.c **** 			if(counter > 99){
- 156              		.loc 1 45 15
- 157 00e2 824B     		ldr	r3, .L49+12
- 158 00e4 1B68     		ldr	r3, [r3]
- 159              		.loc 1 45 6
- 160 00e6 632B     		cmp	r3, #99
- 161 00e8 02DD     		ble	.L15
-  46:./Core/Src/fsm_tuning.c **** 				counter = 2;
- 162              		.loc 1 46 13
- 163 00ea 804B     		ldr	r3, .L49+12
- 164 00ec 0222     		movs	r2, #2
- 165 00ee 1A60     		str	r2, [r3]
- 166              	.L15:
-  47:./Core/Src/fsm_tuning.c **** 			}
-  48:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 167              		.loc 1 48 4
- 168 00f0 FFF7FEFF 		bl	displayCounter
-  49:./Core/Src/fsm_tuning.c **** 		}
-  50:./Core/Src/fsm_tuning.c **** 
-  51:./Core/Src/fsm_tuning.c **** 		break;
- 169              		.loc 1 51 3
- 170 00f4 04E2     		b	.L42
- 171              	.L8:
-  52:./Core/Src/fsm_tuning.c **** 	case TUNING_RED2:
-  53:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
- 172              		.loc 1 53 6
- 173 00f6 7B4B     		ldr	r3, .L49+4
- 174 00f8 1B68     		ldr	r3, [r3]
- 175              		.loc 1 53 5
- 176 00fa 002B     		cmp	r3, #0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 5
+ 134 00b8 0346     		mov	r3, r0
+ 135              		.loc 1 39 5
+ 136 00ba 002B     		cmp	r3, #0
+ 137 00bc 00F0DA81 		beq	.L42
+  40:./Core/Src/fsm_tuning.c **** 			counter++;
+ 138              		.loc 1 40 11
+ 139 00c0 824B     		ldr	r3, .L49+12
+ 140 00c2 1B68     		ldr	r3, [r3]
+ 141 00c4 0133     		adds	r3, r3, #1
+ 142 00c6 814A     		ldr	r2, .L49+12
+ 143 00c8 1360     		str	r3, [r2]
+  41:./Core/Src/fsm_tuning.c **** 			if(counter > 99){
+ 144              		.loc 1 41 15
+ 145 00ca 804B     		ldr	r3, .L49+12
+ 146 00cc 1B68     		ldr	r3, [r3]
+ 147              		.loc 1 41 6
+ 148 00ce 632B     		cmp	r3, #99
+ 149 00d0 02DD     		ble	.L15
+  42:./Core/Src/fsm_tuning.c **** 				counter = 2;
+ 150              		.loc 1 42 13
+ 151 00d2 7E4B     		ldr	r3, .L49+12
+ 152 00d4 0222     		movs	r2, #2
+ 153 00d6 1A60     		str	r2, [r3]
+ 154              	.L15:
+  43:./Core/Src/fsm_tuning.c **** 			}
+  44:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 155              		.loc 1 44 4
+ 156 00d8 FFF7FEFF 		bl	displayCounter
+  45:./Core/Src/fsm_tuning.c **** 		}
+  46:./Core/Src/fsm_tuning.c **** 
+  47:./Core/Src/fsm_tuning.c **** 		break;
+ 157              		.loc 1 47 3
+ 158 00dc CAE1     		b	.L42
+ 159              	.L8:
+  48:./Core/Src/fsm_tuning.c **** 	case TUNING_RED2:
+  49:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
+ 160              		.loc 1 49 6
+ 161 00de 794B     		ldr	r3, .L49+4
+ 162 00e0 1B68     		ldr	r3, [r3]
+ 163              		.loc 1 49 5
+ 164 00e2 002B     		cmp	r3, #0
+ 165 00e4 08D0     		beq	.L16
+  50:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
+ 166              		.loc 1 50 16
+ 167 00e6 774B     		ldr	r3, .L49+4
+ 168 00e8 0022     		movs	r2, #0
+ 169 00ea 1A60     		str	r2, [r3]
+  51:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
+ 170              		.loc 1 51 4
+ 171 00ec 4FF4FA70 		mov	r0, #500
+ 172 00f0 FFF7FEFF 		bl	setTimer1
+  52:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Red();
+ 173              		.loc 1 52 4
+ 174 00f4 FFF7FEFF 		bl	toggleTraffic2Red
+ 175              	.L16:
+  53:./Core/Src/fsm_tuning.c **** 		}
+  54:./Core/Src/fsm_tuning.c **** 
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 5
 
 
- 177 00fc 08D0     		beq	.L16
-  54:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
- 178              		.loc 1 54 16
- 179 00fe 794B     		ldr	r3, .L49+4
- 180 0100 0022     		movs	r2, #0
- 181 0102 1A60     		str	r2, [r3]
-  55:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 182              		.loc 1 55 4
- 183 0104 4FF47A70 		mov	r0, #1000
- 184 0108 FFF7FEFF 		bl	setTimer1
-  56:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Red();
- 185              		.loc 1 56 4
- 186 010c FFF7FEFF 		bl	toggleTraffic2Red
- 187              	.L16:
-  57:./Core/Src/fsm_tuning.c **** 		}
-  58:./Core/Src/fsm_tuning.c **** 
-  59:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
- 188              		.loc 1 59 6
- 189 0110 0120     		movs	r0, #1
- 190 0112 FFF7FEFF 		bl	isButtonPressed
- 191 0116 0346     		mov	r3, r0
- 192              		.loc 1 59 5
- 193 0118 002B     		cmp	r3, #0
- 194 011a 19D0     		beq	.L17
-  60:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
- 195              		.loc 1 60 4
- 196 011c 0220     		movs	r0, #2
- 197 011e FFF7FEFF 		bl	isButtonPressed
-  61:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 198              		.loc 1 61 4
- 199 0122 0320     		movs	r0, #3
- 200 0124 FFF7FEFF 		bl	isButtonPressed
-  62:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Red();
- 201              		.loc 1 62 4
- 202 0128 FFF7FEFF 		bl	acceptTraffic2Red
-  63:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
- 203              		.loc 1 63 11
- 204 012c 6C4B     		ldr	r3, .L49
- 205 012e 0222     		movs	r2, #2
- 206 0130 1A60     		str	r2, [r3]
-  64:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 207              		.loc 1 64 4
- 208 0132 4FF47A70 		mov	r0, #1000
- 209 0136 FFF7FEFF 		bl	setTimer1
-  65:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 210              		.loc 1 65 12
- 211 013a 6B4B     		ldr	r3, .L49+8
- 212 013c 1B68     		ldr	r3, [r3]
- 213 013e 6B4A     		ldr	r2, .L49+12
- 214 0140 1360     		str	r3, [r2]
-  66:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 215              		.loc 1 66 4
- 216 0142 FFF7FEFF 		bl	displayCounter
-  67:./Core/Src/fsm_tuning.c **** 			setTraffic2Red();
- 217              		.loc 1 67 4
- 218 0146 FFF7FEFF 		bl	setTraffic2Red
-  68:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 6
+  55:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
+ 176              		.loc 1 55 6
+ 177 00f8 0120     		movs	r0, #1
+ 178 00fa FFF7FEFF 		bl	isButtonPressed
+ 179 00fe 0346     		mov	r3, r0
+ 180              		.loc 1 55 5
+ 181 0100 002B     		cmp	r3, #0
+ 182 0102 13D0     		beq	.L17
+  56:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+  57:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+  58:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Red();
+ 183              		.loc 1 58 4
+ 184 0104 FFF7FEFF 		bl	acceptTraffic2Red
+  59:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
+ 185              		.loc 1 59 11
+ 186 0108 6D4B     		ldr	r3, .L49
+ 187 010a 0222     		movs	r2, #2
+ 188 010c 1A60     		str	r2, [r3]
+  60:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 189              		.loc 1 60 4
+ 190 010e 4FF47A70 		mov	r0, #1000
+ 191 0112 FFF7FEFF 		bl	setTimer1
+  61:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 192              		.loc 1 61 12
+ 193 0116 6C4B     		ldr	r3, .L49+8
+ 194 0118 1B68     		ldr	r3, [r3]
+ 195 011a 6C4A     		ldr	r2, .L49+12
+ 196 011c 1360     		str	r3, [r2]
+  62:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 197              		.loc 1 62 4
+ 198 011e FFF7FEFF 		bl	displayCounter
+  63:./Core/Src/fsm_tuning.c **** 			setTraffic2Red();
+ 199              		.loc 1 63 4
+ 200 0122 FFF7FEFF 		bl	setTraffic2Red
+  64:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
+ 201              		.loc 1 64 4
+ 202 0126 FFF7FEFF 		bl	setTraffic2Green
+  65:./Core/Src/fsm_tuning.c **** 			break;
+ 203              		.loc 1 65 4
+ 204 012a AEE1     		b	.L12
+ 205              	.L17:
+  66:./Core/Src/fsm_tuning.c **** 		}
+  67:./Core/Src/fsm_tuning.c **** 
+  68:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 206              		.loc 1 68 6
+ 207 012c 0220     		movs	r0, #2
+ 208 012e FFF7FEFF 		bl	isButtonPressed
+ 209 0132 0346     		mov	r3, r0
+ 210              		.loc 1 68 5
+ 211 0134 002B     		cmp	r3, #0
+ 212 0136 13D0     		beq	.L18
+  69:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+  70:./Core/Src/fsm_tuning.c **** 			status = TUNING_GREEN1;
+ 213              		.loc 1 70 11
+ 214 0138 614B     		ldr	r3, .L49
+ 215 013a 1722     		movs	r2, #23
+ 216 013c 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 6
 
 
- 219              		.loc 1 68 4
- 220 014a FFF7FEFF 		bl	setTraffic2Green
-  69:./Core/Src/fsm_tuning.c **** 			break;
- 221              		.loc 1 69 4
- 222 014e E2E1     		b	.L12
- 223              	.L17:
-  70:./Core/Src/fsm_tuning.c **** 		}
-  71:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 224              		.loc 1 71 6
- 225 0150 0020     		movs	r0, #0
- 226 0152 FFF7FEFF 		bl	isButtonPressed
-  72:./Core/Src/fsm_tuning.c **** 
-  73:./Core/Src/fsm_tuning.c **** 		}
-  74:./Core/Src/fsm_tuning.c **** 
-  75:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
- 227              		.loc 1 75 6
- 228 0156 0220     		movs	r0, #2
- 229 0158 FFF7FEFF 		bl	isButtonPressed
- 230 015c 0346     		mov	r3, r0
- 231              		.loc 1 75 5
- 232 015e 002B     		cmp	r3, #0
- 233 0160 16D0     		beq	.L18
-  76:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 234              		.loc 1 76 4
- 235 0162 0320     		movs	r0, #3
- 236 0164 FFF7FEFF 		bl	isButtonPressed
-  77:./Core/Src/fsm_tuning.c **** 			status = TUNING_GREEN1;
- 237              		.loc 1 77 11
- 238 0168 5D4B     		ldr	r3, .L49
- 239 016a 1722     		movs	r2, #23
- 240 016c 1A60     		str	r2, [r3]
-  78:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 241              		.loc 1 78 4
- 242 016e 4FF47A70 		mov	r0, #1000
- 243 0172 FFF7FEFF 		bl	setTimer1
-  79:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Red();
- 244              		.loc 1 79 4
- 245 0176 FFF7FEFF 		bl	acceptTraffic2Red
-  80:./Core/Src/fsm_tuning.c **** 			counter = max_green1;
- 246              		.loc 1 80 12
- 247 017a 5E4B     		ldr	r3, .L49+20
- 248 017c 1B68     		ldr	r3, [r3]
- 249 017e 5B4A     		ldr	r2, .L49+12
- 250 0180 1360     		str	r3, [r2]
-  81:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 251              		.loc 1 81 4
- 252 0182 FFF7FEFF 		bl	displayCounter
-  82:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 253              		.loc 1 82 4
- 254 0186 FFF7FEFF 		bl	clearTraffic1
-  83:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 255              		.loc 1 83 4
- 256 018a FFF7FEFF 		bl	clearTraffic2
-  84:./Core/Src/fsm_tuning.c **** 			break;
- 257              		.loc 1 84 4
- 258 018e C2E1     		b	.L12
- 259              	.L18:
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 7
+  71:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 217              		.loc 1 71 4
+ 218 013e 4FF47A70 		mov	r0, #1000
+ 219 0142 FFF7FEFF 		bl	setTimer1
+  72:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Red();
+ 220              		.loc 1 72 4
+ 221 0146 FFF7FEFF 		bl	acceptTraffic2Red
+  73:./Core/Src/fsm_tuning.c **** 			counter = max_green1;
+ 222              		.loc 1 73 12
+ 223 014a 624B     		ldr	r3, .L49+20
+ 224 014c 1B68     		ldr	r3, [r3]
+ 225 014e 5F4A     		ldr	r2, .L49+12
+ 226 0150 1360     		str	r3, [r2]
+  74:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 227              		.loc 1 74 4
+ 228 0152 FFF7FEFF 		bl	displayCounter
+  75:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
+ 229              		.loc 1 75 4
+ 230 0156 FFF7FEFF 		bl	clearTraffic1
+  76:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 231              		.loc 1 76 4
+ 232 015a FFF7FEFF 		bl	clearTraffic2
+  77:./Core/Src/fsm_tuning.c **** 			break;
+ 233              		.loc 1 77 4
+ 234 015e 94E1     		b	.L12
+ 235              	.L18:
+  78:./Core/Src/fsm_tuning.c **** 		}
+  79:./Core/Src/fsm_tuning.c **** 
+  80:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ 236              		.loc 1 80 6
+ 237 0160 0320     		movs	r0, #3
+ 238 0162 FFF7FEFF 		bl	isButtonPressed
+ 239 0166 0346     		mov	r3, r0
+ 240              		.loc 1 80 5
+ 241 0168 002B     		cmp	r3, #0
+ 242 016a 00F08581 		beq	.L43
+  81:./Core/Src/fsm_tuning.c **** 			counter++;
+ 243              		.loc 1 81 11
+ 244 016e 574B     		ldr	r3, .L49+12
+ 245 0170 1B68     		ldr	r3, [r3]
+ 246 0172 0133     		adds	r3, r3, #1
+ 247 0174 554A     		ldr	r2, .L49+12
+ 248 0176 1360     		str	r3, [r2]
+  82:./Core/Src/fsm_tuning.c **** 			if(counter > 99){
+ 249              		.loc 1 82 15
+ 250 0178 544B     		ldr	r3, .L49+12
+ 251 017a 1B68     		ldr	r3, [r3]
+ 252              		.loc 1 82 6
+ 253 017c 632B     		cmp	r3, #99
+ 254 017e 02DD     		ble	.L20
+  83:./Core/Src/fsm_tuning.c **** 				counter = 2;
+ 255              		.loc 1 83 13
+ 256 0180 524B     		ldr	r3, .L49+12
+ 257 0182 0222     		movs	r2, #2
+ 258 0184 1A60     		str	r2, [r3]
+ 259              	.L20:
+  84:./Core/Src/fsm_tuning.c **** 			}
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 7
 
 
-  85:./Core/Src/fsm_tuning.c **** 		}
-  86:./Core/Src/fsm_tuning.c **** 
-  87:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 260              		.loc 1 87 6
- 261 0190 0320     		movs	r0, #3
- 262 0192 FFF7FEFF 		bl	isButtonPressed
- 263 0196 0346     		mov	r3, r0
- 264              		.loc 1 87 5
- 265 0198 002B     		cmp	r3, #0
- 266 019a 00F0B381 		beq	.L43
-  88:./Core/Src/fsm_tuning.c **** 			counter++;
- 267              		.loc 1 88 11
- 268 019e 534B     		ldr	r3, .L49+12
- 269 01a0 1B68     		ldr	r3, [r3]
- 270 01a2 0133     		adds	r3, r3, #1
- 271 01a4 514A     		ldr	r2, .L49+12
- 272 01a6 1360     		str	r3, [r2]
-  89:./Core/Src/fsm_tuning.c **** 			if(counter > 99){
- 273              		.loc 1 89 15
- 274 01a8 504B     		ldr	r3, .L49+12
- 275 01aa 1B68     		ldr	r3, [r3]
- 276              		.loc 1 89 6
- 277 01ac 632B     		cmp	r3, #99
- 278 01ae 02DD     		ble	.L20
-  90:./Core/Src/fsm_tuning.c **** 				counter = 2;
- 279              		.loc 1 90 13
- 280 01b0 4E4B     		ldr	r3, .L49+12
- 281 01b2 0222     		movs	r2, #2
- 282 01b4 1A60     		str	r2, [r3]
- 283              	.L20:
-  91:./Core/Src/fsm_tuning.c **** 			}
-  92:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 284              		.loc 1 92 4
- 285 01b6 FFF7FEFF 		bl	displayCounter
-  93:./Core/Src/fsm_tuning.c **** 		}
-  94:./Core/Src/fsm_tuning.c **** 		break;
- 286              		.loc 1 94 3
- 287 01ba A3E1     		b	.L43
- 288              	.L7:
-  95:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN1:
-  96:./Core/Src/fsm_tuning.c **** 
-  97:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
- 289              		.loc 1 97 6
- 290 01bc 494B     		ldr	r3, .L49+4
- 291 01be 1B68     		ldr	r3, [r3]
- 292              		.loc 1 97 5
- 293 01c0 002B     		cmp	r3, #0
- 294 01c2 08D0     		beq	.L21
-  98:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
- 295              		.loc 1 98 16
- 296 01c4 474B     		ldr	r3, .L49+4
- 297 01c6 0022     		movs	r2, #0
- 298 01c8 1A60     		str	r2, [r3]
-  99:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 299              		.loc 1 99 4
- 300 01ca 4FF47A70 		mov	r0, #1000
- 301 01ce FFF7FEFF 		bl	setTimer1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 8
+  85:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 260              		.loc 1 85 4
+ 261 0186 FFF7FEFF 		bl	displayCounter
+  86:./Core/Src/fsm_tuning.c **** 		}
+  87:./Core/Src/fsm_tuning.c **** 		break;
+ 262              		.loc 1 87 3
+ 263 018a 75E1     		b	.L43
+ 264              	.L7:
+  88:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN1:
+  89:./Core/Src/fsm_tuning.c **** 
+  90:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
+ 265              		.loc 1 90 6
+ 266 018c 4D4B     		ldr	r3, .L49+4
+ 267 018e 1B68     		ldr	r3, [r3]
+ 268              		.loc 1 90 5
+ 269 0190 002B     		cmp	r3, #0
+ 270 0192 08D0     		beq	.L21
+  91:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
+ 271              		.loc 1 91 16
+ 272 0194 4B4B     		ldr	r3, .L49+4
+ 273 0196 0022     		movs	r2, #0
+ 274 0198 1A60     		str	r2, [r3]
+  92:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
+ 275              		.loc 1 92 4
+ 276 019a 4FF4FA70 		mov	r0, #500
+ 277 019e FFF7FEFF 		bl	setTimer1
+  93:./Core/Src/fsm_tuning.c **** 			toggleTraffic1Green();
+ 278              		.loc 1 93 4
+ 279 01a2 FFF7FEFF 		bl	toggleTraffic1Green
+ 280              	.L21:
+  94:./Core/Src/fsm_tuning.c **** 		}
+  95:./Core/Src/fsm_tuning.c **** 
+  96:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
+ 281              		.loc 1 96 6
+ 282 01a6 0120     		movs	r0, #1
+ 283 01a8 FFF7FEFF 		bl	isButtonPressed
+ 284 01ac 0346     		mov	r3, r0
+ 285              		.loc 1 96 5
+ 286 01ae 002B     		cmp	r3, #0
+ 287 01b0 13D0     		beq	.L22
+  97:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+  98:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+  99:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Green();
+ 288              		.loc 1 99 4
+ 289 01b2 FFF7FEFF 		bl	acceptTraffic1Green
+ 100:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
+ 290              		.loc 1 100 11
+ 291 01b6 424B     		ldr	r3, .L49
+ 292 01b8 0222     		movs	r2, #2
+ 293 01ba 1A60     		str	r2, [r3]
+ 101:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 294              		.loc 1 101 4
+ 295 01bc 4FF47A70 		mov	r0, #1000
+ 296 01c0 FFF7FEFF 		bl	setTimer1
+ 102:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 297              		.loc 1 102 12
+ 298 01c4 404B     		ldr	r3, .L49+8
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 8
 
 
- 100:./Core/Src/fsm_tuning.c **** 			toggleTraffic1Green();
- 302              		.loc 1 100 4
- 303 01d2 FFF7FEFF 		bl	toggleTraffic1Green
- 304              	.L21:
- 101:./Core/Src/fsm_tuning.c **** 		}
- 102:./Core/Src/fsm_tuning.c **** 
- 103:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
- 305              		.loc 1 103 6
- 306 01d6 0120     		movs	r0, #1
- 307 01d8 FFF7FEFF 		bl	isButtonPressed
- 308 01dc 0346     		mov	r3, r0
- 309              		.loc 1 103 5
- 310 01de 002B     		cmp	r3, #0
- 311 01e0 19D0     		beq	.L22
- 104:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
- 312              		.loc 1 104 4
- 313 01e2 0220     		movs	r0, #2
- 314 01e4 FFF7FEFF 		bl	isButtonPressed
- 105:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 315              		.loc 1 105 4
- 316 01e8 0320     		movs	r0, #3
- 317 01ea FFF7FEFF 		bl	isButtonPressed
- 106:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Green();
- 318              		.loc 1 106 4
- 319 01ee FFF7FEFF 		bl	acceptTraffic1Green
- 107:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
- 320              		.loc 1 107 11
- 321 01f2 3B4B     		ldr	r3, .L49
- 322 01f4 0222     		movs	r2, #2
- 323 01f6 1A60     		str	r2, [r3]
- 108:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 324              		.loc 1 108 4
- 325 01f8 4FF47A70 		mov	r0, #1000
- 326 01fc FFF7FEFF 		bl	setTimer1
- 109:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 327              		.loc 1 109 12
- 328 0200 394B     		ldr	r3, .L49+8
- 329 0202 1B68     		ldr	r3, [r3]
- 330 0204 394A     		ldr	r2, .L49+12
- 331 0206 1360     		str	r3, [r2]
- 110:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 332              		.loc 1 110 4
- 333 0208 FFF7FEFF 		bl	displayCounter
- 111:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
- 334              		.loc 1 111 4
- 335 020c FFF7FEFF 		bl	setTraffic1Red
- 112:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
- 336              		.loc 1 112 4
- 337 0210 FFF7FEFF 		bl	setTraffic2Green
- 113:./Core/Src/fsm_tuning.c **** 			break;
- 338              		.loc 1 113 4
- 339 0214 7FE1     		b	.L12
- 340              	.L22:
- 114:./Core/Src/fsm_tuning.c **** 		}
- 115:./Core/Src/fsm_tuning.c **** 
- 116:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 341              		.loc 1 116 6
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 9
+ 299 01c6 1B68     		ldr	r3, [r3]
+ 300 01c8 404A     		ldr	r2, .L49+12
+ 301 01ca 1360     		str	r3, [r2]
+ 103:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 302              		.loc 1 103 4
+ 303 01cc FFF7FEFF 		bl	displayCounter
+ 104:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
+ 304              		.loc 1 104 4
+ 305 01d0 FFF7FEFF 		bl	setTraffic1Red
+ 105:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
+ 306              		.loc 1 105 4
+ 307 01d4 FFF7FEFF 		bl	setTraffic2Green
+ 106:./Core/Src/fsm_tuning.c **** 			break;
+ 308              		.loc 1 106 4
+ 309 01d8 57E1     		b	.L12
+ 310              	.L22:
+ 107:./Core/Src/fsm_tuning.c **** 		}
+ 108:./Core/Src/fsm_tuning.c **** 
+ 109:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 311              		.loc 1 109 6
+ 312 01da 0220     		movs	r0, #2
+ 313 01dc FFF7FEFF 		bl	isButtonPressed
+ 314 01e0 0346     		mov	r3, r0
+ 315              		.loc 1 109 5
+ 316 01e2 002B     		cmp	r3, #0
+ 317 01e4 13D0     		beq	.L23
+ 110:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 111:./Core/Src/fsm_tuning.c **** 			status = TUNING_GREEN2;
+ 318              		.loc 1 111 11
+ 319 01e6 364B     		ldr	r3, .L49
+ 320 01e8 1822     		movs	r2, #24
+ 321 01ea 1A60     		str	r2, [r3]
+ 112:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 322              		.loc 1 112 4
+ 323 01ec 4FF47A70 		mov	r0, #1000
+ 324 01f0 FFF7FEFF 		bl	setTimer1
+ 113:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Green();
+ 325              		.loc 1 113 4
+ 326 01f4 FFF7FEFF 		bl	acceptTraffic1Green
+ 114:./Core/Src/fsm_tuning.c **** 			counter = max_green2;
+ 327              		.loc 1 114 12
+ 328 01f8 374B     		ldr	r3, .L49+24
+ 329 01fa 1B68     		ldr	r3, [r3]
+ 330 01fc 334A     		ldr	r2, .L49+12
+ 331 01fe 1360     		str	r3, [r2]
+ 115:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 332              		.loc 1 115 4
+ 333 0200 FFF7FEFF 		bl	displayCounter
+ 116:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
+ 334              		.loc 1 116 4
+ 335 0204 FFF7FEFF 		bl	clearTraffic1
+ 117:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 336              		.loc 1 117 4
+ 337 0208 FFF7FEFF 		bl	clearTraffic2
+ 118:./Core/Src/fsm_tuning.c **** 			break;
+ 338              		.loc 1 118 4
+ 339 020c 3DE1     		b	.L12
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 9
 
 
- 342 0216 0020     		movs	r0, #0
- 343 0218 FFF7FEFF 		bl	isButtonPressed
- 117:./Core/Src/fsm_tuning.c **** 
- 118:./Core/Src/fsm_tuning.c **** 		}
- 119:./Core/Src/fsm_tuning.c **** 
- 120:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
- 344              		.loc 1 120 6
- 345 021c 0220     		movs	r0, #2
- 346 021e FFF7FEFF 		bl	isButtonPressed
- 347 0222 0346     		mov	r3, r0
- 348              		.loc 1 120 5
- 349 0224 002B     		cmp	r3, #0
- 350 0226 16D0     		beq	.L23
- 121:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 351              		.loc 1 121 4
- 352 0228 0320     		movs	r0, #3
- 353 022a FFF7FEFF 		bl	isButtonPressed
- 122:./Core/Src/fsm_tuning.c **** 			status = TUNING_GREEN2;
- 354              		.loc 1 122 11
- 355 022e 2C4B     		ldr	r3, .L49
- 356 0230 1822     		movs	r2, #24
- 357 0232 1A60     		str	r2, [r3]
- 123:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 358              		.loc 1 123 4
- 359 0234 4FF47A70 		mov	r0, #1000
- 360 0238 FFF7FEFF 		bl	setTimer1
- 124:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Green();
- 361              		.loc 1 124 4
- 362 023c FFF7FEFF 		bl	acceptTraffic1Green
- 125:./Core/Src/fsm_tuning.c **** 			counter = max_green2;
- 363              		.loc 1 125 12
- 364 0240 2D4B     		ldr	r3, .L49+24
- 365 0242 1B68     		ldr	r3, [r3]
- 366 0244 294A     		ldr	r2, .L49+12
- 367 0246 1360     		str	r3, [r2]
+ 340              	.L23:
+ 119:./Core/Src/fsm_tuning.c **** 		}
+ 120:./Core/Src/fsm_tuning.c **** 
+ 121:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ 341              		.loc 1 121 6
+ 342 020e 0320     		movs	r0, #3
+ 343 0210 FFF7FEFF 		bl	isButtonPressed
+ 344 0214 0346     		mov	r3, r0
+ 345              		.loc 1 121 5
+ 346 0216 002B     		cmp	r3, #0
+ 347 0218 00F03081 		beq	.L44
+ 122:./Core/Src/fsm_tuning.c **** 			counter++;
+ 348              		.loc 1 122 11
+ 349 021c 2B4B     		ldr	r3, .L49+12
+ 350 021e 1B68     		ldr	r3, [r3]
+ 351 0220 0133     		adds	r3, r3, #1
+ 352 0222 2A4A     		ldr	r2, .L49+12
+ 353 0224 1360     		str	r3, [r2]
+ 123:./Core/Src/fsm_tuning.c **** 			if(counter == max_red2){
+ 354              		.loc 1 123 15
+ 355 0226 294B     		ldr	r3, .L49+12
+ 356 0228 1A68     		ldr	r2, [r3]
+ 357 022a 294B     		ldr	r3, .L49+16
+ 358 022c 1B68     		ldr	r3, [r3]
+ 359              		.loc 1 123 6
+ 360 022e 9A42     		cmp	r2, r3
+ 361 0230 02D1     		bne	.L25
+ 124:./Core/Src/fsm_tuning.c **** 				counter = 1;
+ 362              		.loc 1 124 13
+ 363 0232 264B     		ldr	r3, .L49+12
+ 364 0234 0122     		movs	r2, #1
+ 365 0236 1A60     		str	r2, [r3]
+ 366              	.L25:
+ 125:./Core/Src/fsm_tuning.c **** 			}
  126:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 368              		.loc 1 126 4
- 369 0248 FFF7FEFF 		bl	displayCounter
- 127:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 370              		.loc 1 127 4
- 371 024c FFF7FEFF 		bl	clearTraffic1
- 128:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 372              		.loc 1 128 4
- 373 0250 FFF7FEFF 		bl	clearTraffic2
- 129:./Core/Src/fsm_tuning.c **** 			break;
- 374              		.loc 1 129 4
- 375 0254 5FE1     		b	.L12
- 376              	.L23:
- 130:./Core/Src/fsm_tuning.c **** 		}
- 131:./Core/Src/fsm_tuning.c **** 
- 132:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 377              		.loc 1 132 6
- 378 0256 0320     		movs	r0, #3
- 379 0258 FFF7FEFF 		bl	isButtonPressed
- 380 025c 0346     		mov	r3, r0
- 381              		.loc 1 132 5
- 382 025e 002B     		cmp	r3, #0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 10
+ 367              		.loc 1 126 4
+ 368 0238 FFF7FEFF 		bl	displayCounter
+ 127:./Core/Src/fsm_tuning.c **** 		}
+ 128:./Core/Src/fsm_tuning.c **** 		break;
+ 369              		.loc 1 128 3
+ 370 023c 1EE1     		b	.L44
+ 371              	.L6:
+ 129:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN2:
+ 130:./Core/Src/fsm_tuning.c **** 
+ 131:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
+ 372              		.loc 1 131 6
+ 373 023e 214B     		ldr	r3, .L49+4
+ 374 0240 1B68     		ldr	r3, [r3]
+ 375              		.loc 1 131 5
+ 376 0242 002B     		cmp	r3, #0
+ 377 0244 08D0     		beq	.L26
+ 132:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
+ 378              		.loc 1 132 16
+ 379 0246 1F4B     		ldr	r3, .L49+4
+ 380 0248 0022     		movs	r2, #0
+ 381 024a 1A60     		str	r2, [r3]
+ 133:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 10
 
 
- 383 0260 00F05281 		beq	.L44
- 133:./Core/Src/fsm_tuning.c **** 			counter++;
- 384              		.loc 1 133 11
- 385 0264 214B     		ldr	r3, .L49+12
- 386 0266 1B68     		ldr	r3, [r3]
- 387 0268 0133     		adds	r3, r3, #1
- 388 026a 204A     		ldr	r2, .L49+12
- 389 026c 1360     		str	r3, [r2]
- 134:./Core/Src/fsm_tuning.c **** 			if(counter > max_red2 - 1){
- 390              		.loc 1 134 15
- 391 026e 204B     		ldr	r3, .L49+16
- 392 0270 1A68     		ldr	r2, [r3]
- 393 0272 1E4B     		ldr	r3, .L49+12
- 394 0274 1B68     		ldr	r3, [r3]
- 395              		.loc 1 134 6
- 396 0276 9A42     		cmp	r2, r3
- 397 0278 02DC     		bgt	.L25
- 135:./Core/Src/fsm_tuning.c **** 				counter = 1;
- 398              		.loc 1 135 13
- 399 027a 1C4B     		ldr	r3, .L49+12
- 400 027c 0122     		movs	r2, #1
- 401 027e 1A60     		str	r2, [r3]
- 402              	.L25:
- 136:./Core/Src/fsm_tuning.c **** 			}
- 137:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 403              		.loc 1 137 4
- 404 0280 FFF7FEFF 		bl	displayCounter
- 138:./Core/Src/fsm_tuning.c **** 		}
- 139:./Core/Src/fsm_tuning.c **** 		break;
- 405              		.loc 1 139 3
- 406 0284 40E1     		b	.L44
- 407              	.L6:
- 140:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN2:
- 141:./Core/Src/fsm_tuning.c **** 
- 142:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
- 408              		.loc 1 142 6
- 409 0286 174B     		ldr	r3, .L49+4
- 410 0288 1B68     		ldr	r3, [r3]
- 411              		.loc 1 142 5
- 412 028a 002B     		cmp	r3, #0
- 413 028c 08D0     		beq	.L26
- 143:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
- 414              		.loc 1 143 16
- 415 028e 154B     		ldr	r3, .L49+4
- 416 0290 0022     		movs	r2, #0
- 417 0292 1A60     		str	r2, [r3]
- 144:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 418              		.loc 1 144 4
- 419 0294 4FF47A70 		mov	r0, #1000
- 420 0298 FFF7FEFF 		bl	setTimer1
- 145:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Green();
- 421              		.loc 1 145 4
- 422 029c FFF7FEFF 		bl	toggleTraffic2Green
- 423              	.L26:
- 146:./Core/Src/fsm_tuning.c **** 		}
- 147:./Core/Src/fsm_tuning.c **** 
- 148:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 11
+ 382              		.loc 1 133 4
+ 383 024c 4FF4FA70 		mov	r0, #500
+ 384 0250 FFF7FEFF 		bl	setTimer1
+ 134:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Green();
+ 385              		.loc 1 134 4
+ 386 0254 FFF7FEFF 		bl	toggleTraffic2Green
+ 387              	.L26:
+ 135:./Core/Src/fsm_tuning.c **** 		}
+ 136:./Core/Src/fsm_tuning.c **** 
+ 137:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
+ 388              		.loc 1 137 6
+ 389 0258 0120     		movs	r0, #1
+ 390 025a FFF7FEFF 		bl	isButtonPressed
+ 391 025e 0346     		mov	r3, r0
+ 392              		.loc 1 137 5
+ 393 0260 002B     		cmp	r3, #0
+ 394 0262 13D0     		beq	.L27
+ 138:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+ 139:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 140:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
+ 395              		.loc 1 140 11
+ 396 0264 164B     		ldr	r3, .L49
+ 397 0266 0222     		movs	r2, #2
+ 398 0268 1A60     		str	r2, [r3]
+ 141:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Green();
+ 399              		.loc 1 141 4
+ 400 026a FFF7FEFF 		bl	acceptTraffic2Green
+ 142:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 401              		.loc 1 142 4
+ 402 026e 4FF47A70 		mov	r0, #1000
+ 403 0272 FFF7FEFF 		bl	setTimer1
+ 143:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 404              		.loc 1 143 12
+ 405 0276 144B     		ldr	r3, .L49+8
+ 406 0278 1B68     		ldr	r3, [r3]
+ 407 027a 144A     		ldr	r2, .L49+12
+ 408 027c 1360     		str	r3, [r2]
+ 144:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 409              		.loc 1 144 4
+ 410 027e FFF7FEFF 		bl	displayCounter
+ 145:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
+ 411              		.loc 1 145 4
+ 412 0282 FFF7FEFF 		bl	setTraffic1Red
+ 146:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
+ 413              		.loc 1 146 4
+ 414 0286 FFF7FEFF 		bl	setTraffic2Green
+ 147:./Core/Src/fsm_tuning.c **** 			break;
+ 415              		.loc 1 147 4
+ 416 028a FEE0     		b	.L12
+ 417              	.L27:
+ 148:./Core/Src/fsm_tuning.c **** 		}
+ 149:./Core/Src/fsm_tuning.c **** 
+ 150:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 418              		.loc 1 150 6
+ 419 028c 0220     		movs	r0, #2
+ 420 028e FFF7FEFF 		bl	isButtonPressed
+ 421 0292 0346     		mov	r3, r0
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 11
 
 
- 424              		.loc 1 148 6
- 425 02a0 0120     		movs	r0, #1
- 426 02a2 FFF7FEFF 		bl	isButtonPressed
- 427 02a6 0346     		mov	r3, r0
- 428              		.loc 1 148 5
- 429 02a8 002B     		cmp	r3, #0
- 430 02aa 27D0     		beq	.L27
- 149:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
- 431              		.loc 1 149 4
- 432 02ac 0220     		movs	r0, #2
- 433 02ae FFF7FEFF 		bl	isButtonPressed
- 150:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 434              		.loc 1 150 4
- 435 02b2 0320     		movs	r0, #3
- 436 02b4 FFF7FEFF 		bl	isButtonPressed
- 151:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
- 437              		.loc 1 151 11
- 438 02b8 094B     		ldr	r3, .L49
- 439 02ba 0222     		movs	r2, #2
- 440 02bc 1A60     		str	r2, [r3]
- 152:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Green();
- 441              		.loc 1 152 4
- 442 02be FFF7FEFF 		bl	acceptTraffic2Green
+ 422              		.loc 1 150 5
+ 423 0294 002B     		cmp	r3, #0
+ 424 0296 23D0     		beq	.L28
+ 151:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 152:./Core/Src/fsm_tuning.c **** 			status = TUNING_YELLOW1;
+ 425              		.loc 1 152 11
+ 426 0298 094B     		ldr	r3, .L49
+ 427 029a 1922     		movs	r2, #25
+ 428 029c 1A60     		str	r2, [r3]
  153:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 443              		.loc 1 153 4
- 444 02c2 4FF47A70 		mov	r0, #1000
- 445 02c6 FFF7FEFF 		bl	setTimer1
- 154:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 446              		.loc 1 154 12
- 447 02ca 074B     		ldr	r3, .L49+8
- 448 02cc 1B68     		ldr	r3, [r3]
- 449 02ce 074A     		ldr	r2, .L49+12
- 450 02d0 1360     		str	r3, [r2]
- 155:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 451              		.loc 1 155 4
- 452 02d2 FFF7FEFF 		bl	displayCounter
- 156:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
- 453              		.loc 1 156 4
- 454 02d6 FFF7FEFF 		bl	setTraffic1Red
- 157:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
- 455              		.loc 1 157 4
- 456 02da FFF7FEFF 		bl	setTraffic2Green
- 158:./Core/Src/fsm_tuning.c **** 			break;
- 457              		.loc 1 158 4
- 458 02de 1AE1     		b	.L12
- 459              	.L50:
- 460              		.align	2
- 461              	.L49:
- 462 02e0 00000000 		.word	status
- 463 02e4 00000000 		.word	timer1_flag
- 464 02e8 00000000 		.word	max_red1
- 465 02ec 00000000 		.word	counter
- 466 02f0 00000000 		.word	max_red2
- 467 02f4 00000000 		.word	max_green1
- 468 02f8 00000000 		.word	max_green2
- 469              	.L27:
- 159:./Core/Src/fsm_tuning.c **** 		}
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 12
+ 429              		.loc 1 153 4
+ 430 029e 4FF47A70 		mov	r0, #1000
+ 431 02a2 FFF7FEFF 		bl	setTimer1
+ 154:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Green();
+ 432              		.loc 1 154 4
+ 433 02a6 FFF7FEFF 		bl	acceptTraffic2Green
+ 155:./Core/Src/fsm_tuning.c **** 			counter = max_yellow1;
+ 434              		.loc 1 155 12
+ 435 02aa 0C4B     		ldr	r3, .L49+28
+ 436 02ac 1B68     		ldr	r3, [r3]
+ 437 02ae 074A     		ldr	r2, .L49+12
+ 438 02b0 1360     		str	r3, [r2]
+ 156:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 439              		.loc 1 156 4
+ 440 02b2 FFF7FEFF 		bl	displayCounter
+ 157:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
+ 441              		.loc 1 157 4
+ 442 02b6 FFF7FEFF 		bl	clearTraffic1
+ 158:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 443              		.loc 1 158 4
+ 444 02ba FFF7FEFF 		bl	clearTraffic2
+ 159:./Core/Src/fsm_tuning.c **** 			break;
+ 445              		.loc 1 159 4
+ 446 02be E4E0     		b	.L12
+ 447              	.L50:
+ 448              		.align	2
+ 449              	.L49:
+ 450 02c0 00000000 		.word	status
+ 451 02c4 00000000 		.word	timer1_flag
+ 452 02c8 00000000 		.word	max_red1
+ 453 02cc 00000000 		.word	counter
+ 454 02d0 00000000 		.word	max_red2
+ 455 02d4 00000000 		.word	max_green1
+ 456 02d8 00000000 		.word	max_green2
+ 457 02dc 00000000 		.word	max_yellow1
+ 458              	.L28:
+ 160:./Core/Src/fsm_tuning.c **** 		}
+ 161:./Core/Src/fsm_tuning.c **** 
+ 162:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ 459              		.loc 1 162 6
+ 460 02e0 0320     		movs	r0, #3
+ 461 02e2 FFF7FEFF 		bl	isButtonPressed
+ 462 02e6 0346     		mov	r3, r0
+ 463              		.loc 1 162 5
+ 464 02e8 002B     		cmp	r3, #0
+ 465 02ea 00F0C980 		beq	.L45
+ 163:./Core/Src/fsm_tuning.c **** 			counter++;
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 12
 
 
- 160:./Core/Src/fsm_tuning.c **** 
- 161:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 470              		.loc 1 161 6
- 471 02fc 0020     		movs	r0, #0
- 472 02fe FFF7FEFF 		bl	isButtonPressed
- 162:./Core/Src/fsm_tuning.c **** 
- 163:./Core/Src/fsm_tuning.c **** 		}
- 164:./Core/Src/fsm_tuning.c **** 
- 165:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
- 473              		.loc 1 165 6
- 474 0302 0220     		movs	r0, #2
- 475 0304 FFF7FEFF 		bl	isButtonPressed
- 476 0308 0346     		mov	r3, r0
- 477              		.loc 1 165 5
- 478 030a 002B     		cmp	r3, #0
- 479 030c 16D0     		beq	.L28
- 166:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 480              		.loc 1 166 4
- 481 030e 0320     		movs	r0, #3
- 482 0310 FFF7FEFF 		bl	isButtonPressed
- 167:./Core/Src/fsm_tuning.c **** 			status = TUNING_YELLOW1;
- 483              		.loc 1 167 11
- 484 0314 814B     		ldr	r3, .L51
- 485 0316 1922     		movs	r2, #25
- 486 0318 1A60     		str	r2, [r3]
- 168:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 487              		.loc 1 168 4
- 488 031a 4FF47A70 		mov	r0, #1000
- 489 031e FFF7FEFF 		bl	setTimer1
- 169:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Green();
- 490              		.loc 1 169 4
- 491 0322 FFF7FEFF 		bl	acceptTraffic2Green
- 170:./Core/Src/fsm_tuning.c **** 			counter = max_yellow1;
- 492              		.loc 1 170 12
- 493 0326 7E4B     		ldr	r3, .L51+4
- 494 0328 1B68     		ldr	r3, [r3]
- 495 032a 7E4A     		ldr	r2, .L51+8
- 496 032c 1360     		str	r3, [r2]
- 171:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 497              		.loc 1 171 4
- 498 032e FFF7FEFF 		bl	displayCounter
- 172:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 499              		.loc 1 172 4
- 500 0332 FFF7FEFF 		bl	clearTraffic1
- 173:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 501              		.loc 1 173 4
- 502 0336 FFF7FEFF 		bl	clearTraffic2
- 174:./Core/Src/fsm_tuning.c **** 			break;
+ 466              		.loc 1 163 11
+ 467 02ee 684B     		ldr	r3, .L51
+ 468 02f0 1B68     		ldr	r3, [r3]
+ 469 02f2 0133     		adds	r3, r3, #1
+ 470 02f4 664A     		ldr	r2, .L51
+ 471 02f6 1360     		str	r3, [r2]
+ 164:./Core/Src/fsm_tuning.c **** 			if(counter == max_red1){
+ 472              		.loc 1 164 15
+ 473 02f8 654B     		ldr	r3, .L51
+ 474 02fa 1A68     		ldr	r2, [r3]
+ 475 02fc 654B     		ldr	r3, .L51+4
+ 476 02fe 1B68     		ldr	r3, [r3]
+ 477              		.loc 1 164 6
+ 478 0300 9A42     		cmp	r2, r3
+ 479 0302 02D1     		bne	.L30
+ 165:./Core/Src/fsm_tuning.c **** 				counter = 1;
+ 480              		.loc 1 165 13
+ 481 0304 624B     		ldr	r3, .L51
+ 482 0306 0122     		movs	r2, #1
+ 483 0308 1A60     		str	r2, [r3]
+ 484              	.L30:
+ 166:./Core/Src/fsm_tuning.c **** 			}
+ 167:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 485              		.loc 1 167 4
+ 486 030a FFF7FEFF 		bl	displayCounter
+ 168:./Core/Src/fsm_tuning.c **** 		}
+ 169:./Core/Src/fsm_tuning.c **** 		break;
+ 487              		.loc 1 169 3
+ 488 030e B7E0     		b	.L45
+ 489              	.L5:
+ 170:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW1:
+ 171:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
+ 490              		.loc 1 171 6
+ 491 0310 614B     		ldr	r3, .L51+8
+ 492 0312 1B68     		ldr	r3, [r3]
+ 493              		.loc 1 171 5
+ 494 0314 002B     		cmp	r3, #0
+ 495 0316 08D0     		beq	.L31
+ 172:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
+ 496              		.loc 1 172 16
+ 497 0318 5F4B     		ldr	r3, .L51+8
+ 498 031a 0022     		movs	r2, #0
+ 499 031c 1A60     		str	r2, [r3]
+ 173:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
+ 500              		.loc 1 173 4
+ 501 031e 4FF4FA70 		mov	r0, #500
+ 502 0322 FFF7FEFF 		bl	setTimer1
+ 174:./Core/Src/fsm_tuning.c **** 			toggleTraffic1Yellow();
  503              		.loc 1 174 4
- 504 033a ECE0     		b	.L12
- 505              	.L28:
+ 504 0326 FFF7FEFF 		bl	toggleTraffic1Yellow
+ 505              	.L31:
  175:./Core/Src/fsm_tuning.c **** 		}
- 176:./Core/Src/fsm_tuning.c **** 
- 177:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 506              		.loc 1 177 6
- 507 033c 0320     		movs	r0, #3
- 508 033e FFF7FEFF 		bl	isButtonPressed
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 13
+ 176:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
+ 506              		.loc 1 176 6
+ 507 032a 0120     		movs	r0, #1
+ 508 032c FFF7FEFF 		bl	isButtonPressed
+ 509 0330 0346     		mov	r3, r0
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 13
 
 
- 509 0342 0346     		mov	r3, r0
- 510              		.loc 1 177 5
- 511 0344 002B     		cmp	r3, #0
- 512 0346 00F0E180 		beq	.L45
- 178:./Core/Src/fsm_tuning.c **** 			counter++;
- 513              		.loc 1 178 11
- 514 034a 764B     		ldr	r3, .L51+8
- 515 034c 1B68     		ldr	r3, [r3]
- 516 034e 0133     		adds	r3, r3, #1
- 517 0350 744A     		ldr	r2, .L51+8
- 518 0352 1360     		str	r3, [r2]
- 179:./Core/Src/fsm_tuning.c **** 			if(counter > max_red1 - 1){
- 519              		.loc 1 179 15
- 520 0354 744B     		ldr	r3, .L51+12
- 521 0356 1A68     		ldr	r2, [r3]
- 522 0358 724B     		ldr	r3, .L51+8
- 523 035a 1B68     		ldr	r3, [r3]
- 524              		.loc 1 179 6
- 525 035c 9A42     		cmp	r2, r3
- 526 035e 02DC     		bgt	.L30
- 180:./Core/Src/fsm_tuning.c **** 				counter = 1;
- 527              		.loc 1 180 13
- 528 0360 704B     		ldr	r3, .L51+8
- 529 0362 0122     		movs	r2, #1
- 530 0364 1A60     		str	r2, [r3]
- 531              	.L30:
- 181:./Core/Src/fsm_tuning.c **** 			}
- 182:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 532              		.loc 1 182 4
- 533 0366 FFF7FEFF 		bl	displayCounter
- 183:./Core/Src/fsm_tuning.c **** 		}
- 184:./Core/Src/fsm_tuning.c **** 		break;
- 534              		.loc 1 184 3
- 535 036a CFE0     		b	.L45
- 536              	.L5:
- 185:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW1:
- 186:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
- 537              		.loc 1 186 6
- 538 036c 6F4B     		ldr	r3, .L51+16
- 539 036e 1B68     		ldr	r3, [r3]
- 540              		.loc 1 186 5
- 541 0370 002B     		cmp	r3, #0
- 542 0372 08D0     		beq	.L31
- 187:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
- 543              		.loc 1 187 16
- 544 0374 6D4B     		ldr	r3, .L51+16
- 545 0376 0022     		movs	r2, #0
- 546 0378 1A60     		str	r2, [r3]
- 188:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 547              		.loc 1 188 4
- 548 037a 4FF47A70 		mov	r0, #1000
- 549 037e FFF7FEFF 		bl	setTimer1
- 189:./Core/Src/fsm_tuning.c **** 			toggleTraffic1Yellow();
- 550              		.loc 1 189 4
- 551 0382 FFF7FEFF 		bl	toggleTraffic1Yellow
- 552              	.L31:
- 190:./Core/Src/fsm_tuning.c **** 		}
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 14
+ 510              		.loc 1 176 5
+ 511 0332 002B     		cmp	r3, #0
+ 512 0334 13D0     		beq	.L32
+ 177:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+ 178:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 179:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
+ 513              		.loc 1 179 11
+ 514 0336 594B     		ldr	r3, .L51+12
+ 515 0338 0222     		movs	r2, #2
+ 516 033a 1A60     		str	r2, [r3]
+ 180:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Yellow();
+ 517              		.loc 1 180 4
+ 518 033c FFF7FEFF 		bl	acceptTraffic1Yellow
+ 181:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 519              		.loc 1 181 4
+ 520 0340 4FF47A70 		mov	r0, #1000
+ 521 0344 FFF7FEFF 		bl	setTimer1
+ 182:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 522              		.loc 1 182 12
+ 523 0348 524B     		ldr	r3, .L51+4
+ 524 034a 1B68     		ldr	r3, [r3]
+ 525 034c 504A     		ldr	r2, .L51
+ 526 034e 1360     		str	r3, [r2]
+ 183:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 527              		.loc 1 183 4
+ 528 0350 FFF7FEFF 		bl	displayCounter
+ 184:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
+ 529              		.loc 1 184 4
+ 530 0354 FFF7FEFF 		bl	setTraffic1Red
+ 185:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
+ 531              		.loc 1 185 4
+ 532 0358 FFF7FEFF 		bl	setTraffic2Green
+ 186:./Core/Src/fsm_tuning.c **** 			break;
+ 533              		.loc 1 186 4
+ 534 035c 95E0     		b	.L12
+ 535              	.L32:
+ 187:./Core/Src/fsm_tuning.c **** 		}
+ 188:./Core/Src/fsm_tuning.c **** 
+ 189:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 536              		.loc 1 189 6
+ 537 035e 0220     		movs	r0, #2
+ 538 0360 FFF7FEFF 		bl	isButtonPressed
+ 539 0364 0346     		mov	r3, r0
+ 540              		.loc 1 189 5
+ 541 0366 002B     		cmp	r3, #0
+ 542 0368 13D0     		beq	.L33
+ 190:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 191:./Core/Src/fsm_tuning.c **** 			status = TUNING_YELLOW2;
+ 543              		.loc 1 191 11
+ 544 036a 4C4B     		ldr	r3, .L51+12
+ 545 036c 1A22     		movs	r2, #26
+ 546 036e 1A60     		str	r2, [r3]
+ 192:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 547              		.loc 1 192 4
+ 548 0370 4FF47A70 		mov	r0, #1000
+ 549 0374 FFF7FEFF 		bl	setTimer1
+ 193:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Yellow();
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 14
 
 
- 191:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
- 553              		.loc 1 191 6
- 554 0386 0120     		movs	r0, #1
- 555 0388 FFF7FEFF 		bl	isButtonPressed
- 556 038c 0346     		mov	r3, r0
- 557              		.loc 1 191 5
- 558 038e 002B     		cmp	r3, #0
- 559 0390 19D0     		beq	.L32
- 192:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
- 560              		.loc 1 192 4
- 561 0392 0220     		movs	r0, #2
- 562 0394 FFF7FEFF 		bl	isButtonPressed
- 193:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 563              		.loc 1 193 4
- 564 0398 0320     		movs	r0, #3
- 565 039a FFF7FEFF 		bl	isButtonPressed
- 194:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
- 566              		.loc 1 194 11
- 567 039e 5F4B     		ldr	r3, .L51
- 568 03a0 0222     		movs	r2, #2
- 569 03a2 1A60     		str	r2, [r3]
- 195:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Yellow();
- 570              		.loc 1 195 4
- 571 03a4 FFF7FEFF 		bl	acceptTraffic1Yellow
- 196:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 572              		.loc 1 196 4
- 573 03a8 4FF47A70 		mov	r0, #1000
- 574 03ac FFF7FEFF 		bl	setTimer1
- 197:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 575              		.loc 1 197 12
- 576 03b0 5D4B     		ldr	r3, .L51+12
- 577 03b2 1B68     		ldr	r3, [r3]
- 578 03b4 5B4A     		ldr	r2, .L51+8
- 579 03b6 1360     		str	r3, [r2]
- 198:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 580              		.loc 1 198 4
- 581 03b8 FFF7FEFF 		bl	displayCounter
- 199:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
- 582              		.loc 1 199 4
- 583 03bc FFF7FEFF 		bl	setTraffic1Red
- 200:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
- 584              		.loc 1 200 4
- 585 03c0 FFF7FEFF 		bl	setTraffic2Green
- 201:./Core/Src/fsm_tuning.c **** 			break;
- 586              		.loc 1 201 4
- 587 03c4 A7E0     		b	.L12
- 588              	.L32:
- 202:./Core/Src/fsm_tuning.c **** 		}
- 203:./Core/Src/fsm_tuning.c **** 
- 204:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 589              		.loc 1 204 6
- 590 03c6 0020     		movs	r0, #0
- 591 03c8 FFF7FEFF 		bl	isButtonPressed
- 205:./Core/Src/fsm_tuning.c **** 
- 206:./Core/Src/fsm_tuning.c **** 		}
- 207:./Core/Src/fsm_tuning.c **** 
- 208:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 15
+ 550              		.loc 1 193 4
+ 551 0378 FFF7FEFF 		bl	acceptTraffic1Yellow
+ 194:./Core/Src/fsm_tuning.c **** 			counter = max_yellow2;
+ 552              		.loc 1 194 12
+ 553 037c 484B     		ldr	r3, .L51+16
+ 554 037e 1B68     		ldr	r3, [r3]
+ 555 0380 434A     		ldr	r2, .L51
+ 556 0382 1360     		str	r3, [r2]
+ 195:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 557              		.loc 1 195 4
+ 558 0384 FFF7FEFF 		bl	displayCounter
+ 196:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
+ 559              		.loc 1 196 4
+ 560 0388 FFF7FEFF 		bl	clearTraffic1
+ 197:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 561              		.loc 1 197 4
+ 562 038c FFF7FEFF 		bl	clearTraffic2
+ 198:./Core/Src/fsm_tuning.c **** 			break;
+ 563              		.loc 1 198 4
+ 564 0390 7BE0     		b	.L12
+ 565              	.L33:
+ 199:./Core/Src/fsm_tuning.c **** 		}
+ 200:./Core/Src/fsm_tuning.c **** 
+ 201:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ 566              		.loc 1 201 6
+ 567 0392 0320     		movs	r0, #3
+ 568 0394 FFF7FEFF 		bl	isButtonPressed
+ 569 0398 0346     		mov	r3, r0
+ 570              		.loc 1 201 5
+ 571 039a 002B     		cmp	r3, #0
+ 572 039c 72D0     		beq	.L46
+ 202:./Core/Src/fsm_tuning.c **** 			counter++;
+ 573              		.loc 1 202 11
+ 574 039e 3C4B     		ldr	r3, .L51
+ 575 03a0 1B68     		ldr	r3, [r3]
+ 576 03a2 0133     		adds	r3, r3, #1
+ 577 03a4 3A4A     		ldr	r2, .L51
+ 578 03a6 1360     		str	r3, [r2]
+ 203:./Core/Src/fsm_tuning.c **** 			if(counter == max_red2){
+ 579              		.loc 1 203 15
+ 580 03a8 394B     		ldr	r3, .L51
+ 581 03aa 1A68     		ldr	r2, [r3]
+ 582 03ac 3D4B     		ldr	r3, .L51+20
+ 583 03ae 1B68     		ldr	r3, [r3]
+ 584              		.loc 1 203 6
+ 585 03b0 9A42     		cmp	r2, r3
+ 586 03b2 02D1     		bne	.L35
+ 204:./Core/Src/fsm_tuning.c **** 				counter = 1;
+ 587              		.loc 1 204 13
+ 588 03b4 364B     		ldr	r3, .L51
+ 589 03b6 0122     		movs	r2, #1
+ 590 03b8 1A60     		str	r2, [r3]
+ 591              	.L35:
+ 205:./Core/Src/fsm_tuning.c **** 			}
+ 206:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 592              		.loc 1 206 4
+ 593 03ba FFF7FEFF 		bl	displayCounter
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 15
 
 
- 592              		.loc 1 208 6
- 593 03cc 0220     		movs	r0, #2
- 594 03ce FFF7FEFF 		bl	isButtonPressed
- 595 03d2 0346     		mov	r3, r0
- 596              		.loc 1 208 5
- 597 03d4 002B     		cmp	r3, #0
- 598 03d6 16D0     		beq	.L33
- 209:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 599              		.loc 1 209 4
- 600 03d8 0320     		movs	r0, #3
- 601 03da FFF7FEFF 		bl	isButtonPressed
- 210:./Core/Src/fsm_tuning.c **** 			status = TUNING_YELLOW2;
- 602              		.loc 1 210 11
- 603 03de 4F4B     		ldr	r3, .L51
- 604 03e0 1A22     		movs	r2, #26
- 605 03e2 1A60     		str	r2, [r3]
- 211:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 606              		.loc 1 211 4
- 607 03e4 4FF47A70 		mov	r0, #1000
- 608 03e8 FFF7FEFF 		bl	setTimer1
- 212:./Core/Src/fsm_tuning.c **** 			acceptTraffic1Yellow();
- 609              		.loc 1 212 4
- 610 03ec FFF7FEFF 		bl	acceptTraffic1Yellow
- 213:./Core/Src/fsm_tuning.c **** 			counter = max_yellow2;
- 611              		.loc 1 213 12
- 612 03f0 4F4B     		ldr	r3, .L51+20
- 613 03f2 1B68     		ldr	r3, [r3]
- 614 03f4 4B4A     		ldr	r2, .L51+8
- 615 03f6 1360     		str	r3, [r2]
- 214:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 616              		.loc 1 214 4
- 617 03f8 FFF7FEFF 		bl	displayCounter
- 215:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 618              		.loc 1 215 4
- 619 03fc FFF7FEFF 		bl	clearTraffic1
- 216:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 620              		.loc 1 216 4
- 621 0400 FFF7FEFF 		bl	clearTraffic2
- 217:./Core/Src/fsm_tuning.c **** 			break;
- 622              		.loc 1 217 4
- 623 0404 87E0     		b	.L12
- 624              	.L33:
- 218:./Core/Src/fsm_tuning.c **** 		}
- 219:./Core/Src/fsm_tuning.c **** 
- 220:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 625              		.loc 1 220 6
- 626 0406 0320     		movs	r0, #3
- 627 0408 FFF7FEFF 		bl	isButtonPressed
- 628 040c 0346     		mov	r3, r0
- 629              		.loc 1 220 5
- 630 040e 002B     		cmp	r3, #0
- 631 0410 7ED0     		beq	.L46
- 221:./Core/Src/fsm_tuning.c **** 			counter++;
- 632              		.loc 1 221 11
- 633 0412 444B     		ldr	r3, .L51+8
- 634 0414 1B68     		ldr	r3, [r3]
- 635 0416 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 16
+ 207:./Core/Src/fsm_tuning.c **** 		}
+ 208:./Core/Src/fsm_tuning.c **** 		break;
+ 594              		.loc 1 208 3
+ 595 03be 61E0     		b	.L46
+ 596              	.L3:
+ 209:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW2:
+ 210:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
+ 597              		.loc 1 210 6
+ 598 03c0 354B     		ldr	r3, .L51+8
+ 599 03c2 1B68     		ldr	r3, [r3]
+ 600              		.loc 1 210 5
+ 601 03c4 002B     		cmp	r3, #0
+ 602 03c6 08D0     		beq	.L36
+ 211:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
+ 603              		.loc 1 211 16
+ 604 03c8 334B     		ldr	r3, .L51+8
+ 605 03ca 0022     		movs	r2, #0
+ 606 03cc 1A60     		str	r2, [r3]
+ 212:./Core/Src/fsm_tuning.c **** 			setTimer1(500);
+ 607              		.loc 1 212 4
+ 608 03ce 4FF4FA70 		mov	r0, #500
+ 609 03d2 FFF7FEFF 		bl	setTimer1
+ 213:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Yellow();
+ 610              		.loc 1 213 4
+ 611 03d6 FFF7FEFF 		bl	toggleTraffic2Yellow
+ 612              	.L36:
+ 214:./Core/Src/fsm_tuning.c **** 		}
+ 215:./Core/Src/fsm_tuning.c **** 
+ 216:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
+ 613              		.loc 1 216 6
+ 614 03da 0120     		movs	r0, #1
+ 615 03dc FFF7FEFF 		bl	isButtonPressed
+ 616 03e0 0346     		mov	r3, r0
+ 617              		.loc 1 216 5
+ 618 03e2 002B     		cmp	r3, #0
+ 619 03e4 13D0     		beq	.L37
+ 217:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(2);
+ 218:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 219:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
+ 620              		.loc 1 219 11
+ 621 03e6 2D4B     		ldr	r3, .L51+12
+ 622 03e8 0222     		movs	r2, #2
+ 623 03ea 1A60     		str	r2, [r3]
+ 220:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Yellow();
+ 624              		.loc 1 220 4
+ 625 03ec FFF7FEFF 		bl	acceptTraffic2Yellow
+ 221:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 626              		.loc 1 221 4
+ 627 03f0 4FF47A70 		mov	r0, #1000
+ 628 03f4 FFF7FEFF 		bl	setTimer1
+ 222:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 629              		.loc 1 222 12
+ 630 03f8 264B     		ldr	r3, .L51+4
+ 631 03fa 1B68     		ldr	r3, [r3]
+ 632 03fc 244A     		ldr	r2, .L51
+ 633 03fe 1360     		str	r3, [r2]
+ 223:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 16
 
 
- 636 0418 424A     		ldr	r2, .L51+8
- 637 041a 1360     		str	r3, [r2]
- 222:./Core/Src/fsm_tuning.c **** 			if(counter > max_red2 - 1){
- 638              		.loc 1 222 15
- 639 041c 454B     		ldr	r3, .L51+24
- 640 041e 1A68     		ldr	r2, [r3]
- 641 0420 404B     		ldr	r3, .L51+8
- 642 0422 1B68     		ldr	r3, [r3]
- 643              		.loc 1 222 6
- 644 0424 9A42     		cmp	r2, r3
- 645 0426 02DC     		bgt	.L35
- 223:./Core/Src/fsm_tuning.c **** 				counter = 1;
- 646              		.loc 1 223 13
- 647 0428 3E4B     		ldr	r3, .L51+8
- 648 042a 0122     		movs	r2, #1
- 649 042c 1A60     		str	r2, [r3]
- 650              	.L35:
- 224:./Core/Src/fsm_tuning.c **** 			}
- 225:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 651              		.loc 1 225 4
- 652 042e FFF7FEFF 		bl	displayCounter
- 226:./Core/Src/fsm_tuning.c **** 		}
- 227:./Core/Src/fsm_tuning.c **** 		break;
- 653              		.loc 1 227 3
- 654 0432 6DE0     		b	.L46
- 655              	.L3:
- 228:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW2:
- 229:./Core/Src/fsm_tuning.c **** 		if(timer1_flag){
- 656              		.loc 1 229 6
- 657 0434 3D4B     		ldr	r3, .L51+16
- 658 0436 1B68     		ldr	r3, [r3]
- 659              		.loc 1 229 5
- 660 0438 002B     		cmp	r3, #0
- 661 043a 08D0     		beq	.L36
- 230:./Core/Src/fsm_tuning.c **** 			timer1_flag = 0;
- 662              		.loc 1 230 16
- 663 043c 3B4B     		ldr	r3, .L51+16
- 664 043e 0022     		movs	r2, #0
- 665 0440 1A60     		str	r2, [r3]
- 231:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 666              		.loc 1 231 4
- 667 0442 4FF47A70 		mov	r0, #1000
- 668 0446 FFF7FEFF 		bl	setTimer1
- 232:./Core/Src/fsm_tuning.c **** 			toggleTraffic2Yellow();
- 669              		.loc 1 232 4
- 670 044a FFF7FEFF 		bl	toggleTraffic2Yellow
- 671              	.L36:
- 233:./Core/Src/fsm_tuning.c **** 		}
- 234:./Core/Src/fsm_tuning.c **** 
- 235:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(1)){
- 672              		.loc 1 235 6
- 673 044e 0120     		movs	r0, #1
- 674 0450 FFF7FEFF 		bl	isButtonPressed
- 675 0454 0346     		mov	r3, r0
- 676              		.loc 1 235 5
- 677 0456 002B     		cmp	r3, #0
- 678 0458 19D0     		beq	.L37
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 17
+ 634              		.loc 1 223 4
+ 635 0400 FFF7FEFF 		bl	displayCounter
+ 224:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
+ 636              		.loc 1 224 4
+ 637 0404 FFF7FEFF 		bl	setTraffic1Red
+ 225:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
+ 638              		.loc 1 225 4
+ 639 0408 FFF7FEFF 		bl	setTraffic2Green
+ 226:./Core/Src/fsm_tuning.c **** 			break;
+ 640              		.loc 1 226 4
+ 641 040c 3DE0     		b	.L12
+ 642              	.L37:
+ 227:./Core/Src/fsm_tuning.c **** 		}
+ 228:./Core/Src/fsm_tuning.c **** 
+ 229:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
+ 643              		.loc 1 229 6
+ 644 040e 0220     		movs	r0, #2
+ 645 0410 FFF7FEFF 		bl	isButtonPressed
+ 646 0414 0346     		mov	r3, r0
+ 647              		.loc 1 229 5
+ 648 0416 002B     		cmp	r3, #0
+ 649 0418 13D0     		beq	.L38
+ 230:./Core/Src/fsm_tuning.c **** 			//isButtonPressed(3);
+ 231:./Core/Src/fsm_tuning.c **** 			status = TUNING_RED1;
+ 650              		.loc 1 231 11
+ 651 041a 204B     		ldr	r3, .L51+12
+ 652 041c 1522     		movs	r2, #21
+ 653 041e 1A60     		str	r2, [r3]
+ 232:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
+ 654              		.loc 1 232 4
+ 655 0420 4FF47A70 		mov	r0, #1000
+ 656 0424 FFF7FEFF 		bl	setTimer1
+ 233:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Yellow();
+ 657              		.loc 1 233 4
+ 658 0428 FFF7FEFF 		bl	acceptTraffic2Yellow
+ 234:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
+ 659              		.loc 1 234 12
+ 660 042c 194B     		ldr	r3, .L51+4
+ 661 042e 1B68     		ldr	r3, [r3]
+ 662 0430 174A     		ldr	r2, .L51
+ 663 0432 1360     		str	r3, [r2]
+ 235:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 664              		.loc 1 235 4
+ 665 0434 FFF7FEFF 		bl	displayCounter
+ 236:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
+ 666              		.loc 1 236 4
+ 667 0438 FFF7FEFF 		bl	clearTraffic1
+ 237:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
+ 668              		.loc 1 237 4
+ 669 043c FFF7FEFF 		bl	clearTraffic2
+ 238:./Core/Src/fsm_tuning.c **** 			break;
+ 670              		.loc 1 238 4
+ 671 0440 23E0     		b	.L12
+ 672              	.L38:
+ 239:./Core/Src/fsm_tuning.c **** 		}
+ 240:./Core/Src/fsm_tuning.c **** 
+ 241:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 17
 
 
- 236:./Core/Src/fsm_tuning.c **** 			isButtonPressed(2);
- 679              		.loc 1 236 4
- 680 045a 0220     		movs	r0, #2
- 681 045c FFF7FEFF 		bl	isButtonPressed
- 237:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
- 682              		.loc 1 237 4
- 683 0460 0320     		movs	r0, #3
- 684 0462 FFF7FEFF 		bl	isButtonPressed
- 238:./Core/Src/fsm_tuning.c **** 			status = AUTO_RED_GREEN;
- 685              		.loc 1 238 11
- 686 0466 2D4B     		ldr	r3, .L51
- 687 0468 0222     		movs	r2, #2
- 688 046a 1A60     		str	r2, [r3]
- 239:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Yellow();
- 689              		.loc 1 239 4
- 690 046c FFF7FEFF 		bl	acceptTraffic2Yellow
- 240:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 691              		.loc 1 240 4
- 692 0470 4FF47A70 		mov	r0, #1000
- 693 0474 FFF7FEFF 		bl	setTimer1
- 241:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 694              		.loc 1 241 12
- 695 0478 2B4B     		ldr	r3, .L51+12
- 696 047a 1B68     		ldr	r3, [r3]
- 697 047c 294A     		ldr	r2, .L51+8
- 698 047e 1360     		str	r3, [r2]
- 242:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 699              		.loc 1 242 4
- 700 0480 FFF7FEFF 		bl	displayCounter
- 243:./Core/Src/fsm_tuning.c **** 			setTraffic1Red();
- 701              		.loc 1 243 4
- 702 0484 FFF7FEFF 		bl	setTraffic1Red
- 244:./Core/Src/fsm_tuning.c **** 			setTraffic2Green();
- 703              		.loc 1 244 4
- 704 0488 FFF7FEFF 		bl	setTraffic2Green
- 245:./Core/Src/fsm_tuning.c **** 			break;
- 705              		.loc 1 245 4
- 706 048c 43E0     		b	.L12
- 707              	.L37:
- 246:./Core/Src/fsm_tuning.c **** 		}
- 247:./Core/Src/fsm_tuning.c **** 
- 248:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(0)){
- 708              		.loc 1 248 6
- 709 048e 0020     		movs	r0, #0
- 710 0490 FFF7FEFF 		bl	isButtonPressed
- 249:./Core/Src/fsm_tuning.c **** 
- 250:./Core/Src/fsm_tuning.c **** 		}
- 251:./Core/Src/fsm_tuning.c **** 
- 252:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(2)){
- 711              		.loc 1 252 6
- 712 0494 0220     		movs	r0, #2
- 713 0496 FFF7FEFF 		bl	isButtonPressed
- 714 049a 0346     		mov	r3, r0
- 715              		.loc 1 252 5
- 716 049c 002B     		cmp	r3, #0
- 717 049e 16D0     		beq	.L38
- 253:./Core/Src/fsm_tuning.c **** 			isButtonPressed(3);
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 18
+ 673              		.loc 1 241 6
+ 674 0442 0320     		movs	r0, #3
+ 675 0444 FFF7FEFF 		bl	isButtonPressed
+ 676 0448 0346     		mov	r3, r0
+ 677              		.loc 1 241 5
+ 678 044a 002B     		cmp	r3, #0
+ 679 044c 1CD0     		beq	.L47
+ 242:./Core/Src/fsm_tuning.c **** 			counter++;
+ 680              		.loc 1 242 11
+ 681 044e 104B     		ldr	r3, .L51
+ 682 0450 1B68     		ldr	r3, [r3]
+ 683 0452 0133     		adds	r3, r3, #1
+ 684 0454 0E4A     		ldr	r2, .L51
+ 685 0456 1360     		str	r3, [r2]
+ 243:./Core/Src/fsm_tuning.c **** 			if(counter == max_red1){
+ 686              		.loc 1 243 15
+ 687 0458 0D4B     		ldr	r3, .L51
+ 688 045a 1A68     		ldr	r2, [r3]
+ 689 045c 0D4B     		ldr	r3, .L51+4
+ 690 045e 1B68     		ldr	r3, [r3]
+ 691              		.loc 1 243 6
+ 692 0460 9A42     		cmp	r2, r3
+ 693 0462 02D1     		bne	.L40
+ 244:./Core/Src/fsm_tuning.c **** 				counter = 1;
+ 694              		.loc 1 244 13
+ 695 0464 0A4B     		ldr	r3, .L51
+ 696 0466 0122     		movs	r2, #1
+ 697 0468 1A60     		str	r2, [r3]
+ 698              	.L40:
+ 245:./Core/Src/fsm_tuning.c **** 			}
+ 246:./Core/Src/fsm_tuning.c **** 			displayCounter();
+ 699              		.loc 1 246 4
+ 700 046a FFF7FEFF 		bl	displayCounter
+ 247:./Core/Src/fsm_tuning.c **** 		}
+ 248:./Core/Src/fsm_tuning.c **** 		break;
+ 701              		.loc 1 248 3
+ 702 046e 0BE0     		b	.L47
+ 703              	.L41:
+ 249:./Core/Src/fsm_tuning.c **** 	default:
+ 250:./Core/Src/fsm_tuning.c **** 		break;
+ 704              		.loc 1 250 3
+ 705 0470 00BF     		nop
+ 706 0472 0AE0     		b	.L48
+ 707              	.L42:
+  47:./Core/Src/fsm_tuning.c **** 	case TUNING_RED2:
+ 708              		.loc 1 47 3
+ 709 0474 00BF     		nop
+ 710 0476 08E0     		b	.L48
+ 711              	.L43:
+  87:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN1:
+ 712              		.loc 1 87 3
+ 713 0478 00BF     		nop
+ 714 047a 06E0     		b	.L48
+ 715              	.L44:
+ 128:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN2:
+ 716              		.loc 1 128 3
+ 717 047c 00BF     		nop
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 18
 
 
- 718              		.loc 1 253 4
- 719 04a0 0320     		movs	r0, #3
- 720 04a2 FFF7FEFF 		bl	isButtonPressed
- 254:./Core/Src/fsm_tuning.c **** 			status = TUNING_RED1;
- 721              		.loc 1 254 11
- 722 04a6 1D4B     		ldr	r3, .L51
- 723 04a8 1522     		movs	r2, #21
- 724 04aa 1A60     		str	r2, [r3]
- 255:./Core/Src/fsm_tuning.c **** 			setTimer1(1000);
- 725              		.loc 1 255 4
- 726 04ac 4FF47A70 		mov	r0, #1000
- 727 04b0 FFF7FEFF 		bl	setTimer1
- 256:./Core/Src/fsm_tuning.c **** 			acceptTraffic2Yellow();
- 728              		.loc 1 256 4
- 729 04b4 FFF7FEFF 		bl	acceptTraffic2Yellow
- 257:./Core/Src/fsm_tuning.c **** 			counter = max_red1;
- 730              		.loc 1 257 12
- 731 04b8 1B4B     		ldr	r3, .L51+12
- 732 04ba 1B68     		ldr	r3, [r3]
- 733 04bc 194A     		ldr	r2, .L51+8
- 734 04be 1360     		str	r3, [r2]
- 258:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 735              		.loc 1 258 4
- 736 04c0 FFF7FEFF 		bl	displayCounter
- 259:./Core/Src/fsm_tuning.c **** 			clearTraffic1();
- 737              		.loc 1 259 4
- 738 04c4 FFF7FEFF 		bl	clearTraffic1
- 260:./Core/Src/fsm_tuning.c **** 			clearTraffic2();
- 739              		.loc 1 260 4
- 740 04c8 FFF7FEFF 		bl	clearTraffic2
- 261:./Core/Src/fsm_tuning.c **** 			break;
- 741              		.loc 1 261 4
- 742 04cc 23E0     		b	.L12
- 743              	.L38:
- 262:./Core/Src/fsm_tuning.c **** 		}
- 263:./Core/Src/fsm_tuning.c **** 
- 264:./Core/Src/fsm_tuning.c **** 		if(isButtonPressed(3)){
- 744              		.loc 1 264 6
- 745 04ce 0320     		movs	r0, #3
- 746 04d0 FFF7FEFF 		bl	isButtonPressed
- 747 04d4 0346     		mov	r3, r0
- 748              		.loc 1 264 5
- 749 04d6 002B     		cmp	r3, #0
- 750 04d8 1CD0     		beq	.L47
- 265:./Core/Src/fsm_tuning.c **** 			counter++;
- 751              		.loc 1 265 11
- 752 04da 124B     		ldr	r3, .L51+8
- 753 04dc 1B68     		ldr	r3, [r3]
- 754 04de 0133     		adds	r3, r3, #1
- 755 04e0 104A     		ldr	r2, .L51+8
- 756 04e2 1360     		str	r3, [r2]
- 266:./Core/Src/fsm_tuning.c **** 			if(counter > max_red1 - 1){
- 757              		.loc 1 266 15
- 758 04e4 104B     		ldr	r3, .L51+12
- 759 04e6 1A68     		ldr	r2, [r3]
- 760 04e8 0E4B     		ldr	r3, .L51+8
- 761 04ea 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 19
-
-
- 762              		.loc 1 266 6
- 763 04ec 9A42     		cmp	r2, r3
- 764 04ee 02DC     		bgt	.L40
- 267:./Core/Src/fsm_tuning.c **** 				counter = 1;
- 765              		.loc 1 267 13
- 766 04f0 0C4B     		ldr	r3, .L51+8
- 767 04f2 0122     		movs	r2, #1
- 768 04f4 1A60     		str	r2, [r3]
- 769              	.L40:
- 268:./Core/Src/fsm_tuning.c **** 			}
- 269:./Core/Src/fsm_tuning.c **** 			displayCounter();
- 770              		.loc 1 269 4
- 771 04f6 FFF7FEFF 		bl	displayCounter
- 270:./Core/Src/fsm_tuning.c **** 		}
- 271:./Core/Src/fsm_tuning.c **** 		break;
- 772              		.loc 1 271 3
- 773 04fa 0BE0     		b	.L47
- 774              	.L41:
- 272:./Core/Src/fsm_tuning.c **** 	default:
- 273:./Core/Src/fsm_tuning.c **** 		break;
- 775              		.loc 1 273 3
- 776 04fc 00BF     		nop
- 777 04fe 0AE0     		b	.L48
- 778              	.L42:
-  51:./Core/Src/fsm_tuning.c **** 	case TUNING_RED2:
- 779              		.loc 1 51 3
- 780 0500 00BF     		nop
- 781 0502 08E0     		b	.L48
- 782              	.L43:
-  94:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN1:
- 783              		.loc 1 94 3
- 784 0504 00BF     		nop
- 785 0506 06E0     		b	.L48
- 786              	.L44:
- 139:./Core/Src/fsm_tuning.c **** 	case TUNING_GREEN2:
- 787              		.loc 1 139 3
- 788 0508 00BF     		nop
- 789 050a 04E0     		b	.L48
- 790              	.L45:
- 184:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW1:
- 791              		.loc 1 184 3
- 792 050c 00BF     		nop
- 793 050e 02E0     		b	.L48
- 794              	.L46:
- 227:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW2:
- 795              		.loc 1 227 3
- 796 0510 00BF     		nop
- 797 0512 00E0     		b	.L48
- 798              	.L47:
- 271:./Core/Src/fsm_tuning.c **** 	default:
- 799              		.loc 1 271 3
- 800 0514 00BF     		nop
- 801              	.L12:
- 802              	.L48:
- 274:./Core/Src/fsm_tuning.c **** 	}
- 275:./Core/Src/fsm_tuning.c **** }
- 803              		.loc 1 275 1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 20
-
-
- 804 0516 00BF     		nop
- 805 0518 80BD     		pop	{r7, pc}
- 806              	.L52:
- 807 051a 00BF     		.align	2
- 808              	.L51:
- 809 051c 00000000 		.word	status
- 810 0520 00000000 		.word	max_yellow1
- 811 0524 00000000 		.word	counter
- 812 0528 00000000 		.word	max_red1
- 813 052c 00000000 		.word	timer1_flag
- 814 0530 00000000 		.word	max_yellow2
- 815 0534 00000000 		.word	max_red2
- 816              		.cfi_endproc
- 817              	.LFE68:
- 819              		.text
- 820              	.Letext0:
- 821              		.file 2 "Core/Inc/timer.h"
- 822              		.file 3 "Core/Inc/global.h"
- 823              		.file 4 "Core/Inc/traffic.h"
- 824              		.file 5 "Core/Inc/button.h"
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 21
+ 718 047e 04E0     		b	.L48
+ 719              	.L45:
+ 169:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW1:
+ 720              		.loc 1 169 3
+ 721 0480 00BF     		nop
+ 722 0482 02E0     		b	.L48
+ 723              	.L46:
+ 208:./Core/Src/fsm_tuning.c **** 	case TUNING_YELLOW2:
+ 724              		.loc 1 208 3
+ 725 0484 00BF     		nop
+ 726 0486 00E0     		b	.L48
+ 727              	.L47:
+ 248:./Core/Src/fsm_tuning.c **** 	default:
+ 728              		.loc 1 248 3
+ 729 0488 00BF     		nop
+ 730              	.L12:
+ 731              	.L48:
+ 251:./Core/Src/fsm_tuning.c **** 	}
+ 252:./Core/Src/fsm_tuning.c **** }
+ 732              		.loc 1 252 1
+ 733 048a 00BF     		nop
+ 734 048c 80BD     		pop	{r7, pc}
+ 735              	.L52:
+ 736 048e 00BF     		.align	2
+ 737              	.L51:
+ 738 0490 00000000 		.word	counter
+ 739 0494 00000000 		.word	max_red1
+ 740 0498 00000000 		.word	timer1_flag
+ 741 049c 00000000 		.word	status
+ 742 04a0 00000000 		.word	max_yellow2
+ 743 04a4 00000000 		.word	max_red2
+ 744              		.cfi_endproc
+ 745              	.LFE68:
+ 747              		.text
+ 748              	.Letext0:
+ 749              		.file 2 "Core/Inc/timer.h"
+ 750              		.file 3 "Core/Inc/global.h"
+ 751              		.file 4 "Core/Inc/traffic.h"
+ 752              		.file 5 "Core/Inc/button.h"
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 fsm_tuning.c
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:18     .text.fsm_tuning_run:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:24     .text.fsm_tuning_run:0000000000000000 fsm_tuning_run
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:47     .text.fsm_tuning_run:0000000000000018 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:53     .text.fsm_tuning_run:0000000000000030 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:462    .text.fsm_tuning_run:00000000000002e0 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:471    .text.fsm_tuning_run:00000000000002fc $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:809    .text.fsm_tuning_run:000000000000051c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:18     .text.fsm_tuning_run:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:24     .text.fsm_tuning_run:0000000000000000 fsm_tuning_run
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:47     .text.fsm_tuning_run:0000000000000018 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:53     .text.fsm_tuning_run:0000000000000030 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:450    .text.fsm_tuning_run:00000000000002c0 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:460    .text.fsm_tuning_run:00000000000002e0 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s:738    .text.fsm_tuning_run:0000000000000490 $d
                            .group:0000000000000000 wm4.0.cb5f01749778df26340c4505df3d34d0
                            .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
                            .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
@@ -1221,7 +1120,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:809    .text.fsm_tuning_run:0000
                            .group:0000000000000000 wm4.stddef.h.155.3588ebfdd1e8c7ede80509bb9c3b8009
                            .group:0000000000000000 wm4._types.h.127.34941de1b2539d59d5cac00e0dd27a45
                            .group:0000000000000000 wm4.reent.h.17.e292bf8b0bec6c96e131a54347145a30
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s 			page 22
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccqGTINA.s 			page 20
 
 
                            .group:0000000000000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
@@ -1239,8 +1138,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccwbVamE.s:809    .text.fsm_tuning_run:0000
                            .group:0000000000000000 wm4.stdio.h.81.932d0c162786b883f622b8d05c120c78
                            .group:0000000000000000 wm4.main.h.66.f6c32797044e6683294f2b743aea3471
                            .group:0000000000000000 wm4.button.h.9.c6366124cd589a43ad584300c9157129
-                           .group:0000000000000000 wm4.scheduler.h.4.83ce304dfb906999b52630f400dd3d97
-                           .group:0000000000000000 wm4.global.h.12.cde98173854399505bb16cbc58c7b8b7
+                           .group:0000000000000000 wm4.global.h.11.2fb835f5a6e6029efdfc188ecbd44406
 
 UNDEFINED SYMBOLS
 setTimer1
@@ -1266,9 +1164,9 @@ counter
 max_red2
 max_green1
 max_green2
+max_yellow1
 toggleTraffic1Yellow
 acceptTraffic1Yellow
 toggleTraffic2Yellow
 acceptTraffic2Yellow
-max_yellow1
 max_yellow2

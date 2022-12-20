@@ -4,7 +4,6 @@
 void fsm_manual_run(){
 	switch (status) {
 		case MAN_RED_GREEN:
-			//isButtonPressed(3);
 			if(timer1_flag) {
 				status = AUTO_RED_YELLOW;
 				setTimer1(1000);
@@ -15,7 +14,6 @@ void fsm_manual_run(){
 			}
 
 			if(isButtonPressed(1)){
-				//isButtonPressed(2);
 				status = TUNING_RED1;
 				setTimer1(1000);
 				counter = max_red1;
@@ -34,7 +32,6 @@ void fsm_manual_run(){
 			break;
 
 		case MAN_RED_YELLOW:
-			//isButtonPressed(3);
 			if(timer1_flag) {
 				status = AUTO_GREEN_RED;
 				setTimer1(1000);
@@ -45,14 +42,12 @@ void fsm_manual_run(){
 			}
 
 			if(isButtonPressed(1)) {
-				//isButtonPressed(2);
 				status = TUNING_RED1;
 				setTimer1(1000);
 				counter = max_red1;
 				displayCounter();
 				clearTraffic1();
 				clearTraffic2();
-				//isButtonPressed(2);
 			}
 
 			if (isButtonPressed(2)) {
@@ -66,7 +61,6 @@ void fsm_manual_run(){
 			break;
 
 		case MAN_GREEN_RED:
-			//isButtonPressed(3);
 			if(timer1_flag) {
 				status = AUTO_YELLOW_RED;
 				setTimer1(1000);
@@ -77,14 +71,12 @@ void fsm_manual_run(){
 			}
 
 			if(isButtonPressed(1)) {
-				//isButtonPressed(2);
 				status = TUNING_RED1;
 				setTimer1(1000);
 				counter = max_red1;
 				displayCounter();
 				clearTraffic1();
 				clearTraffic2();
-				//isButtonPressed(2);
 			}
 
 			if (isButtonPressed(2)) {
@@ -97,7 +89,6 @@ void fsm_manual_run(){
 			break;
 
 		case MAN_YELLOW_RED:
-			//isButtonPressed(3);
 			if(timer1_flag) {
 				status = AUTO_RED_GREEN;
 				setTimer1(1000);
@@ -108,7 +99,6 @@ void fsm_manual_run(){
 			}
 
 			if(isButtonPressed(1)) {
-				//isButtonPressed(2);
 				status = TUNING_RED1;
 				setTimer1(1000);
 				counter = max_red1;

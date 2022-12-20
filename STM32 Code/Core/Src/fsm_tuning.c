@@ -12,8 +12,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status = AUTO_RED_GREEN;
 			acceptTraffic1Red();
 			setTimer1(1000);
@@ -25,7 +23,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_RED2;
 			setTimer1(1000);
 			acceptTraffic1Red();
@@ -53,8 +50,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			acceptTraffic2Red();
 			status = AUTO_RED_GREEN;
 			setTimer1(1000);
@@ -66,7 +61,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_GREEN1;
 			setTimer1(1000);
 			acceptTraffic2Red();
@@ -94,8 +88,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			acceptTraffic1Green();
 			status = AUTO_RED_GREEN;
 			setTimer1(1000);
@@ -107,7 +99,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_GREEN2;
 			setTimer1(1000);
 			acceptTraffic1Green();
@@ -135,8 +126,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status = AUTO_RED_GREEN;
 			acceptTraffic2Green();
 			setTimer1(1000);
@@ -148,7 +137,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_YELLOW1;
 			setTimer1(1000);
 			acceptTraffic2Green();
@@ -174,8 +162,6 @@ void fsm_tuning_run(){
 			toggleTraffic1Yellow();
 		}
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status = AUTO_RED_GREEN;
 			acceptTraffic1Yellow();
 			setTimer1(1000);
@@ -187,7 +173,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_YELLOW2;
 			setTimer1(1000);
 			acceptTraffic1Yellow();
@@ -214,8 +199,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status = AUTO_RED_GREEN;
 			acceptTraffic2Yellow();
 			setTimer1(1000);
@@ -227,7 +210,6 @@ void fsm_tuning_run(){
 		}
 
 		if(isButtonPressed(2)){
-			//isButtonPressed(3);
 			status = TUNING_RED1;
 			setTimer1(1000);
 			acceptTraffic2Yellow();

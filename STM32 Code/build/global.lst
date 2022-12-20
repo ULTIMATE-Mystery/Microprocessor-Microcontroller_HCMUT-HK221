@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 1
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 1
   71              	max_green2:
   72 0000 03000000 		.word	3
   73              		.global	max_yellow2
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s 			page 2
 
 
   74              		.section	.data.max_yellow2,"aw"
@@ -86,35 +86,35 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 1
  102              	.Letext0:
  103              		.file 1 "Core/Inc/global.h"
  104              		.file 2 "./Core/Src/global.c"
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 3
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 global.c
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:22     .bss.status:0000000000000000 status
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:19     .bss.status:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:29     .bss.pedestrianStatus:0000000000000000 pedestrianStatus
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:26     .bss.pedestrianStatus:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:36     .bss.counter:0000000000000000 counter
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:33     .bss.counter:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:43     .data.max_red1:0000000000000000 max_red1
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:40     .data.max_red1:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:50     .data.max_green1:0000000000000000 max_green1
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:47     .data.max_green1:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:57     .data.max_yellow1:0000000000000000 max_yellow1
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:54     .data.max_yellow1:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:64     .data.max_red2:0000000000000000 max_red2
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:61     .data.max_red2:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:71     .data.max_green2:0000000000000000 max_green2
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:68     .data.max_green2:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:78     .data.max_yellow2:0000000000000000 max_yellow2
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:75     .data.max_yellow2:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:85     .bss.str:0000000000000000 str
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:82     .bss.str:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:92     .bss.ped_red_flag:0000000000000000 ped_red_flag
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:89     .bss.ped_red_flag:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:99     .bss.ped_green_flag:0000000000000000 ped_green_flag
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:96     .bss.ped_green_flag:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:22     .bss.status:0000000000000000 status
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:19     .bss.status:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:29     .bss.pedestrianStatus:0000000000000000 pedestrianStatus
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:26     .bss.pedestrianStatus:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:36     .bss.counter:0000000000000000 counter
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:33     .bss.counter:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:43     .data.max_red1:0000000000000000 max_red1
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:40     .data.max_red1:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:50     .data.max_green1:0000000000000000 max_green1
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:47     .data.max_green1:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:57     .data.max_yellow1:0000000000000000 max_yellow1
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:54     .data.max_yellow1:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:64     .data.max_red2:0000000000000000 max_red2
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:61     .data.max_red2:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:71     .data.max_green2:0000000000000000 max_green2
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:68     .data.max_green2:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:78     .data.max_yellow2:0000000000000000 max_yellow2
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:75     .data.max_yellow2:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:85     .bss.str:0000000000000000 str
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:82     .bss.str:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:92     .bss.ped_red_flag:0000000000000000 ped_red_flag
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:89     .bss.ped_red_flag:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:99     .bss.ped_green_flag:0000000000000000 ped_green_flag
+C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s:96     .bss.ped_green_flag:0000000000000000 $d
                            .group:0000000000000000 wm4.0.cb5f01749778df26340c4505df3d34d0
                            .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
                            .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
@@ -146,7 +146,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:96     .bss.ped_green_flag:00000
                            .group:0000000000000000 wm4.stm32f1xx_hal_dma.h.409.cafcd2cfe701091535636be537c18293
                            .group:0000000000000000 wm4.stm32f1xx_hal_cortex.h.22.b5f4174bb6a50d95405567b8f50e0900
                            .group:0000000000000000 wm4.stm32f1xx_hal_flash.h.22.5cea9a7210e6315b41724b47b5fdf203
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s 			page 4
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cccDiMQ2.s 			page 4
 
 
                            .group:0000000000000000 wm4.stm32f1xx_hal_flash_ex.h.22.d4e19c21f2a86fa2f8ec2c2d5f1ab2af
@@ -181,7 +181,6 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccSgvjL5.s:96     .bss.ped_green_flag:00000
                            .group:0000000000000000 wm4.stdio.h.81.932d0c162786b883f622b8d05c120c78
                            .group:0000000000000000 wm4.main.h.66.f6c32797044e6683294f2b743aea3471
                            .group:0000000000000000 wm4.button.h.9.c6366124cd589a43ad584300c9157129
-                           .group:0000000000000000 wm4.scheduler.h.4.83ce304dfb906999b52630f400dd3d97
-                           .group:0000000000000000 wm4.global.h.12.cde98173854399505bb16cbc58c7b8b7
+                           .group:0000000000000000 wm4.global.h.11.2fb835f5a6e6029efdfc188ecbd44406
 
 NO UNDEFINED SYMBOLS

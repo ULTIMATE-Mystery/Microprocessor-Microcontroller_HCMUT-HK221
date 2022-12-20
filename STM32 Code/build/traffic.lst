@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
   48 001a 00BF     		nop
   49 001c 80BD     		pop	{r7, pc}
   50              	.L3:
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 2
 
 
   51 001e 00BF     		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  104              	setTraffic1Green:
  105              	.LFB70:
   14:./Core/Src/traffic.c **** 
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 3
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 3
 
 
   15:./Core/Src/traffic.c **** void setTraffic1Green(){
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
   21:./Core/Src/traffic.c **** 	HAL_GPIO_WritePin(TrafficLight1_0_GPIO_Port, TrafficLight1_0_Pin, GPIO_PIN_RESET);
  156              		.loc 1 21 2
  157 0004 0022     		movs	r2, #0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 4
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 4
 
 
  158 0006 4FF48061 		mov	r1, #1024
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  206              		.loc 1 29 1
  207 0018 00BF     		nop
  208 001a 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 5
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 5
 
 
  209              	.L15:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  261              		.thumb_func
  263              	setTraffic2Yellow:
  264              	.LFB74:
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 6
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 6
 
 
   35:./Core/Src/traffic.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
   42:./Core/Src/traffic.c **** 	HAL_GPIO_WritePin(TrafficLight2_0_GPIO_Port, TrafficLight2_0_Pin, GPIO_PIN_RESET);
  314              		.loc 1 42 2
  315 0004 0022     		movs	r2, #0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 7
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 7
 
 
  316 0006 2021     		movs	r1, #32
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  365 001e 80BD     		pop	{r7, pc}
  366              	.L27:
  367              		.align	2
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 8
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 8
 
 
  368              	.L26:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  421              	setPedestrianYellow:
  422              	.LFB78:
   55:./Core/Src/traffic.c **** 
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 9
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 9
 
 
   56:./Core/Src/traffic.c **** void setPedestrianYellow(){
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
   62:./Core/Src/traffic.c **** 	HAL_GPIO_WritePin(PedestrianLight_0_GPIO_Port, PedestrianLight_0_Pin, GPIO_PIN_RESET);
  473              		.loc 1 62 2
  474 0004 0022     		movs	r2, #0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 10
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 10
 
 
  475 0006 4FF48061 		mov	r1, #1024
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  524              		.cfi_endproc
  525              	.LFE80:
  527              		.section	.text.toggleTraffic2Red,"ax",%progbits
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 11
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 11
 
 
  528              		.align	1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  578              		.cfi_def_cfa_register 7
   77:./Core/Src/traffic.c **** 	// Only use when led is clear or green.
   78:./Core/Src/traffic.c **** 	HAL_GPIO_TogglePin(TrafficLight1_1_GPIO_Port, TrafficLight1_1_Pin);
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 12
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 12
 
 
  579              		.loc 1 78 2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  630              		.thumb
  631              		.thumb_func
  633              	toggleTraffic1Yellow:
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 13
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 13
 
 
  634              	.LFB84:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  682              		.cfi_def_cfa_register 7
   93:./Core/Src/traffic.c **** 	// Only use when led is clear or yellow.
   94:./Core/Src/traffic.c **** 	HAL_GPIO_TogglePin(TrafficLight2_0_GPIO_Port, TrafficLight2_0_Pin);
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 14
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 14
 
 
  683              		.loc 1 94 2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  733              		.loc 1 100 42 discriminator 1
  734 0018 084B     		ldr	r3, .L57+8
  735 001a 0122     		movs	r2, #1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 15
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 15
 
 
  736 001c 1A60     		str	r2, [r3]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  787 0006 1B68     		ldr	r3, [r3]
  788 0008 0B4A     		ldr	r2, .L61+4
  789 000a 1360     		str	r3, [r2]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 16
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 16
 
 
  106:./Core/Src/traffic.c **** 	if(max_red2 <= max_yellow1) max_yellow1 = 1;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  841              		.cfi_startproc
  842              		@ args = 0, pretend = 0, frame = 0
  843              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 17
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 17
 
 
  844              		@ link register save eliminated.
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  895              		@ frame_needed = 1, uses_anonymous_args = 0
  896              		@ link register save eliminated.
  897 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 18
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 18
 
 
  898              		.cfi_def_cfa_offset 4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  949 0000 80B4     		push	{r7}
  950              		.cfi_def_cfa_offset 4
  951              		.cfi_offset 7, -4
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 19
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 19
 
 
  952 0002 00AF     		add	r7, sp, #0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  1003              		.cfi_offset 7, -4
  1004 0002 00AF     		add	r7, sp, #0
  1005              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 20
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 20
 
 
  126:./Core/Src/traffic.c **** 	max_yellow2 = counter;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  1054              		@ args = 0, pretend = 0, frame = 0
  1055              		@ frame_needed = 1, uses_anonymous_args = 0
  1056 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 21
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 21
 
 
  1057              		.cfi_def_cfa_offset 8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  1109              		.file 3 "c:\\st\\stm32cubeide_1.10.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltool
  1110              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
  1111              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 22
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 22
 
 
  1112              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
@@ -1267,90 +1267,90 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 1
  1115              		.file 9 "Core/Inc/main.h"
  1116              		.file 10 "Core/Inc/global.h"
  1117              		.file 11 "c:\\st\\stm32cubeide_1.10.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltoo
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 23
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 traffic.c
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:18     .text.setTraffic1Red:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:24     .text.setTraffic1Red:0000000000000000 setTraffic1Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:53     .text.setTraffic1Red:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:59     .text.setTraffic2Red:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:65     .text.setTraffic2Red:0000000000000000 setTraffic2Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:93     .text.setTraffic2Red:000000000000001c $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:98     .text.setTraffic1Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:104    .text.setTraffic1Green:0000000000000000 setTraffic1Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:132    .text.setTraffic1Green:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:138    .text.clearTraffic1:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:144    .text.clearTraffic1:0000000000000000 clearTraffic1
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:172    .text.clearTraffic1:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:178    .text.setTraffic2Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:184    .text.setTraffic2Green:0000000000000000 setTraffic2Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:212    .text.setTraffic2Green:000000000000001c $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:217    .text.setTraffic1Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:223    .text.setTraffic1Yellow:0000000000000000 setTraffic1Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:251    .text.setTraffic1Yellow:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:257    .text.setTraffic2Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:263    .text.setTraffic2Yellow:0000000000000000 setTraffic2Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:291    .text.setTraffic2Yellow:000000000000001c $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:296    .text.clearTraffic2:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:302    .text.clearTraffic2:0000000000000000 clearTraffic2
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:330    .text.clearTraffic2:000000000000001c $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:335    .text.setPedestrianRed:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:341    .text.setPedestrianRed:0000000000000000 setPedestrianRed
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:369    .text.setPedestrianRed:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:375    .text.setPedestrianGreen:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:381    .text.setPedestrianGreen:0000000000000000 setPedestrianGreen
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:409    .text.setPedestrianGreen:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:415    .text.setPedestrianYellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:421    .text.setPedestrianYellow:0000000000000000 setPedestrianYellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:449    .text.setPedestrianYellow:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:455    .text.clearPedestrian:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:461    .text.clearPedestrian:0000000000000000 clearPedestrian
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:489    .text.clearPedestrian:0000000000000020 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:495    .text.toggleTraffic1Red:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:501    .text.toggleTraffic1Red:0000000000000000 toggleTraffic1Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:523    .text.toggleTraffic1Red:0000000000000014 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:528    .text.toggleTraffic2Red:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:534    .text.toggleTraffic2Red:0000000000000000 toggleTraffic2Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:556    .text.toggleTraffic2Red:0000000000000010 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:561    .text.toggleTraffic1Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:567    .text.toggleTraffic1Green:0000000000000000 toggleTraffic1Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:589    .text.toggleTraffic1Green:0000000000000010 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:594    .text.toggleTraffic2Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:600    .text.toggleTraffic2Green:0000000000000000 toggleTraffic2Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:622    .text.toggleTraffic2Green:0000000000000010 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:627    .text.toggleTraffic1Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:633    .text.toggleTraffic1Yellow:0000000000000000 toggleTraffic1Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:659    .text.toggleTraffic1Yellow:000000000000001c $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:665    .text.toggleTraffic2Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:671    .text.toggleTraffic2Yellow:0000000000000000 toggleTraffic2Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:697    .text.toggleTraffic2Yellow:0000000000000018 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:702    .text.acceptTraffic1Red:0000000000000000 $t
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 24
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:18     .text.setTraffic1Red:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:24     .text.setTraffic1Red:0000000000000000 setTraffic1Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:53     .text.setTraffic1Red:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:59     .text.setTraffic2Red:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:65     .text.setTraffic2Red:0000000000000000 setTraffic2Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:93     .text.setTraffic2Red:000000000000001c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:98     .text.setTraffic1Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:104    .text.setTraffic1Green:0000000000000000 setTraffic1Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:132    .text.setTraffic1Green:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:138    .text.clearTraffic1:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:144    .text.clearTraffic1:0000000000000000 clearTraffic1
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:172    .text.clearTraffic1:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:178    .text.setTraffic2Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:184    .text.setTraffic2Green:0000000000000000 setTraffic2Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:212    .text.setTraffic2Green:000000000000001c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:217    .text.setTraffic1Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:223    .text.setTraffic1Yellow:0000000000000000 setTraffic1Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:251    .text.setTraffic1Yellow:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:257    .text.setTraffic2Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:263    .text.setTraffic2Yellow:0000000000000000 setTraffic2Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:291    .text.setTraffic2Yellow:000000000000001c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:296    .text.clearTraffic2:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:302    .text.clearTraffic2:0000000000000000 clearTraffic2
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:330    .text.clearTraffic2:000000000000001c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:335    .text.setPedestrianRed:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:341    .text.setPedestrianRed:0000000000000000 setPedestrianRed
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:369    .text.setPedestrianRed:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:375    .text.setPedestrianGreen:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:381    .text.setPedestrianGreen:0000000000000000 setPedestrianGreen
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:409    .text.setPedestrianGreen:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:415    .text.setPedestrianYellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:421    .text.setPedestrianYellow:0000000000000000 setPedestrianYellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:449    .text.setPedestrianYellow:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:455    .text.clearPedestrian:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:461    .text.clearPedestrian:0000000000000000 clearPedestrian
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:489    .text.clearPedestrian:0000000000000020 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:495    .text.toggleTraffic1Red:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:501    .text.toggleTraffic1Red:0000000000000000 toggleTraffic1Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:523    .text.toggleTraffic1Red:0000000000000014 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:528    .text.toggleTraffic2Red:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:534    .text.toggleTraffic2Red:0000000000000000 toggleTraffic2Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:556    .text.toggleTraffic2Red:0000000000000010 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:561    .text.toggleTraffic1Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:567    .text.toggleTraffic1Green:0000000000000000 toggleTraffic1Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:589    .text.toggleTraffic1Green:0000000000000010 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:594    .text.toggleTraffic2Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:600    .text.toggleTraffic2Green:0000000000000000 toggleTraffic2Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:622    .text.toggleTraffic2Green:0000000000000010 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:627    .text.toggleTraffic1Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:633    .text.toggleTraffic1Yellow:0000000000000000 toggleTraffic1Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:659    .text.toggleTraffic1Yellow:000000000000001c $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:665    .text.toggleTraffic2Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:671    .text.toggleTraffic2Yellow:0000000000000000 toggleTraffic2Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:697    .text.toggleTraffic2Yellow:0000000000000018 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:702    .text.acceptTraffic1Red:0000000000000000 $t
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 24
 
 
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:708    .text.acceptTraffic1Red:0000000000000000 acceptTraffic1Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:759    .text.acceptTraffic1Red:0000000000000034 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:767    .text.acceptTraffic2Red:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:773    .text.acceptTraffic2Red:0000000000000000 acceptTraffic2Red
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:824    .text.acceptTraffic2Red:0000000000000034 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:832    .text.acceptTraffic1Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:838    .text.acceptTraffic1Green:0000000000000000 acceptTraffic1Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:876    .text.acceptTraffic1Green:0000000000000024 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:884    .text.acceptTraffic2Green:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:890    .text.acceptTraffic2Green:0000000000000000 acceptTraffic2Green
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:928    .text.acceptTraffic2Green:0000000000000024 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:936    .text.acceptTraffic1Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:942    .text.acceptTraffic1Yellow:0000000000000000 acceptTraffic1Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:980    .text.acceptTraffic1Yellow:0000000000000024 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:988    .text.acceptTraffic2Yellow:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:994    .text.acceptTraffic2Yellow:0000000000000000 acceptTraffic2Yellow
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1032   .text.acceptTraffic2Yellow:0000000000000024 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1040   .rodata:0000000000000000 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1044   .text.displayCounter:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1050   .text.displayCounter:0000000000000000 displayCounter
-C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1098   .text.displayCounter:0000000000000048 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:708    .text.acceptTraffic1Red:0000000000000000 acceptTraffic1Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:759    .text.acceptTraffic1Red:0000000000000034 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:767    .text.acceptTraffic2Red:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:773    .text.acceptTraffic2Red:0000000000000000 acceptTraffic2Red
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:824    .text.acceptTraffic2Red:0000000000000034 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:832    .text.acceptTraffic1Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:838    .text.acceptTraffic1Green:0000000000000000 acceptTraffic1Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:876    .text.acceptTraffic1Green:0000000000000024 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:884    .text.acceptTraffic2Green:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:890    .text.acceptTraffic2Green:0000000000000000 acceptTraffic2Green
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:928    .text.acceptTraffic2Green:0000000000000024 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:936    .text.acceptTraffic1Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:942    .text.acceptTraffic1Yellow:0000000000000000 acceptTraffic1Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:980    .text.acceptTraffic1Yellow:0000000000000024 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:988    .text.acceptTraffic2Yellow:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:994    .text.acceptTraffic2Yellow:0000000000000000 acceptTraffic2Yellow
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:1032   .text.acceptTraffic2Yellow:0000000000000024 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:1040   .rodata:0000000000000000 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:1044   .text.displayCounter:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:1050   .text.displayCounter:0000000000000000 displayCounter
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s:1098   .text.displayCounter:0000000000000048 $d
                            .group:0000000000000000 wm4.0.cb5f01749778df26340c4505df3d34d0
                            .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
                            .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
@@ -1387,7 +1387,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1098   .text.displayCounter:0000
                            .group:0000000000000000 wm4.stm32f1xx_hal_tim.h.22.a16e206564e97dbace9faae59a0d6008
                            .group:0000000000000000 wm4.stm32f1xx_hal_uart.h.22.5f7992e497faa36aa98f09f7214f4dbb
                            .group:0000000000000000 wm4.stm32f1xx_hal.h.88.91065c0692bed6019c34f1e9c00589fd
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s 			page 25
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccf6wOzN.s 			page 25
 
 
                            .group:0000000000000000 wm4.newlib.h.8.7cb3972cd43265932d4782d5eb589854
@@ -1417,8 +1417,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\ccgcu71A.s:1098   .text.displayCounter:0000
                            .group:0000000000000000 wm4.stdio.h.81.932d0c162786b883f622b8d05c120c78
                            .group:0000000000000000 wm4.main.h.66.f6c32797044e6683294f2b743aea3471
                            .group:0000000000000000 wm4.button.h.9.c6366124cd589a43ad584300c9157129
-                           .group:0000000000000000 wm4.scheduler.h.4.83ce304dfb906999b52630f400dd3d97
-                           .group:0000000000000000 wm4.global.h.12.cde98173854399505bb16cbc58c7b8b7
+                           .group:0000000000000000 wm4.global.h.11.2fb835f5a6e6029efdfc188ecbd44406
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

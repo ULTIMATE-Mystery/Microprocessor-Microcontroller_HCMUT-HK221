@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -43,22 +43,22 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
   36              		.cfi_def_cfa_register 7
    6:./Core/Src/fsm_auto.c **** 	switch (status)
   37              		.loc 1 6 2
-  38 0004 8B4B     		ldr	r3, .L26
+  38 0004 7E4B     		ldr	r3, .L26
   39 0006 1B68     		ldr	r3, [r3]
   40 0008 013B     		subs	r3, r3, #1
   41 000a 042B     		cmp	r3, #4
-  42 000c 00F20F81 		bhi	.L21
+  42 000c 00F2F680 		bhi	.L21
   43 0010 01A2     		adr	r2, .L4
   44 0012 52F823F0 		ldr	pc, [r2, r3, lsl #2]
   45 0016 00BF     		.p2align 2
   46              	.L4:
   47 0018 2D000000 		.word	.L8+1
   48 001c 51000000 		.word	.L7+1
-  49 0020 C1000000 		.word	.L6+1
-  50 0024 39010000 		.word	.L5+1
-  51 0028 AB010000 		.word	.L3+1
+  49 0020 B5000000 		.word	.L6+1
+  50 0024 1F010000 		.word	.L5+1
+  51 0028 85010000 		.word	.L3+1
   52              		.p2align 1
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 2
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 2
 
 
   53              	.L8:
@@ -66,7 +66,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
    8:./Core/Src/fsm_auto.c **** 	case INIT:
    9:./Core/Src/fsm_auto.c **** 		status=AUTO_RED_GREEN;
   54              		.loc 1 9 9
-  55 002c 814B     		ldr	r3, .L26
+  55 002c 744B     		ldr	r3, .L26
   56 002e 0222     		movs	r2, #2
   57 0030 1A60     		str	r2, [r3]
   10:./Core/Src/fsm_auto.c **** 		setTimer1(1000);
@@ -75,9 +75,9 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
   60 0036 FFF7FEFF 		bl	setTimer1
   11:./Core/Src/fsm_auto.c **** 		counter = max_red1;
   61              		.loc 1 11 11
-  62 003a 7F4B     		ldr	r3, .L26+4
+  62 003a 724B     		ldr	r3, .L26+4
   63 003c 1B68     		ldr	r3, [r3]
-  64 003e 7F4A     		ldr	r2, .L26+8
+  64 003e 724A     		ldr	r2, .L26+8
   65 0040 1360     		str	r3, [r2]
   12:./Core/Src/fsm_auto.c **** 		displayCounter();
   66              		.loc 1 12 3
@@ -90,22 +90,22 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
   71 004a FFF7FEFF 		bl	setTraffic2Green
   15:./Core/Src/fsm_auto.c **** 		break;
   72              		.loc 1 15 3
-  73 004e EEE0     		b	.L2
+  73 004e D5E0     		b	.L2
   74              	.L7:
   16:./Core/Src/fsm_auto.c **** 	case AUTO_RED_GREEN:
   17:./Core/Src/fsm_auto.c **** 		if(timer1_flag == 1){
   75              		.loc 1 17 18
-  76 0050 7B4B     		ldr	r3, .L26+12
+  76 0050 6E4B     		ldr	r3, .L26+12
   77 0052 1B68     		ldr	r3, [r3]
   78              		.loc 1 17 5
   79 0054 012B     		cmp	r3, #1
   80 0056 15D1     		bne	.L9
   18:./Core/Src/fsm_auto.c **** 			counter--;
   81              		.loc 1 18 11
-  82 0058 784B     		ldr	r3, .L26+8
+  82 0058 6B4B     		ldr	r3, .L26+8
   83 005a 1B68     		ldr	r3, [r3]
   84 005c 013B     		subs	r3, r3, #1
-  85 005e 774A     		ldr	r2, .L26+8
+  85 005e 6A4A     		ldr	r2, .L26+8
   86 0060 1360     		str	r3, [r2]
   19:./Core/Src/fsm_auto.c **** 			setTimer1(1000);
   87              		.loc 1 19 4
@@ -113,12 +113,12 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
   89 0066 FFF7FEFF 		bl	setTimer1
   20:./Core/Src/fsm_auto.c **** 			if(counter == max_yellow2){
   90              		.loc 1 20 15
-  91 006a 744B     		ldr	r3, .L26+8
+  91 006a 674B     		ldr	r3, .L26+8
   92 006c 1A68     		ldr	r2, [r3]
-  93 006e 754B     		ldr	r3, .L26+16
+  93 006e 684B     		ldr	r3, .L26+16
   94 0070 1B68     		ldr	r3, [r3]
   95              		.loc 1 20 6
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 3
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 3
 
 
   96 0072 9A42     		cmp	r2, r3
@@ -128,7 +128,7 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
   99 0076 FFF7FEFF 		bl	setTraffic2Yellow
   22:./Core/Src/fsm_auto.c **** 				status=AUTO_RED_YELLOW;
  100              		.loc 1 22 11
- 101 007a 6E4B     		ldr	r3, .L26
+ 101 007a 614B     		ldr	r3, .L26
  102 007c 0322     		movs	r2, #3
  103 007e 1A60     		str	r2, [r3]
  104              	.L10:
@@ -146,403 +146,379 @@ ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 1
  111 008a 0346     		mov	r3, r0
  112              		.loc 1 27 5
  113 008c 002B     		cmp	r3, #0
- 114 008e 00F0C780 		beq	.L22
-  28:./Core/Src/fsm_auto.c **** 			isButtonPressed(2);
- 115              		.loc 1 28 4
- 116 0092 0220     		movs	r0, #2
- 117 0094 FFF7FEFF 		bl	isButtonPressed
-  29:./Core/Src/fsm_auto.c **** 			isButtonPressed(3);
- 118              		.loc 1 29 4
- 119 0098 0320     		movs	r0, #3
- 120 009a FFF7FEFF 		bl	isButtonPressed
+ 114 008e 00F0AE80 		beq	.L22
+  28:./Core/Src/fsm_auto.c **** 			//isButtonPressed(2);
+  29:./Core/Src/fsm_auto.c **** 			//isButtonPressed(3);
   30:./Core/Src/fsm_auto.c **** 			status=MAN_RED_GREEN;
- 121              		.loc 1 30 10
- 122 009e 654B     		ldr	r3, .L26
- 123 00a0 0B22     		movs	r2, #11
- 124 00a2 1A60     		str	r2, [r3]
-  31:./Core/Src/fsm_auto.c **** 			setTimer1(60000);
- 125              		.loc 1 31 4
- 126 00a4 4EF66020 		movw	r0, #60000
- 127 00a8 FFF7FEFF 		bl	setTimer1
+ 115              		.loc 1 30 10
+ 116 0092 5B4B     		ldr	r3, .L26
+ 117 0094 0B22     		movs	r2, #11
+ 118 0096 1A60     		str	r2, [r3]
+  31:./Core/Src/fsm_auto.c **** 			setTimer1(30000);
+ 119              		.loc 1 31 4
+ 120 0098 47F23050 		movw	r0, #30000
+ 121 009c FFF7FEFF 		bl	setTimer1
   32:./Core/Src/fsm_auto.c **** 			setTraffic1Red();
- 128              		.loc 1 32 4
- 129 00ac FFF7FEFF 		bl	setTraffic1Red
+ 122              		.loc 1 32 4
+ 123 00a0 FFF7FEFF 		bl	setTraffic1Red
   33:./Core/Src/fsm_auto.c **** 			setTraffic2Green();
- 130              		.loc 1 33 4
- 131 00b0 FFF7FEFF 		bl	setTraffic2Green
-  34:./Core/Src/fsm_auto.c **** 			counter = 99;
- 132              		.loc 1 34 12
- 133 00b4 614B     		ldr	r3, .L26+8
- 134 00b6 6322     		movs	r2, #99
- 135 00b8 1A60     		str	r2, [r3]
+ 124              		.loc 1 33 4
+ 125 00a4 FFF7FEFF 		bl	setTraffic2Green
+  34:./Core/Src/fsm_auto.c **** 			counter = 0;
+ 126              		.loc 1 34 12
+ 127 00a8 574B     		ldr	r3, .L26+8
+ 128 00aa 0022     		movs	r2, #0
+ 129 00ac 1A60     		str	r2, [r3]
   35:./Core/Src/fsm_auto.c **** 			displayCounter();
- 136              		.loc 1 35 4
- 137 00ba FFF7FEFF 		bl	displayCounter
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 4
-
-
+ 130              		.loc 1 35 4
+ 131 00ae FFF7FEFF 		bl	displayCounter
   36:./Core/Src/fsm_auto.c **** 			break;
- 138              		.loc 1 36 4
- 139 00be B6E0     		b	.L2
- 140              	.L6:
+ 132              		.loc 1 36 4
+ 133 00b2 A3E0     		b	.L2
+ 134              	.L6:
   37:./Core/Src/fsm_auto.c **** 		}
   38:./Core/Src/fsm_auto.c **** 		break;
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 4
+
+
   39:./Core/Src/fsm_auto.c **** 	case AUTO_RED_YELLOW:
   40:./Core/Src/fsm_auto.c **** 		if(timer1_flag == 1){
- 141              		.loc 1 40 18
- 142 00c0 5F4B     		ldr	r3, .L26+12
- 143 00c2 1B68     		ldr	r3, [r3]
- 144              		.loc 1 40 5
- 145 00c4 012B     		cmp	r3, #1
- 146 00c6 19D1     		bne	.L12
+ 135              		.loc 1 40 18
+ 136 00b4 554B     		ldr	r3, .L26+12
+ 137 00b6 1B68     		ldr	r3, [r3]
+ 138              		.loc 1 40 5
+ 139 00b8 012B     		cmp	r3, #1
+ 140 00ba 19D1     		bne	.L12
   41:./Core/Src/fsm_auto.c **** 			counter--;
- 147              		.loc 1 41 11
- 148 00c8 5C4B     		ldr	r3, .L26+8
- 149 00ca 1B68     		ldr	r3, [r3]
- 150 00cc 013B     		subs	r3, r3, #1
- 151 00ce 5B4A     		ldr	r2, .L26+8
- 152 00d0 1360     		str	r3, [r2]
+ 141              		.loc 1 41 11
+ 142 00bc 524B     		ldr	r3, .L26+8
+ 143 00be 1B68     		ldr	r3, [r3]
+ 144 00c0 013B     		subs	r3, r3, #1
+ 145 00c2 514A     		ldr	r2, .L26+8
+ 146 00c4 1360     		str	r3, [r2]
   42:./Core/Src/fsm_auto.c **** 			setTimer1(1000);
- 153              		.loc 1 42 4
- 154 00d2 4FF47A70 		mov	r0, #1000
- 155 00d6 FFF7FEFF 		bl	setTimer1
+ 147              		.loc 1 42 4
+ 148 00c6 4FF47A70 		mov	r0, #1000
+ 149 00ca FFF7FEFF 		bl	setTimer1
   43:./Core/Src/fsm_auto.c **** 			if(counter == 0){
- 156              		.loc 1 43 15
- 157 00da 584B     		ldr	r3, .L26+8
- 158 00dc 1B68     		ldr	r3, [r3]
- 159              		.loc 1 43 6
- 160 00de 002B     		cmp	r3, #0
- 161 00e0 0AD1     		bne	.L13
+ 150              		.loc 1 43 15
+ 151 00ce 4E4B     		ldr	r3, .L26+8
+ 152 00d0 1B68     		ldr	r3, [r3]
+ 153              		.loc 1 43 6
+ 154 00d2 002B     		cmp	r3, #0
+ 155 00d4 0AD1     		bne	.L13
   44:./Core/Src/fsm_auto.c **** 				counter = max_green1;
- 162              		.loc 1 44 13
- 163 00e2 594B     		ldr	r3, .L26+20
- 164 00e4 1B68     		ldr	r3, [r3]
- 165 00e6 554A     		ldr	r2, .L26+8
- 166 00e8 1360     		str	r3, [r2]
+ 156              		.loc 1 44 13
+ 157 00d6 4F4B     		ldr	r3, .L26+20
+ 158 00d8 1B68     		ldr	r3, [r3]
+ 159 00da 4B4A     		ldr	r2, .L26+8
+ 160 00dc 1360     		str	r3, [r2]
   45:./Core/Src/fsm_auto.c **** 				setTraffic1Green();
- 167              		.loc 1 45 5
- 168 00ea FFF7FEFF 		bl	setTraffic1Green
+ 161              		.loc 1 45 5
+ 162 00de FFF7FEFF 		bl	setTraffic1Green
   46:./Core/Src/fsm_auto.c **** 				setTraffic2Red();
- 169              		.loc 1 46 5
- 170 00ee FFF7FEFF 		bl	setTraffic2Red
+ 163              		.loc 1 46 5
+ 164 00e2 FFF7FEFF 		bl	setTraffic2Red
   47:./Core/Src/fsm_auto.c **** 				status=AUTO_GREEN_RED;
- 171              		.loc 1 47 11
- 172 00f2 504B     		ldr	r3, .L26
- 173 00f4 0422     		movs	r2, #4
- 174 00f6 1A60     		str	r2, [r3]
- 175              	.L13:
+ 165              		.loc 1 47 11
+ 166 00e6 464B     		ldr	r3, .L26
+ 167 00e8 0422     		movs	r2, #4
+ 168 00ea 1A60     		str	r2, [r3]
+ 169              	.L13:
   48:./Core/Src/fsm_auto.c **** 			}
   49:./Core/Src/fsm_auto.c **** 			displayCounter();
- 176              		.loc 1 49 4
- 177 00f8 FFF7FEFF 		bl	displayCounter
- 178              	.L12:
+ 170              		.loc 1 49 4
+ 171 00ec FFF7FEFF 		bl	displayCounter
+ 172              	.L12:
   50:./Core/Src/fsm_auto.c **** 		}
   51:./Core/Src/fsm_auto.c **** 
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 5
-
-
   52:./Core/Src/fsm_auto.c **** 		if(isButtonPressed(1)){
- 179              		.loc 1 52 6
- 180 00fc 0120     		movs	r0, #1
- 181 00fe FFF7FEFF 		bl	isButtonPressed
- 182 0102 0346     		mov	r3, r0
- 183              		.loc 1 52 5
- 184 0104 002B     		cmp	r3, #0
- 185 0106 00F08D80 		beq	.L23
-  53:./Core/Src/fsm_auto.c **** 			isButtonPressed(2);
- 186              		.loc 1 53 4
- 187 010a 0220     		movs	r0, #2
- 188 010c FFF7FEFF 		bl	isButtonPressed
-  54:./Core/Src/fsm_auto.c **** 			isButtonPressed(3);
- 189              		.loc 1 54 4
- 190 0110 0320     		movs	r0, #3
- 191 0112 FFF7FEFF 		bl	isButtonPressed
+ 173              		.loc 1 52 6
+ 174 00f0 0120     		movs	r0, #1
+ 175 00f2 FFF7FEFF 		bl	isButtonPressed
+ 176 00f6 0346     		mov	r3, r0
+ 177              		.loc 1 52 5
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 5
+
+
+ 178 00f8 002B     		cmp	r3, #0
+ 179 00fa 7AD0     		beq	.L23
+  53:./Core/Src/fsm_auto.c **** 			//isButtonPressed(2);
+  54:./Core/Src/fsm_auto.c **** 			//isButtonPressed(3);
   55:./Core/Src/fsm_auto.c **** 			status=MAN_RED_GREEN;
- 192              		.loc 1 55 10
- 193 0116 474B     		ldr	r3, .L26
- 194 0118 0B22     		movs	r2, #11
- 195 011a 1A60     		str	r2, [r3]
-  56:./Core/Src/fsm_auto.c **** 			setTimer1(60000);
- 196              		.loc 1 56 4
- 197 011c 4EF66020 		movw	r0, #60000
- 198 0120 FFF7FEFF 		bl	setTimer1
+ 180              		.loc 1 55 10
+ 181 00fc 404B     		ldr	r3, .L26
+ 182 00fe 0B22     		movs	r2, #11
+ 183 0100 1A60     		str	r2, [r3]
+  56:./Core/Src/fsm_auto.c **** 			setTimer1(30000);
+ 184              		.loc 1 56 4
+ 185 0102 47F23050 		movw	r0, #30000
+ 186 0106 FFF7FEFF 		bl	setTimer1
   57:./Core/Src/fsm_auto.c **** 			setTraffic1Red();
- 199              		.loc 1 57 4
- 200 0124 FFF7FEFF 		bl	setTraffic1Red
+ 187              		.loc 1 57 4
+ 188 010a FFF7FEFF 		bl	setTraffic1Red
   58:./Core/Src/fsm_auto.c **** 			setTraffic2Green();
- 201              		.loc 1 58 4
- 202 0128 FFF7FEFF 		bl	setTraffic2Green
-  59:./Core/Src/fsm_auto.c **** 			counter = 99;
- 203              		.loc 1 59 12
- 204 012c 434B     		ldr	r3, .L26+8
- 205 012e 6322     		movs	r2, #99
- 206 0130 1A60     		str	r2, [r3]
+ 189              		.loc 1 58 4
+ 190 010e FFF7FEFF 		bl	setTraffic2Green
+  59:./Core/Src/fsm_auto.c **** 			counter = 0;
+ 191              		.loc 1 59 12
+ 192 0112 3D4B     		ldr	r3, .L26+8
+ 193 0114 0022     		movs	r2, #0
+ 194 0116 1A60     		str	r2, [r3]
   60:./Core/Src/fsm_auto.c **** 			displayCounter();
- 207              		.loc 1 60 4
- 208 0132 FFF7FEFF 		bl	displayCounter
+ 195              		.loc 1 60 4
+ 196 0118 FFF7FEFF 		bl	displayCounter
   61:./Core/Src/fsm_auto.c **** 			break;
- 209              		.loc 1 61 4
- 210 0136 7AE0     		b	.L2
- 211              	.L5:
+ 197              		.loc 1 61 4
+ 198 011c 6EE0     		b	.L2
+ 199              	.L5:
   62:./Core/Src/fsm_auto.c **** 		}
   63:./Core/Src/fsm_auto.c **** 		break;
   64:./Core/Src/fsm_auto.c **** 
   65:./Core/Src/fsm_auto.c **** 	case AUTO_GREEN_RED:
   66:./Core/Src/fsm_auto.c **** 		if(timer1_flag == 1){
- 212              		.loc 1 66 18
- 213 0138 414B     		ldr	r3, .L26+12
- 214 013a 1B68     		ldr	r3, [r3]
- 215              		.loc 1 66 5
- 216 013c 012B     		cmp	r3, #1
- 217 013e 17D1     		bne	.L15
+ 200              		.loc 1 66 18
+ 201 011e 3B4B     		ldr	r3, .L26+12
+ 202 0120 1B68     		ldr	r3, [r3]
+ 203              		.loc 1 66 5
+ 204 0122 012B     		cmp	r3, #1
+ 205 0124 17D1     		bne	.L15
   67:./Core/Src/fsm_auto.c **** 			counter--;
- 218              		.loc 1 67 11
- 219 0140 3E4B     		ldr	r3, .L26+8
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 6
-
-
- 220 0142 1B68     		ldr	r3, [r3]
- 221 0144 013B     		subs	r3, r3, #1
- 222 0146 3D4A     		ldr	r2, .L26+8
- 223 0148 1360     		str	r3, [r2]
+ 206              		.loc 1 67 11
+ 207 0126 384B     		ldr	r3, .L26+8
+ 208 0128 1B68     		ldr	r3, [r3]
+ 209 012a 013B     		subs	r3, r3, #1
+ 210 012c 364A     		ldr	r2, .L26+8
+ 211 012e 1360     		str	r3, [r2]
   68:./Core/Src/fsm_auto.c **** 			setTimer1(1000);
- 224              		.loc 1 68 4
- 225 014a 4FF47A70 		mov	r0, #1000
- 226 014e FFF7FEFF 		bl	setTimer1
+ 212              		.loc 1 68 4
+ 213 0130 4FF47A70 		mov	r0, #1000
+ 214 0134 FFF7FEFF 		bl	setTimer1
   69:./Core/Src/fsm_auto.c **** 			if(counter == 0){
- 227              		.loc 1 69 15
- 228 0152 3A4B     		ldr	r3, .L26+8
- 229 0154 1B68     		ldr	r3, [r3]
- 230              		.loc 1 69 6
- 231 0156 002B     		cmp	r3, #0
- 232 0158 08D1     		bne	.L16
+ 215              		.loc 1 69 15
+ 216 0138 334B     		ldr	r3, .L26+8
+ 217 013a 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 6
+
+
+ 218              		.loc 1 69 6
+ 219 013c 002B     		cmp	r3, #0
+ 220 013e 08D1     		bne	.L16
   70:./Core/Src/fsm_auto.c **** 				counter = max_yellow1;
- 233              		.loc 1 70 13
- 234 015a 3C4B     		ldr	r3, .L26+24
- 235 015c 1B68     		ldr	r3, [r3]
- 236 015e 374A     		ldr	r2, .L26+8
- 237 0160 1360     		str	r3, [r2]
+ 221              		.loc 1 70 13
+ 222 0140 354B     		ldr	r3, .L26+24
+ 223 0142 1B68     		ldr	r3, [r3]
+ 224 0144 304A     		ldr	r2, .L26+8
+ 225 0146 1360     		str	r3, [r2]
   71:./Core/Src/fsm_auto.c **** 				setTraffic1Yellow();
- 238              		.loc 1 71 5
- 239 0162 FFF7FEFF 		bl	setTraffic1Yellow
+ 226              		.loc 1 71 5
+ 227 0148 FFF7FEFF 		bl	setTraffic1Yellow
   72:./Core/Src/fsm_auto.c **** 				status=AUTO_YELLOW_RED;
- 240              		.loc 1 72 11
- 241 0166 334B     		ldr	r3, .L26
- 242 0168 0522     		movs	r2, #5
- 243 016a 1A60     		str	r2, [r3]
- 244              	.L16:
+ 228              		.loc 1 72 11
+ 229 014c 2C4B     		ldr	r3, .L26
+ 230 014e 0522     		movs	r2, #5
+ 231 0150 1A60     		str	r2, [r3]
+ 232              	.L16:
   73:./Core/Src/fsm_auto.c **** 			}
   74:./Core/Src/fsm_auto.c **** 			displayCounter();
- 245              		.loc 1 74 4
- 246 016c FFF7FEFF 		bl	displayCounter
- 247              	.L15:
+ 233              		.loc 1 74 4
+ 234 0152 FFF7FEFF 		bl	displayCounter
+ 235              	.L15:
   75:./Core/Src/fsm_auto.c **** 		}
   76:./Core/Src/fsm_auto.c **** 
   77:./Core/Src/fsm_auto.c **** 		if(isButtonPressed(1)){
- 248              		.loc 1 77 6
- 249 0170 0120     		movs	r0, #1
- 250 0172 FFF7FEFF 		bl	isButtonPressed
- 251 0176 0346     		mov	r3, r0
- 252              		.loc 1 77 5
- 253 0178 002B     		cmp	r3, #0
- 254 017a 55D0     		beq	.L24
-  78:./Core/Src/fsm_auto.c **** 			isButtonPressed(2);
- 255              		.loc 1 78 4
- 256 017c 0220     		movs	r0, #2
- 257 017e FFF7FEFF 		bl	isButtonPressed
-  79:./Core/Src/fsm_auto.c **** 			isButtonPressed(3);
- 258              		.loc 1 79 4
- 259 0182 0320     		movs	r0, #3
- 260 0184 FFF7FEFF 		bl	isButtonPressed
+ 236              		.loc 1 77 6
+ 237 0156 0120     		movs	r0, #1
+ 238 0158 FFF7FEFF 		bl	isButtonPressed
+ 239 015c 0346     		mov	r3, r0
+ 240              		.loc 1 77 5
+ 241 015e 002B     		cmp	r3, #0
+ 242 0160 49D0     		beq	.L24
+  78:./Core/Src/fsm_auto.c **** 			//isButtonPressed(2);
+  79:./Core/Src/fsm_auto.c **** 			//isButtonPressed(3);
   80:./Core/Src/fsm_auto.c **** 			status=MAN_RED_GREEN;
- 261              		.loc 1 80 10
- 262 0188 2A4B     		ldr	r3, .L26
- 263 018a 0B22     		movs	r2, #11
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 7
-
-
- 264 018c 1A60     		str	r2, [r3]
-  81:./Core/Src/fsm_auto.c **** 			setTimer1(60000);
- 265              		.loc 1 81 4
- 266 018e 4EF66020 		movw	r0, #60000
- 267 0192 FFF7FEFF 		bl	setTimer1
+ 243              		.loc 1 80 10
+ 244 0162 274B     		ldr	r3, .L26
+ 245 0164 0B22     		movs	r2, #11
+ 246 0166 1A60     		str	r2, [r3]
+  81:./Core/Src/fsm_auto.c **** 			setTimer1(30000);
+ 247              		.loc 1 81 4
+ 248 0168 47F23050 		movw	r0, #30000
+ 249 016c FFF7FEFF 		bl	setTimer1
   82:./Core/Src/fsm_auto.c **** 			setTraffic1Red();
- 268              		.loc 1 82 4
- 269 0196 FFF7FEFF 		bl	setTraffic1Red
+ 250              		.loc 1 82 4
+ 251 0170 FFF7FEFF 		bl	setTraffic1Red
   83:./Core/Src/fsm_auto.c **** 			setTraffic2Green();
- 270              		.loc 1 83 4
- 271 019a FFF7FEFF 		bl	setTraffic2Green
-  84:./Core/Src/fsm_auto.c **** 			counter = 99;
- 272              		.loc 1 84 12
- 273 019e 274B     		ldr	r3, .L26+8
- 274 01a0 6322     		movs	r2, #99
- 275 01a2 1A60     		str	r2, [r3]
+ 252              		.loc 1 83 4
+ 253 0174 FFF7FEFF 		bl	setTraffic2Green
+  84:./Core/Src/fsm_auto.c **** 			counter = 0;
+ 254              		.loc 1 84 12
+ 255 0178 234B     		ldr	r3, .L26+8
+ 256 017a 0022     		movs	r2, #0
+ 257 017c 1A60     		str	r2, [r3]
   85:./Core/Src/fsm_auto.c **** 			displayCounter();
- 276              		.loc 1 85 4
- 277 01a4 FFF7FEFF 		bl	displayCounter
+ 258              		.loc 1 85 4
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 7
+
+
+ 259 017e FFF7FEFF 		bl	displayCounter
   86:./Core/Src/fsm_auto.c **** 			break;
- 278              		.loc 1 86 4
- 279 01a8 41E0     		b	.L2
- 280              	.L3:
+ 260              		.loc 1 86 4
+ 261 0182 3BE0     		b	.L2
+ 262              	.L3:
   87:./Core/Src/fsm_auto.c **** 		}
   88:./Core/Src/fsm_auto.c **** 		break;
   89:./Core/Src/fsm_auto.c **** 
   90:./Core/Src/fsm_auto.c **** 	case AUTO_YELLOW_RED:
   91:./Core/Src/fsm_auto.c **** 
   92:./Core/Src/fsm_auto.c **** 		if(timer1_flag == 1){
- 281              		.loc 1 92 18
- 282 01aa 254B     		ldr	r3, .L26+12
- 283 01ac 1B68     		ldr	r3, [r3]
- 284              		.loc 1 92 5
- 285 01ae 012B     		cmp	r3, #1
- 286 01b0 19D1     		bne	.L18
+ 263              		.loc 1 92 18
+ 264 0184 214B     		ldr	r3, .L26+12
+ 265 0186 1B68     		ldr	r3, [r3]
+ 266              		.loc 1 92 5
+ 267 0188 012B     		cmp	r3, #1
+ 268 018a 19D1     		bne	.L18
   93:./Core/Src/fsm_auto.c **** 			counter--;
- 287              		.loc 1 93 11
- 288 01b2 224B     		ldr	r3, .L26+8
- 289 01b4 1B68     		ldr	r3, [r3]
- 290 01b6 013B     		subs	r3, r3, #1
- 291 01b8 204A     		ldr	r2, .L26+8
- 292 01ba 1360     		str	r3, [r2]
+ 269              		.loc 1 93 11
+ 270 018c 1E4B     		ldr	r3, .L26+8
+ 271 018e 1B68     		ldr	r3, [r3]
+ 272 0190 013B     		subs	r3, r3, #1
+ 273 0192 1D4A     		ldr	r2, .L26+8
+ 274 0194 1360     		str	r3, [r2]
   94:./Core/Src/fsm_auto.c **** 			setTimer1(1000);
- 293              		.loc 1 94 4
- 294 01bc 4FF47A70 		mov	r0, #1000
- 295 01c0 FFF7FEFF 		bl	setTimer1
+ 275              		.loc 1 94 4
+ 276 0196 4FF47A70 		mov	r0, #1000
+ 277 019a FFF7FEFF 		bl	setTimer1
   95:./Core/Src/fsm_auto.c **** 			if(counter == 0){
- 296              		.loc 1 95 15
- 297 01c4 1D4B     		ldr	r3, .L26+8
- 298 01c6 1B68     		ldr	r3, [r3]
- 299              		.loc 1 95 6
- 300 01c8 002B     		cmp	r3, #0
- 301 01ca 0AD1     		bne	.L19
+ 278              		.loc 1 95 15
+ 279 019e 1A4B     		ldr	r3, .L26+8
+ 280 01a0 1B68     		ldr	r3, [r3]
+ 281              		.loc 1 95 6
+ 282 01a2 002B     		cmp	r3, #0
+ 283 01a4 0AD1     		bne	.L19
   96:./Core/Src/fsm_auto.c **** 				counter = max_red1;
- 302              		.loc 1 96 13
- 303 01cc 1A4B     		ldr	r3, .L26+4
- 304 01ce 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 8
-
-
- 305 01d0 1A4A     		ldr	r2, .L26+8
- 306 01d2 1360     		str	r3, [r2]
+ 284              		.loc 1 96 13
+ 285 01a6 174B     		ldr	r3, .L26+4
+ 286 01a8 1B68     		ldr	r3, [r3]
+ 287 01aa 174A     		ldr	r2, .L26+8
+ 288 01ac 1360     		str	r3, [r2]
   97:./Core/Src/fsm_auto.c **** 				setTraffic1Red();
- 307              		.loc 1 97 5
- 308 01d4 FFF7FEFF 		bl	setTraffic1Red
+ 289              		.loc 1 97 5
+ 290 01ae FFF7FEFF 		bl	setTraffic1Red
   98:./Core/Src/fsm_auto.c **** 				setTraffic2Green();
- 309              		.loc 1 98 5
- 310 01d8 FFF7FEFF 		bl	setTraffic2Green
+ 291              		.loc 1 98 5
+ 292 01b2 FFF7FEFF 		bl	setTraffic2Green
   99:./Core/Src/fsm_auto.c **** 				status=AUTO_RED_GREEN;
- 311              		.loc 1 99 11
- 312 01dc 154B     		ldr	r3, .L26
- 313 01de 0222     		movs	r2, #2
- 314 01e0 1A60     		str	r2, [r3]
- 315              	.L19:
+ 293              		.loc 1 99 11
+ 294 01b6 124B     		ldr	r3, .L26
+ 295 01b8 0222     		movs	r2, #2
+ 296 01ba 1A60     		str	r2, [r3]
+ 297              	.L19:
  100:./Core/Src/fsm_auto.c **** 			}
  101:./Core/Src/fsm_auto.c **** 			displayCounter();
- 316              		.loc 1 101 4
- 317 01e2 FFF7FEFF 		bl	displayCounter
- 318              	.L18:
+ 298              		.loc 1 101 4
+ 299 01bc FFF7FEFF 		bl	displayCounter
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 8
+
+
+ 300              	.L18:
  102:./Core/Src/fsm_auto.c **** 		}
  103:./Core/Src/fsm_auto.c **** 
- 104:./Core/Src/fsm_auto.c **** 		if(isButtonPressed(1)==1){
- 319              		.loc 1 104 6
- 320 01e6 0120     		movs	r0, #1
- 321 01e8 FFF7FEFF 		bl	isButtonPressed
- 322 01ec 0346     		mov	r3, r0
- 323              		.loc 1 104 5
- 324 01ee 012B     		cmp	r3, #1
- 325 01f0 1CD1     		bne	.L25
- 105:./Core/Src/fsm_auto.c **** 			isButtonPressed(2);
- 326              		.loc 1 105 4
- 327 01f2 0220     		movs	r0, #2
- 328 01f4 FFF7FEFF 		bl	isButtonPressed
- 106:./Core/Src/fsm_auto.c **** 			isButtonPressed(3);
- 329              		.loc 1 106 4
- 330 01f8 0320     		movs	r0, #3
- 331 01fa FFF7FEFF 		bl	isButtonPressed
+ 104:./Core/Src/fsm_auto.c **** 		if(isButtonPressed(1)){
+ 301              		.loc 1 104 6
+ 302 01c0 0120     		movs	r0, #1
+ 303 01c2 FFF7FEFF 		bl	isButtonPressed
+ 304 01c6 0346     		mov	r3, r0
+ 305              		.loc 1 104 5
+ 306 01c8 002B     		cmp	r3, #0
+ 307 01ca 16D0     		beq	.L25
+ 105:./Core/Src/fsm_auto.c **** 			//isButtonPressed(2);
+ 106:./Core/Src/fsm_auto.c **** 			//isButtonPressed(3);
  107:./Core/Src/fsm_auto.c **** 			status=MAN_RED_GREEN;
- 332              		.loc 1 107 10
- 333 01fe 0D4B     		ldr	r3, .L26
- 334 0200 0B22     		movs	r2, #11
- 335 0202 1A60     		str	r2, [r3]
- 108:./Core/Src/fsm_auto.c **** 			setTimer1(60000);
- 336              		.loc 1 108 4
- 337 0204 4EF66020 		movw	r0, #60000
- 338 0208 FFF7FEFF 		bl	setTimer1
+ 308              		.loc 1 107 10
+ 309 01cc 0C4B     		ldr	r3, .L26
+ 310 01ce 0B22     		movs	r2, #11
+ 311 01d0 1A60     		str	r2, [r3]
+ 108:./Core/Src/fsm_auto.c **** 			setTimer1(30000);
+ 312              		.loc 1 108 4
+ 313 01d2 47F23050 		movw	r0, #30000
+ 314 01d6 FFF7FEFF 		bl	setTimer1
  109:./Core/Src/fsm_auto.c **** 			setTraffic1Red();
- 339              		.loc 1 109 4
- 340 020c FFF7FEFF 		bl	setTraffic1Red
+ 315              		.loc 1 109 4
+ 316 01da FFF7FEFF 		bl	setTraffic1Red
  110:./Core/Src/fsm_auto.c **** 			setTraffic2Green();
- 341              		.loc 1 110 4
- 342 0210 FFF7FEFF 		bl	setTraffic2Green
- 111:./Core/Src/fsm_auto.c **** 			counter = 99;
- 343              		.loc 1 111 12
- 344 0214 094B     		ldr	r3, .L26+8
- 345 0216 6322     		movs	r2, #99
- 346 0218 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 9
-
-
+ 317              		.loc 1 110 4
+ 318 01de FFF7FEFF 		bl	setTraffic2Green
+ 111:./Core/Src/fsm_auto.c **** 			counter = 0;
+ 319              		.loc 1 111 12
+ 320 01e2 094B     		ldr	r3, .L26+8
+ 321 01e4 0022     		movs	r2, #0
+ 322 01e6 1A60     		str	r2, [r3]
  112:./Core/Src/fsm_auto.c **** 			displayCounter();
- 347              		.loc 1 112 4
- 348 021a FFF7FEFF 		bl	displayCounter
+ 323              		.loc 1 112 4
+ 324 01e8 FFF7FEFF 		bl	displayCounter
  113:./Core/Src/fsm_auto.c **** 			break;
- 349              		.loc 1 113 4
- 350 021e 06E0     		b	.L2
- 351              	.L22:
+ 325              		.loc 1 113 4
+ 326 01ec 06E0     		b	.L2
+ 327              	.L22:
   38:./Core/Src/fsm_auto.c **** 	case AUTO_RED_YELLOW:
- 352              		.loc 1 38 3
- 353 0220 00BF     		nop
- 354 0222 04E0     		b	.L21
- 355              	.L23:
+ 328              		.loc 1 38 3
+ 329 01ee 00BF     		nop
+ 330 01f0 04E0     		b	.L21
+ 331              	.L23:
   63:./Core/Src/fsm_auto.c **** 
- 356              		.loc 1 63 3
- 357 0224 00BF     		nop
- 358 0226 02E0     		b	.L21
- 359              	.L24:
+ 332              		.loc 1 63 3
+ 333 01f2 00BF     		nop
+ 334 01f4 02E0     		b	.L21
+ 335              	.L24:
   88:./Core/Src/fsm_auto.c **** 
- 360              		.loc 1 88 3
- 361 0228 00BF     		nop
- 362 022a 00E0     		b	.L21
- 363              	.L25:
+ 336              		.loc 1 88 3
+ 337 01f6 00BF     		nop
+ 338 01f8 00E0     		b	.L21
+ 339              	.L25:
  114:./Core/Src/fsm_auto.c **** 		}
  115:./Core/Src/fsm_auto.c **** 		break;
- 364              		.loc 1 115 3
- 365 022c 00BF     		nop
- 366              	.L2:
- 367              	.L21:
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 9
+
+
+ 340              		.loc 1 115 3
+ 341 01fa 00BF     		nop
+ 342              	.L2:
+ 343              	.L21:
  116:./Core/Src/fsm_auto.c **** 	}
  117:./Core/Src/fsm_auto.c **** 
  118:./Core/Src/fsm_auto.c **** }
- 368              		.loc 1 118 1
- 369 022e 00BF     		nop
- 370 0230 80BD     		pop	{r7, pc}
- 371              	.L27:
- 372 0232 00BF     		.align	2
- 373              	.L26:
- 374 0234 00000000 		.word	status
- 375 0238 00000000 		.word	max_red1
- 376 023c 00000000 		.word	counter
- 377 0240 00000000 		.word	timer1_flag
- 378 0244 00000000 		.word	max_yellow2
- 379 0248 00000000 		.word	max_green1
- 380 024c 00000000 		.word	max_yellow1
- 381              		.cfi_endproc
- 382              	.LFE68:
- 384              		.text
- 385              	.Letext0:
- 386              		.file 2 "Core/Inc/timer.h"
- 387              		.file 3 "Core/Inc/global.h"
- 388              		.file 4 "Core/Inc/traffic.h"
- 389              		.file 5 "Core/Inc/button.h"
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 10
+ 344              		.loc 1 118 1
+ 345 01fc 00BF     		nop
+ 346 01fe 80BD     		pop	{r7, pc}
+ 347              	.L27:
+ 348              		.align	2
+ 349              	.L26:
+ 350 0200 00000000 		.word	status
+ 351 0204 00000000 		.word	max_red1
+ 352 0208 00000000 		.word	counter
+ 353 020c 00000000 		.word	timer1_flag
+ 354 0210 00000000 		.word	max_yellow2
+ 355 0214 00000000 		.word	max_green1
+ 356 0218 00000000 		.word	max_yellow1
+ 357              		.cfi_endproc
+ 358              	.LFE68:
+ 360              		.text
+ 361              	.Letext0:
+ 362              		.file 2 "Core/Inc/timer.h"
+ 363              		.file 3 "Core/Inc/global.h"
+ 364              		.file 4 "Core/Inc/traffic.h"
+ 365              		.file 5 "Core/Inc/button.h"
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 fsm_auto.c
-C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:18     .text.fsm_auto_run:0000000000000000 $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:24     .text.fsm_auto_run:0000000000000000 fsm_auto_run
-C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:47     .text.fsm_auto_run:0000000000000018 $d
-C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:52     .text.fsm_auto_run:000000000000002c $t
-C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:374    .text.fsm_auto_run:0000000000000234 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s:18     .text.fsm_auto_run:0000000000000000 $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s:24     .text.fsm_auto_run:0000000000000000 fsm_auto_run
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s:47     .text.fsm_auto_run:0000000000000018 $d
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s:52     .text.fsm_auto_run:000000000000002c $t
+C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s:350    .text.fsm_auto_run:0000000000000200 $d
                            .group:0000000000000000 wm4.0.cb5f01749778df26340c4505df3d34d0
                            .group:0000000000000000 wm4.stm32f1xx_hal_conf.h.21.98635006afa9a018cfa5e0632ed4968b
                            .group:0000000000000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
@@ -593,7 +569,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:374    .text.fsm_auto_run:000000
                            .group:0000000000000000 wm4.reent.h.17.e292bf8b0bec6c96e131a54347145a30
                            .group:0000000000000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
                            .group:0000000000000000 wm4.reent.h.77.dcd6129ff07fe81bd5636db29abe53b2
-ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s 			page 11
+ARM GAS  C:\Users\ULTIMA~1\AppData\Local\Temp\ccXjpYfu.s 			page 11
 
 
                            .group:0000000000000000 wm4.types.h.40.8b6acba56cefbb11746718204edc8f5e
@@ -609,8 +585,7 @@ C:\Users\ULTIMA~1\AppData\Local\Temp\cclA9tkr.s:374    .text.fsm_auto_run:000000
                            .group:0000000000000000 wm4.stdio.h.81.932d0c162786b883f622b8d05c120c78
                            .group:0000000000000000 wm4.main.h.66.f6c32797044e6683294f2b743aea3471
                            .group:0000000000000000 wm4.button.h.9.c6366124cd589a43ad584300c9157129
-                           .group:0000000000000000 wm4.scheduler.h.4.83ce304dfb906999b52630f400dd3d97
-                           .group:0000000000000000 wm4.global.h.12.cde98173854399505bb16cbc58c7b8b7
+                           .group:0000000000000000 wm4.global.h.11.2fb835f5a6e6029efdfc188ecbd44406
 
 UNDEFINED SYMBOLS
 setTimer1

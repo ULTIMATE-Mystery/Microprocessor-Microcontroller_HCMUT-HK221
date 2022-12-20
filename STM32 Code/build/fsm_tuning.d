@@ -23,7 +23,7 @@ build/fsm_tuning.o: Core/Src/fsm_tuning.c Core/Inc/fsm_tuning.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Core/Inc/button.h \
- Core/Inc/traffic.h Core/Inc/scheduler.h
+ Core/Inc/traffic.h
 Core/Inc/fsm_tuning.h:
 Core/Inc/global.h:
 Core/Inc/timer.h:
@@ -55,4 +55,3 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 Core/Inc/button.h:
 Core/Inc/traffic.h:
-Core/Inc/scheduler.h:

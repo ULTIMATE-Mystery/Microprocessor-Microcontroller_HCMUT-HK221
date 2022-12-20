@@ -15,8 +15,12 @@ void fsm_pedestrian_run(){
 					pedestrianStatus = PED_GREEN;
 					setPedestrianGreen();
 					setTimer2(250);
+				} else if(status == MAN_RED_GREEN || status == MAN_RED_YELLOW ){
+					pedestrianStatus = PED_GREEN;
+					setPedestrianGreen();
+					setTimer2(0);
 				}
-				else if (status == AUTO_GREEN_RED || status == AUTO_YELLOW_RED){
+				else if(status == AUTO_GREEN_RED || status == MAN_GREEN_RED || status == AUTO_YELLOW_RED || status == MAN_YELLOW_RED){
 					pedestrianStatus = PED_RED;
 					setPedestrianRed();
 				}
@@ -34,6 +38,11 @@ void fsm_pedestrian_run(){
 				setPedestrianGreen();
 				setTimer2(250);
 			}
+			else if (status == MAN_RED_GREEN){
+				pedestrianStatus = PED_GREEN;
+				setPedestrianGreen();
+				setTimer2(0);
+			}
 			break;
 		case PED_GREEN:
 			if(timer2_flag){
@@ -46,7 +55,7 @@ void fsm_pedestrian_run(){
 				}
 				setTimer2(250);
 			}
-			if(status == AUTO_GREEN_RED || status == AUTO_YELLOW_RED){
+			if(status == AUTO_GREEN_RED || status == MAN_GREEN_RED || status == AUTO_YELLOW_RED || status == MAN_YELLOW_RED){
 				pedestrianStatus = PED_RED;
 				setTimer2(2000);
 				setPedestrianRed();

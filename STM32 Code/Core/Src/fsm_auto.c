@@ -25,8 +25,6 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
 			setTimer1(30000);
 			setTraffic1Red();
@@ -50,8 +48,6 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
 			setTimer1(30000);
 			setTraffic1Red();
@@ -75,8 +71,6 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
 			setTimer1(30000);
 			setTraffic1Red();
@@ -102,8 +96,6 @@ void fsm_auto_run(){
 		}
 
 		if(isButtonPressed(1)){
-			//isButtonPressed(2);
-			//isButtonPressed(3);
 			status=MAN_RED_GREEN;
 			setTimer1(30000);
 			setTraffic1Red();
