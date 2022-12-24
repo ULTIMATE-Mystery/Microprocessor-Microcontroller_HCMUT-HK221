@@ -1,15 +1,15 @@
+
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
-extern int timer1_flag;
-extern int timer2_flag;
+#include "global.h"
 
-void setTimer1(int duration);
-void setTimer2(int duration);
+#define PERIOD	10
 
-void clearTimer1();
-void clearTimer2();
+extern int timer_flag;
 
+void setTimer(int);
 void timerRun();
+int flagRaised();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

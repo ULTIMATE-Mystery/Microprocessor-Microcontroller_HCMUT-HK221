@@ -19,12 +19,10 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "scheduler.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "global.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,7 +32,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -43,9 +40,10 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
 TIM_HandleTypeDef htim2;
-
 UART_HandleTypeDef huart2;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -53,86 +51,23 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_TIM2_Init(void);
+static void MX_ADC1_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void LEDInit(void){
-	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 1);
-	HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
-	HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, 1);
-	HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, 1);
-	HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, 1);
-}
-
-uint8_t var[30];
-int time_Stamp = 0;
-//char str[50];
-void Toggle_Led1(){
-	/* Toggle led */
-	HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-	/* Create String to display on terminal */
-	uint8_t showTimeStamp[30] = {"Task1: "};
-	itoa(time_Stamp*10, var, 10);
-	strcat(showTimeStamp, var);
-	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
-}
-
-void Toggle_Led2(){
-	/* Toggle led */
-	HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-	/* Create String to display on terminal */
-	uint8_t showTimeStamp[30] = {"Task2: "};
-	itoa(time_Stamp*10, var, 10);
-	strcat(showTimeStamp, var);
-	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
-}
-
-void Toggle_Led3(){
-	/* Toggle led */
-	HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
-	/* Create String to display on terminal */
-	uint8_t showTimeStamp[30] = {"Task3: "};
-	itoa(time_Stamp*10, var, 10);
-	strcat(showTimeStamp, var);
-	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
-}
-
-void Toggle_Led4(){
-	/* Toggle led */
-	HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
-	/* Create String to display on terminal */
-	uint8_t showTimeStamp[30] = {"Task4: "};
-	itoa(time_Stamp*10, var, 10);
-	strcat(showTimeStamp, var);
-	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
-}
-
-void One_Shot_Led(){
-	/* Toggle led */
-	HAL_GPIO_TogglePin(LED5_GPIO_Port, LED5_Pin);
-	/* Create String to display on terminal */
-	uint8_t showTimeStamp[30] = {"One-Shot: "};
-	itoa(time_Stamp*10, var, 10);
-	strcat(showTimeStamp, var);
-	strcat(showTimeStamp, "ms\r\n");
-	HAL_UART_Transmit(&huart2, &showTimeStamp[0], strlen(showTimeStamp), 100);
-}
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
-int main(void) {
+int main(void)
+{
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -155,29 +90,28 @@ int main(void) {
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM2_Init();
+  MX_ADC1_Init();
   MX_USART2_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_UART_Receive_IT(&huart2, &temp, 1);
   HAL_TIM_Base_Start_IT(&htim2);
-  SCH_Init();
-  LEDInit();
-  setTimer1(100);
 
-  SCH_Add_Task(Toggle_Led1, 0, 200);
-  SCH_Add_Task(Toggle_Led2, 200, 100);
-  SCH_Add_Task(Toggle_Led3, 300, 200);
-  SCH_Add_Task(Toggle_Led4, 400, 300);
-  SCH_Add_Task(One_Shot_Led, 500, 0); //One-shot task
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
+	  if (buffer_flag == 1){
+		  command_parser_fsm();
+		  buffer_flag = 0;
+	  }
+	  uart_communication_fsm();
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
-    SCH_Dispatch_Tasks();
-    /* USER CODE END 3 */
   }
-  /* USER CODE END WHILE */
+  /* USER CODE END 3 */
 }
 
 /**
@@ -188,6 +122,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -213,6 +148,57 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -304,28 +290,30 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
-                          |LED5_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED1_Pin LED2_Pin LED3_Pin LED4_Pin
-                           LED5_Pin */
-  GPIO_InitStruct.Pin = LED1_Pin|LED2_Pin|LED3_Pin|LED4_Pin
-                          |LED5_Pin;
+  /*Configure GPIO pin : LED_RED_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  HAL_GPIO_Init(LED_RED_GPIO_Port, &GPIO_InitStruct);
 
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2) {
-  SCH_Update();
-  time_Stamp++;
-  timerRun();
+//int cnt = 100;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim2){
+	timerRun();
+//	if (cnt > 0){
+//		cnt--;
+//		if (cnt == 0){
+//			HAL_GPIO_TogglePin(GPIOA, LED_RED_Pin);
+//			cnt = 100;
+//		}
+//	}
 }
 /* USER CODE END 4 */
 
