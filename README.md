@@ -1,6 +1,13 @@
 # Microprocessor - Microcontroller assignment
 
-Hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người đi bộ qua đường có 3 mode và tổng cộng 4 nút nhấn.
+# Lớp L02 - Nhóm 007:
+- Nhóm trưởng: Phạm Duy Quang - MSSV: 2011899
+- Thành viên nhóm: Nguyễn Trọng Vinh - MSSV: 2015070
+- Thành viên nhóm: Nguyễn Thành Quí - MSSV: 2014291
+
+# Slides trình bày: https://www.canva.com/design/DAFUIRlPmRw/t55NXGa4lA5sxmYdHFE64Q/view
+
+Project sử dụng STM32F103RB để mô phỏng hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người đi bộ qua đường. Hệ thống đèn giao thông này có 3 mode và tổng cộng 4 nút nhấn.
 
 *) 4 nút nhấn hoạt động như sau:
 
@@ -15,20 +22,18 @@ Hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người
 
 *) 3 mode hoạt động như sau:
 
-- Auto mode:
-  + Đèn sẽ hoạt động bình thường theo chu kỳ (Đỏ-Xanh -> Đỏ-Vàng -> Xanh-Đỏ -> Vàng-Đỏ).
-  + Khi Button 1 được nhấn sẽ chuyển sang Manual mode.
+- Auto mode: Đèn giao thông sẽ hoạt động theo chu kỳ bình thường. Nhấn Button 1 để chuyển sang Manual mode.
 
 - Manual mode:
-  + Khi chuyển từ auto mode sang manual mode thì trạng thái đèn vẫn giữ nguyên như khi ở auto mode.
-  + Khi Button 2 được nhấn hệ thống đèn sẽ chuyển sang trạng thái tiếp theo như khi ở auto mode.
-  + Khi Button 2 không được nhấn sau 30s thì hệ thống sẽ quay lại auto mode, và trạng thái của đèn sẽ là trạng thái tiếp theo.
-  + Khi Button 1 được nhấn sẽ chuyển sang tuning mode.
+  + Khi chuyển từ Auto mode sang Manual mode thì trạng thái sáng đèn giao thông vẫn giữ nguyên như khi ở Auto mode.
+  + Khi Button 2 được nhấn, hệ thống đèn sẽ chuyển sang trạng thái sáng đèn giao thông tiếp theo như chu kỳ khi ở Auto mode.
+  + Khi Button 2 không được nhấn sau 30s thì hệ thống sẽ quay lại Auto mode, và trạng thái sáng đèn sẽ là trạng thái đèn giao thông tiếp theo như chu kỳ.
+  + Khi Button 1 được nhấn sẽ chuyển sang Tuning mode.
 
 - Tuning mode:
-  + Tuning mode sẽ dùng để set giá trị duration. Lưu ý duration: Đỏ1 = Xanh2 + Vàng2, Đỏ2 = Xanh1 + Vàng1 (Đỏ >= 2)
+  + Tuning mode sẽ dùng để điều chỉnh giá trị thời gian. Lưu ý thời gian: Đỏ1 = Xanh2 + Vàng2, Đỏ2 = Xanh1 + Vàng1 (Đỏ >= 2)
   + Lần lượt các giá trị sẽ được điều chỉnh là Đỏ1, Đỏ2, Xanh1, Xanh2, Vàng1, Vàng2.
   + Đỏ1 sẽ được chỉnh từ [2 -> 99]. Nếu Đỏ1 <= Vàng2 thì đặt lại Vàng2 = 1 và đặt lại Xanh2 = Đỏ1 - Vàng2. Tương tự như vậy với Đỏ2.
   + Xanh1 sẽ được chỉnh từ [1 -> (Đỏ2 - 1)] và đặt lại Vàng1 = Đỏ2 - Xanh1. Tương tự như vậy với Xanh2.
   + Vàng1 sẽ được chỉnh từ [1 -> (Đỏ2 - 1)] và đặt lại Xanh1 = Đỏ2 - Vàng1. Tương tự như vậy với Vàng2.
-  + Khi Button1 được nhấn sẽ chuyển sang Auto mode.
+  + Khi Button 1 được nhấn sẽ chuyển về Auto mode.
