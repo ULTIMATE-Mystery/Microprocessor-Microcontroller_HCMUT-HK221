@@ -5,7 +5,7 @@ Lớp L02 - Nhóm 007:
 - Thành viên nhóm: Nguyễn Trọng Vinh - MSSV: 2015070
 - Thành viên nhóm: Nguyễn Thành Quí - MSSV: 2014291
 
-Slides trình bày: https://www.canva.com/design/DAFUIRlPmRw/t55NXGa4lA5sxmYdHFE64Q/view
+Slides trình bày: https://www.canva.com/design/DAFUIRlPmRw/t55NXGa4lA5sxmYdHFE64Q/view.
 
 Project sử dụng STM32F103RB để mô phỏng hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người đi bộ qua đường. Hệ thống đèn giao thông này có 3 mode và tổng cộng 4 nút nhấn.
 
