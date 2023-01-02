@@ -9,7 +9,7 @@ Slides trình bày: https://www.canva.com/design/DAFUIRlPmRw/t55NXGa4lA5sxmYdHFE
 
 Project sử dụng STM32F103RB để mô phỏng hệ thống đèn giao thông ở ngã tư với nút nhấn dành cho người đi bộ qua đường. Hệ thống đèn giao thông này có 3 mode và tổng cộng 4 nút nhấn.
 
-*) 4 nút nhấn hoạt động như sau:
+<+> 4 nút nhấn hoạt động như sau:
 
 - Button 0 - Pedestrian button (nút nhấn dành cho người đi bộ): Nút nhấn này hoạt động khi hệ thống đang ở Auto mode và Manual mode. Khi nhấn nút này, đèn của người đi bộ sẽ hiển thị ngược lại với đèn giao thông trên tuyến đường. Buzzer (còi) sẽ không kêu khi ở Manual mode. Ở Auto mode, buzzer sẽ kêu khi đèn người đi bộ là đèn xanh và khi counter (thời gian) đèn xanh của người đi bộ càng giảm thì buzzer kêu càng to. Buzzer sẽ tự động tắt ở cuối chu kỳ đèn vàng thứ 2 của tuyến đường giao thông kể từ khi được nhấn.
 
@@ -20,7 +20,7 @@ Project sử dụng STM32F103RB để mô phỏng hệ thống đèn giao thông
 - Button 3 - Tuning button: Ở Tunning mode, nhấn nút này để điều chỉnh thời gian sáng của từng đèn giao thông.
 
 
-*) 3 mode hoạt động như sau:
+<+> 3 mode hoạt động như sau:
 
 - Auto mode: Đèn giao thông sẽ hoạt động theo chu kỳ bình thường. Nhấn Button 1 để chuyển sang Manual mode.
 
