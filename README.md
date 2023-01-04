@@ -27,7 +27,7 @@ Project sử dụng STM32F103RB để mô phỏng hệ thống đèn giao thông
 - Manual mode:
   + Khi chuyển từ Auto mode sang Manual mode thì trạng thái sáng đèn giao thông vẫn giữ nguyên như khi ở Auto mode.
   + Khi Button 2 được nhấn, hệ thống đèn sẽ chuyển sang trạng thái sáng đèn giao thông tiếp theo như chu kỳ khi ở Auto mode.
-  + Khi Button 2 không được nhấn sau 30s thì hệ thống sẽ quay lại Auto mode, và trạng thái sáng đèn sẽ là trạng thái đèn giao thông tiếp theo như chu kỳ.
+  + Khi Button 2 không được nhấn sau 30 giây thì hệ thống sẽ quay lại Auto mode, và trạng thái sáng đèn sẽ là trạng thái đèn giao thông tiếp theo như chu kỳ.
   + Khi Button 1 được nhấn sẽ chuyển sang Tuning mode.
 
 - Tuning mode:
